@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "interview-preparation"
+version = "0.1.0"
+description = ""
+authors = ["Hasan Ozdemir <hasanozdemir1@trakya.edu.tr>"]
+readme = "README.md"
+packages = [{include = "interview_preparation"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
