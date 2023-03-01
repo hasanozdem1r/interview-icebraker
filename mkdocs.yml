@@ -12,6 +12,7 @@ theme:
   custom_dir: 'cinder'
   # snytax highlighting
   colorscheme: dracula
+  favicon: img/favicon.ico
 
 nav:
     - Home: index.md
