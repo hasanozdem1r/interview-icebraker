@@ -1,3 +1,3 @@
-# Questions
+# Python Theoretical Questions
 
-1. https://realpython.com/python-gil/
+Theoretical interview questions in Python are designed to assess a candidate's understanding of fundamental concepts and principles in the field of software development. 

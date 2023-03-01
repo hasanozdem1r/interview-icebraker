@@ -1,4 +1,4 @@
 # Table of Contents
 
-* [Theoratical Questions](#theoritical)
-* [Practical Questions](#practical)
+* [Theoratical Questions](theoritical.md)
+* [Coding Questions](coding.md)
