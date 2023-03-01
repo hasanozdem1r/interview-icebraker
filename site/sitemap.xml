@@ -5,4 +5,14 @@
          <lastmod>2023-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://interview-preparation.readthedocs.io/en/latest/practical/</loc>
+         <lastmod>2023-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://interview-preparation.readthedocs.io/en/latest/theoretical/</loc>
+         <lastmod>2023-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>

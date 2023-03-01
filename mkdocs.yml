@@ -1,2 +1,8 @@
 site_name: Interview Preparation
 site_url: https://interview-preparation.readthedocs.io/en/latest/
+
+
+nav:
+    - Home: index.md
+    - Theoratical: theoretical.md
+    - Practical: practical.md
