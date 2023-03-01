@@ -5,11 +5,13 @@ repo_url: https://github.com/hasanozdem1r/interview_preparation
 copyright: Hasan Ozdemir
 
 theme:
-  name: 
+  name: null
   disable_nav_previous_next: true
   # Turn off the footer entirely
   disable_footer: true
   custom_dir: 'cinder'
+  # snytax highlighting
+  colorscheme: dracula
 
 nav:
     - Home: index.md
