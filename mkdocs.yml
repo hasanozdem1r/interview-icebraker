@@ -14,4 +14,4 @@ theme:
 nav:
     - Home: index.md
     - Theoratical: theoretical.md
-    - Practical: practical.md
+    - Coding: coding.md
