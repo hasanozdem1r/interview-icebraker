@@ -1,6 +1,15 @@
 site_name: Interview Preparation
 site_url: https://interview-preparation.readthedocs.io/en/latest/
+repo_name: hasanozdem1r/interview_preparation
+repo_url: https://github.com/hasanozdem1r/interview_preparation
+copyright: Hasan Ozdemir
 
+theme:
+  name: 
+  disable_nav_previous_next: true
+  # Turn off the footer entirely
+  disable_footer: true
+  custom_dir: 'cinder'
 
 nav:
     - Home: index.md
