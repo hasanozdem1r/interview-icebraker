@@ -45,7 +45,7 @@ jobs:
 
       - id: install_dependencies
         name: Install project dependencies
-        run: poetry install
+        run: poetry install --no-root
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
 
       - id: markdown_analysis
