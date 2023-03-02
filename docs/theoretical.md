@@ -91,3 +91,48 @@ Memory is managed in Python in the following ways:
 ### 10. What are python modules? Name some commonly used built-in modules in Python ?
 A module is a file containing Python definitions and statements. This code can either be functions classes or variables. Ex ; os, sys, math, random, JSON, csv
 
+### 11. What are local variables and global variables in Python ?
+
+* **Global**: Variables declared outside a function or in global space are called global variables. These variables can be accessed by any function in the program
+* **Local**: Any variable declared inside a function is known as a local variable. This variable is present in the local space and not in the global space.
+
+**BASE_URL** is a global variable and **user_domain** is local variable and only can be accessed in scope of function
+```
+BASE_URL="www.github.com"
+
+def get_user_domain(base_url:str,username:str):
+    user_domain:str=""
+    user_domain=f"{base_url}/{username}"
+    return user_domain
+```
+### 12. What is type conversion in Python ?
+
+Type conversion refers to the conversion of one data type into another.
+* Implicit type conversion, interpreter helps in automatically converting the data type into another data type without any User involvement.
+* Explicit type conversion the data type in changed into a required type by the user.
+
+### 13. What is PEP 8 and why is it important ?
+PEP stands for Python Enhancement Proposal. PEP 8 is especially important since it documents the style guidelines for Python Code. It is a set of rules that specify how to write and design Python code for maximum readability.
+
+### 14. What is docstring in Python?
+Documentation string or docstring is a multiline string used to document a specific code segment.
+Below you can see example docstr for **do_sth** function
+```
+def do_sth(:
+    """
+    do_sth method return message (I AM DOCSTRING)
+    """
+    return "DO STH"
+```
+
+### 15. What is PYTHONPATH in Python ?
+
+The PYTHONPATH variable has a value that is a string with a list of directories that Python should add to the **sys.path** directory list.
+If PYTHONPATH is not setted you can encounter with various problems such as **xyz package is not found** and etc. 
+
+If you want to set PYTHONPATH please do as following
+```
+echo $PYTHONPATH # if return none do the following
+export PYTHONPATH="$PWD" # project root directory
+```
+
