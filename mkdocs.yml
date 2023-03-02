@@ -18,3 +18,12 @@ nav:
     - Home: index.md
     - Theoratical: theoretical.md
     - Coding: coding.md
+
+extra:
+  alternate:
+    - name: English
+      link: /en/ 
+      lang: en
+    - name: Turkish
+      link: /tr/
+      lang: tr
