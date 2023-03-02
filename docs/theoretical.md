@@ -90,3 +90,4 @@ Memory is managed in Python in the following ways:
 
 ### 10. What are python modules? Name some commonly used built-in modules in Python ?
 A module is a file containing Python definitions and statements. This code can either be functions classes or variables. Ex ; os, sys, math, random, JSON, csv
+
