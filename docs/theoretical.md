@@ -136,3 +136,77 @@ echo $PYTHONPATH # if return none do the following
 export PYTHONPATH="$PWD" # project root directory
 ```
 
+### 16. What is a lambda function in Python ?
+
+A lambda function is an anonymous function (i.e., defined without a name) that can take any number of arguments but, unlike normal functions, evaluates and returns only one expression
+
+```
+# lambda function
+lambda x: x - 1
+# normal function
+def decrease(x):
+    return x - 1
+```
+
+### 17. How Python is interpreted ?
+
+Python as a language is not interpreted or compiled. 
+Interpreted or compiled is the property of the implementation. 
+Python is a bytecode(set of interpreter readable instructions) interpreted generally.
+
+### 18. What does *args and **kwargs mean ?
+
+args stands for arguments, and kwargs stands for is keyword arguments.
+* *args allows you to pass the desired number of arguments to the function
+* *kwargs represent same idea, but only that this format uses keyword-based Python dictionaries
+
+Let's look at following example to understand better *args and **kwargs
+```
+def example(x,y,*args,**kwargs):
+    # access args, it's a tuple
+    arguments=[arg for arg in args]
+    # access kwargs, it's a dictionary
+    keyword_arguments={key:value for (key,value) in kwargs.items()}
+    print(f"x:{x}, y:{y}")
+    print(f"arguments:{arguments}")
+    print(f"keyword_arguments:{keyword_arguments}")
+example(-3,-2,-1,0,a= 1, b= 2, c= 3, d= 4, e= 5)
+```
+The code provided above outputs the following:
+```
+x:-3, y:-2
+arguments:[-1, 0]
+keyword_arguments:{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+```
+
+### 19. What is context manager in Python ?
+
+A context manager is a Python construct that is used to manage resources, such as files or network connections, that need to be properly initialized and cleaned up after use. The context manager provides a convenient way to allocate and release resources automatically, ensuring that resources are properly managed even if an error occurs or an exception is raised.
+
+The context manager is implemented as an object that defines two methods: __enter__ and __exit__. The __enter__ method is called when the context is entered, and it returns the resource object that will be used in the block of code that follows.
+
+The context manager can be used with the with statement, which provides a convenient way to manage resources in a safe and reliable manner. When the with statement is used, the context manager is automatically called when the block of code is entered, and it is automatically cleaned up when the block of code is exited, even if an error occurs.
+
+```
+class prep_interview:
+    def __enter__(self):
+        print("Entering the context...")
+        # Code to initialize the resource goes here
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        # Code to clean up the resource goes here
+        print("Exiting the context...")
+
+# usage of the context manager
+with prep_interview() as cm:
+    print("Inside the context.")
+
+# built-in context manager
+with open('file.txt', 'w') as f:
+    f.write('Hello, World!')
+
+# python request library
+with requests.Session() as session:
+    session.get('https://httpbin.org')
+```
