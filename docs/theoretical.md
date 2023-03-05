@@ -395,3 +395,41 @@ def calculate_with_difference(a, b):
 some_library.calculate = calculate_with_difference
 ```
 If you call some_library.calculate(10, 5), it will return (15, 5) instead of just 15. This is because we used monkey patching to add the difference value to the return value of the calculate() function.
+
+### 32. What is mocking in Python ?
+
+Mocking is a technique used in unit testing to replace a real object or function with a fake one that simulates its behavior. The purpose of mocking is to isolate the code being tested from its dependencies, so that the test can focus on the behavior of the code under test without being affected by the behavior of external dependencies.
+
+Mocking is often used to simulate the behavior of complex or external dependencies that are difficult to test directly, such as web services or databases. By mocking these dependencies, a test can be designed to verify that the code under test interacts with the dependency correctly, without actually making any real calls to the external service.
+
+Mocking can be a powerful technique for writing effective unit tests in Python, but it should be used judiciously. Overuse of mocking can lead to brittle and hard-to-maintain tests, as well as a false sense of security that the code is working correctly when in fact it may not be.
+
+```
+from unittest.mock import MagicMock
+import requests
+
+def get_data_from_api(api_url):
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return None
+
+def test_get_data_from_api():
+    # create a mock response object
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = {'foo': 'bar'}
+
+    # create a mock requests.get function that returns the mock response
+    requests.get = MagicMock(return_value=mock_response)
+
+    # call the function under test
+    data = get_data_from_api('https://example.com/api')
+
+    # assert that the function returned the expected data
+    assert data == {'foo': 'bar'}
+
+    # assert that requests.get was called with the correct URL
+    requests.get.assert_called_with('https://example.com/api')
+```
