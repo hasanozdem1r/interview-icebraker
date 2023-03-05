@@ -307,6 +307,57 @@ class EvenNumbers:
 # calling iterator
 for number in EvenNumbers(5):
     print(number)
-    
+
 # output -> 0, 2, 4, 6, 8
+```
+
+### 27. What are the negative indexes and why are they used ?
+
+In Python, negative indexes are used to access elements from the end of a sequence, such as a string, list, or tuple. 
+The last element in the sequence can be accessed using an index of -1, the second-to-last element can be accessed using an index of -2, and so on.
+
+```
+example_list = [1, 2, 3, 4, 5]
+last_element = example_list[-1]  # returns 5
+last_two_elements = example_list[-2:]  # returns [4, 5]
+```
+
+Negative indexes can be particularly useful when working with sequences of unknown length or when you need to access elements relative to the end of the sequence, such as when processing log files or other types of time-series data
+
+### 28. Why is finalize used ?
+In Python, finalize is a method that is used to release resources associated with an object when it is no longer needed. This method is part of the Python garbage collection mechanism, which automatically manages memory allocation and deallocation for objects created in a Python program.
+
+The finalize method provides a way to automatically release these external resources when the object is garbage-collected. To use finalize, you define a callback function that will be called when the object is about to be garbage-collected. This function can then release any external resources held by the object, such as closing a file or disconnecting from a network socket.
+
+```
+import atexit
+
+class FileWrapper:
+    def __init__(self, filename):
+        self.file = open(filename, 'w')
+        self.finalizer = atexit.register(self.finalize)
+    
+    def write(self, data):
+        self.file.write(data)
+    
+    def finalize(self):
+        self.file.close()
+        atexit.unregister(self.finalizer)
+```
+
+### 29. What is comprehensions in Python ?
+Comprehensions in Python are a concise way to create sequences (such as lists, sets, and dictionaries) based on existing sequences. 
+They are a shorthand notation for loops that reduce the amount of code you need to write and make it easier to express complex operations on sequences.
+
+Following comprehension creates a list of squares of even numbers between 0 and 9.
+```
+squares = [x**2 for x in range(10) if x % 2 == 0]
+```
+Following comprehension creates a set of squares of even numbers between 0 and 9.
+```
+squares_set = {x**2 for x in range(10) if x % 2 == 0}
+```
+Following comprehension creates a dictionary of even numbers between 0 and 9 and their squares.
+```
+squares_dict = {x: x**2 for x in range(10) if x % 2 == 0}
 ```
