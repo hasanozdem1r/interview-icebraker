@@ -245,3 +245,68 @@ The GIL has both benefits and drawbacks. On the one hand, it <u>simplifies the i
 However, it's important to note that the <u>GIL only affects multi-threaded Python programs, not multi-process Python programs</u>. Python's multiprocessing module can be used to take advantage of multiple CPUs without being limited by the GIL. Additionally, the GIL is specific to the CPython implementation of Python, and other implementations such as Jython and IronPython do not have a GIL.
 
 **NOTE**:The GIL can have a significant impact on the performance of multi-threaded Python programs that perform CPU-bound tasks, but it may have less of an impact on programs that spend most of their time waiting for I/O or calling into C extensions that release the GIL.
+
+### 24. What are generators in Python ?
+
+Generators are functions that return an iterable collection of items, one at a time, in a set manner. 
+Generators, in general, are used to create iterators with a different approach. 
+They employ the use of yield keyword rather than return to return a generator object.
+
+Here's an example of a simple generator that generates the first n Fibonacci numbers:
+```
+# creating generator
+def fibonacci(n):
+    a, b = 0, 1
+    for i in range(n):
+        yield a
+        a, b = b, a + b
+
+# accessing generator
+for number in fibonacci(10):
+    print(number)
+
+# Code output:  0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+```
+
+### 25. How are arguments passed by value or by reference in Python ?
+
+* Pass by value: Copy of the actual object is passed. Changing the value of the copy of the object will not change the value of the original object.
+* Pass by reference: Reference to the actual object is passed. Changing the value of the new object will change the value of the original object.
+
+Arguments are passed by reference in Python, but the behavior can depend on whether the objects are mutable or immutable. 
+
+* Mutable objects can be modified in place inside a function, and the modifications will be visible outside the function. 
+* Immutable objects cannot be modified in place, so modifications inside a function will create new objects and not affect the original objects outside the function.
+
+### 26. What are iterators in Python ?
+An iterator is an object.  It remembers its state i.e., where it is during iteration
+
+* \__iter__() method initializes an iterator.
+* \__next__() method which returns the next item in iteration and points to the next element. Upon reaching the end of iterable object \__next__() must return StopIteration exception. It is also self-iterable.
+
+```
+# example iterator
+class EvenNumbers:
+    # constructor
+    def __init__(self, n):
+        self.n = n
+        self.current = 0
+    
+    # returns the iterator object itself
+    def __iter__(self):
+        return self
+
+    # computes the next even number in the sequence and updates the current value
+    def __next__(self):
+        if self.current >= self.n:
+            raise StopIteration
+        result = 2 * self.current
+        self.current += 1
+        return result
+
+# calling iterator
+for number in EvenNumbers(5):
+    print(number)
+    
+# output -> 0, 2, 4, 6, 8
+```
