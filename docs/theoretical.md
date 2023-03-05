@@ -361,3 +361,37 @@ Following comprehension creates a dictionary of even numbers between 0 and 9 and
 ```
 squares_dict = {x: x**2 for x in range(10) if x % 2 == 0}
 ```
+
+### 30. What is difference between append() and extend() in Python ?
+In Python, both the append and extend methods are used to add new elements to a list. 
+
+append method adds a single element to the end of the list:
+```
+my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list) # Output: [1, 2, 3, 4]
+```
+extend method, on the other hand, adds multiple elements to the end of the list. It takes an iterable (e.g. a list, tuple, set, etc.) and adds all of its elements to the list:
+```
+my_list = [1, 2, 3]
+my_list.extend([4, 5, 6])
+print(my_list) # Output: [1, 2, 3, 4, 5, 6]
+```
+### 31. What is monkey patching in Python ?
+
+Monkey patching in Python is the practice of changing or adding functionality to a module, class, or object at runtime, without actually modifying the original source code.
+
+Let's say you're working with a third-party library that has a function called calculate() which takes two arguments and returns their sum. However, for some reason, you want this function to also return the difference between the two arguments. Instead of modifying the original code of the library, you can use monkey patching to add this additional functionality.
+```
+import some_library
+
+# define a new function that we want to add to the library
+def calculate_with_difference(a, b):
+    sum = some_library.calculate(a, b)
+    difference = a - b
+    return (sum, difference)
+
+# monkey patch the library with our new function
+some_library.calculate = calculate_with_difference
+```
+If you call some_library.calculate(10, 5), it will return (15, 5) instead of just 15. This is because we used monkey patching to add the difference value to the return value of the calculate() function.
