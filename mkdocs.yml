@@ -1,8 +1,8 @@
 site_name: Interview Preparation
-site_url: https://interview-preparation.readthedocs.io/en/latest/
+site_url: https://interview-icebraker.readthedocs.io/en/latest/
 site_description: "This repository contains a comprehensive list of Python interview questions that can assist you in securing your dream job"
-repo_url: https://github.com/hasanozdem1r/interview_preparation
-copyright: "Interview Preparation is licensed under the <a href='https://github.com/hasanozdem1r/interview_preparation/blob/master/LICENSE'>Apache License 2.0</a>"
+repo_url: https://github.com/hasanozdem1r/interview-icebraker
+copyright: "Interview Preparation is licensed under the <a href='https://github.com/hasanozdem1r/interview-icebraker/blob/master/LICENSE'>Apache License 2.0</a>"
 
 
 theme:
