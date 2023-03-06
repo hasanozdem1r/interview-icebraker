@@ -7,7 +7,7 @@ body {
     font-size: 16px;
     line-height: 1.7;
     background-color: #FFF;
-    color: #343838;
+    color: rgb(0, 0, 0);
 }
 h1, h2, h3, h4, h5, h6 {
     font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -53,7 +53,7 @@ pre {
     color: #B1B7B9;
 }
 .navbar-default {
-    background-color: #343838;
+    background-color: #00f;
     border-bottom: 8px #EBF2F2 solid;
 }
 .bs-sidenav {
@@ -80,7 +80,7 @@ pre {
     font-family:"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: #343838;
+    color: #000;
     height: 45px;
 }
 footer > hr {
