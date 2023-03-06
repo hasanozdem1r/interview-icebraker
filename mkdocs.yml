@@ -17,8 +17,8 @@ theme:
 
 nav:
     - Home: index.md
-    - Theoratical: theoretical.md
-    - Coding: coding.md
+    - Python: python.md
+    - SQL: sql.md
 
 extra:
   alternate:

@@ -1,4 +1,4 @@
-# Python Theoretical Questions
+# Theoretical
 
 Theoretical interview questions in Python are designed to assess a candidate's understanding of fundamental concepts and principles in the field of software development. 
 
@@ -433,3 +433,6 @@ def test_get_data_from_api():
     # assert that requests.get was called with the correct URL
     requests.get.assert_called_with('https://example.com/api')
 ```
+
+
+# Coding

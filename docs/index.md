@@ -2,6 +2,10 @@
 ![Interview Questions](img/homepage/homepage.png)
 
 # Table of Contents
+* Python Questions
+    * [Theoratical](python.md)
+    * [Coding](python.md)
 
-* [Theoratical Questions](theoretical.md)
-* [Coding Questions](coding.md)
+* SQL Questions
+    * [Theoratical](sql.md)
+    * [Coding](sql.md)
