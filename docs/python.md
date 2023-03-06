@@ -1,4 +1,4 @@
-# Theoretical
+# Python Theoretical
 
 Theoretical interview questions in Python are designed to assess a candidate's understanding of fundamental concepts and principles in the field of software development. 
 
@@ -435,5 +435,5 @@ def test_get_data_from_api():
 ```
 
 
-# Coding
+# Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
