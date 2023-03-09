@@ -437,3 +437,41 @@ def test_get_data_from_api():
 
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
+
+### 1. Implement a Linked List in Python
+
+```
+from typing import Any
+
+class Node:
+
+    def __init__(self,data:Any=None):
+        self.data=data
+        self.next=None
+    
+        def __repr__(self):
+            return self.data
+
+class LinkedList:
+
+    def __init__(self):
+        self.head=None
+    
+    def __repr__(self) -> str:
+        node=self.head
+        nodes=[]
+        while node is not None:
+            nodes.append(node.data)
+            node=node.next
+        nodes.append("None")
+        return " --> ".join(nodes)
+
+linked_list=LinkedList()
+node_a=Node("a")
+linked_list.head=node_a
+node_b=Node("b")
+node_a.next = node_b
+node_c=Node("c")
+node_b.next=node_c
+print(linked_list) 
+```
