@@ -106,3 +106,34 @@ You can then execute this stored procedure by passing a value for the @ProductId
 ```
 EXEC sp_GetProductDetails @ProductId = 1;
 ```
+
+### 20. What are joins in SQL ?
+
+In SQL , a join is used to combine rows from two or more tables based on a related column between them. Joins are used to retrieve data that is spread across multiple tables in a database.
+
+There are several types of joins in SQL, including:
+
+* INNER JOIN / JOIN: Returns only the rows that have matching values in both tables.
+* LEFT JOIN: Returns all the rows from the left table and the matched rows from the right table. If there is no match in the right table, NULL values are returned for those columns.
+* RIGHT JOIN: Returns all the rows from the right table and the matched rows from the left table. If there is no match in the left table, NULL values are returned for those columns.
+* OUTER JOIN / FULL OUTER JOIN: Returns all the rows from both tables, with NULL values for the columns that do not have a match in the other table.
+
+![join visualization](img/sql/sql_joins.png)
+
+```
+-- INNER JOIN or just JOIN retrieves all users and likes that match each other 
+-- ( where the id field in users matches a user_id in the likes table and vice versa )
+SELECT users.name, likes.like FROM users JOIN likes ON users.id = likes.user_id;
+
+-- LEFT JOIN retrieves all users and its likes if there is any else sets NULL in the like field
+SELECT users.name, likes.like FROM users LEFT JOIN likes ON users.id = likes.user_id;
+
+-- RIGHT JOIN is like LEFT JOIN but retrieves all likes with all matching users or NULL if it doesn't have any matching user
+SELECT users.name, likes.like FROM users RIGHT JOIN likes ON users.id = likes.user_id;
+
+-- OUTER JOIN or OUTER LEFT and RIGHT with UNION (MySQL don't support FULL OUTER JOIN) retrieves all users and likes and matches them 
+-- and sets NULL on any like without any match on user  and same thing with user with no matching like
+SELECT users.name, likes.like FROM users LEFT OUTER JOIN likes ON users.id = likes.user_id
+UNION
+SELECT users.name, likes.like FROM users RIGHT OUTER JOIN likes ON users.id = likes.user_id
+```

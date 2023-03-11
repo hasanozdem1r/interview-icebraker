@@ -15,7 +15,7 @@ Theoretical interview questions in Python are designed to assess a candidate's u
 Keywords are the reserved words in Python. We cannot use a keyword as a variable name, function name or any other identifier.
 Here's a list of all keywords in Python Programming
 
-![Keywords](img/theoretical/keywords.PNG)
+![Keywords](img/python/keywords.PNG)
 
 ### 3. What are literals in Python ?
 
