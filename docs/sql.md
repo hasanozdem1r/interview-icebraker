@@ -229,6 +229,57 @@ BEGIN
   SET total_order_amount = total_order_amount + NEW.total_amount
   WHERE customer_id = NEW.customer_id;
 END;
-
 ```
 This trigger will be executed automatically after a new row is inserted into the "orders" table. The 'NEW' keyword is used to refer to the new row being inserted, and the trigger will update the "customer_orders" table to add the total amount of the new order to the corresponding customer's total order amount.
+
+### 26. What is table and field in SQL ?
+
+A table refers to a collection of data in an organised manner in form of rows and columns. A field refers to the number of columns in a table. 
+
+For example:
+
+* table: Students
+* field: id, full_name, marks, register_date, origin
+
+### 27. What are the different operators available in SQL ?
+
+SQL has several types of operators that can be used to perform various tasks on data in a database. The following are some of the most common SQL operators:
+
+1. Arithmetic Operators: SQL supports the basic arithmetic operators: + (addition), - (subtraction), * (multiplication), / (division), and % (modulus).
+2. Comparison Operators: SQL supports various comparison operators, including = (equal to), != or <> (not equal to), > (greater than), < (less than), >= (greater than or equal to), and <= (less than or equal to).
+3. Logical Operators: SQL supports three logical operators: AND, OR, and NOT. These operators are used to combine two or more conditions in a WHERE clause.
+4. String Operators: SQL supports the concatenation operator (||) to concatenate two or more strings, and the LIKE operator to search for a string pattern within a string.
+5. NULL Operators: SQL has the special operator IS NULL which is used to check if a value is NULL or not.
+6. Set Operators: SQL supports set operators such as UNION, UNION ALL, INTERSECT, and EXCEPT which can be used to combine results of multiple SELECT statements.
+
+### 28. What is the difference between cross join and natural join ?
+
+**Cross Join**: A cross join (also known as a Cartesian join) returns the Cartesian product of the two tables involved. In other words, *it returns all possible combinations of rows from both tables*. This type of join does not use any join condition to filter rows.
+```
+SELECT * FROM table1 CROSS JOIN table2;
+```
+**Natural Join**: A natural join *returns only the rows that have matching values in both tables*, based on the column names that are the same in both tables. It automatically matches columns with the same name in both tables and returns only those rows where the values in those columns match. This type of join does not require a join condition to be specified explicitly.
+```
+SELECT * FROM table1 NATURAL JOIN table2;
+```
+In summary, the main difference between a cross join and a natural join is that a cross join returns all possible combinations of rows from both tables, while a natural join returns only the rows that have matching values in both tables based on the column names that are the same in both tables.
+
+### 29. What is query optimization in SQL ?
+
+Query optimization is the process of improving the performance of a database query by selecting the most efficient method of executing it. The goal of query optimization is to minimize the response time of a query and reduce the amount of system resources needed to execute it.
+
+Query optimization involves several steps, including:
+
+1. **Parsing and Translation**:
+The first step in query optimization is to parse and translate the query into a form that can be processed by the database engine. This involves breaking the query down into its component parts, such as the SELECT, FROM, and WHERE clauses, and generating an execution plan.
+
+2. **Cost Estimation**:
+The next step is to estimate the cost of executing the query using different execution plans. This involves analyzing the size of the data, the complexity of the query, and the resources required to execute it.
+
+3. **Plan Generation**:
+Based on the cost estimates, the database engine generates multiple execution plans for the query. Each plan represents a different way of executing the query, and may involve different optimization techniques such as index selection, join ordering, and filtering.
+
+4. **Plan Selection**:
+The final step is to select the best execution plan based on the estimated cost. The selected plan is then executed to retrieve the query results.
+
+Query optimization is critical for improving the performance of database systems, especially for large, complex queries that involve multiple tables and join operations. By optimizing queries, database administrators can improve the overall efficiency of the system, reduce response times, and ensure that users can retrieve the information they need in a timely manner.
