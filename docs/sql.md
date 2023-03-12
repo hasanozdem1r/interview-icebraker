@@ -137,3 +137,98 @@ SELECT users.name, likes.like FROM users LEFT OUTER JOIN likes ON users.id = lik
 UNION
 SELECT users.name, likes.like FROM users RIGHT OUTER JOIN likes ON users.id = likes.user_id
 ```
+
+### 21. What is data integrity ? 
+
+Data integrity in SQL refers to the *accuracy*, *consistency*, and *reliability* of data stored in a database. It ensures that the data is complete, correct, and valid. In other words, data integrity ensures that the data is of high quality and can be relied upon for decision-making, analysis, and reporting.
+
+There are different types of data integrity in SQL:
+
+* Entity integrity: It ensures that each row in a table has a unique identifier, such as a primary key.
+* Referential integrity: It ensures that the relationships between tables are maintained, and any foreign key values in one table refer to valid primary key values in another table.
+* Domain integrity: It ensures that the data in each column of a table conforms to a specific set of rules, such as data type, range, and format.
+* User-defined integrity: It allows users to define their own rules and constraints to ensure the accuracy and consistency of data.
+* Overall, data integrity is critical for maintaining the reliability and consistency of data in a SQL database, and it helps to prevent errors, data loss, and data corruption.
+
+### 22. What is view in SQL ?
+
+*View* is a virtual table that is based on the result of a SELECT query. It is not a physical table, but rather a stored SELECT statement that can be used to retrieve data in a specific format.
+
+A view is created using the CREATE VIEW statement, which defines the SELECT query used to generate the view's data. The result set of the SELECT query is then stored as a named object that can be used in other SQL statements just like a regular table.
+
+Views are useful for several reasons:
+
+1. They provide a simplified view of complex data. A view can be used to hide the complexity of a database schema and present a simpler view of the data that is more easily understood by users.
+2. They provide a way to control access to data. Views can be used to restrict access to certain columns or rows of data, so that users only see the data they need to see.
+3. They provide a way to aggregate data. Views can be used to group data together and calculate summary information, such as totals or averages, which can be used for reporting or analysis.
+4. They provide a way to combine data from multiple tables. Views can be used to combine data from several tables into a single view, making it easier to work with the data.
+5. Overall, views are a powerful tool in SQL that can help to simplify complex data, control access to data, and provide a flexible way to work with data from multiple tables.
+
+### 23. What are the different types of a subquery ?
+
+**Subquery** is a query that is nested within another query. The subquery is used to retrieve data that will be used by the outer query to filter or manipulate the results.
+
+There are two types of subqueries:
+
+* Single-row subquery: A single-row subquery is a subquery that returns only one row of data, which is then used by the outer query as a value in a comparison or calculation. For example, a single-row subquery can be used to find the maximum value in a column and then use that value to filter the results of the outer query.
+* Multiple-row subquery: A multiple-row subquery is a subquery that returns multiple rows of data, which are then used by the outer query to filter or manipulate the results. For example, a multiple-row subquery can be used to find all the customers who have ordered a particular product and then use that information to generate a report.
+
+```
+-- Single-row subquery
+SELECT *
+FROM products
+WHERE price = (SELECT MAX(price) FROM products);
+
+-- Multiple-row subquery
+SELECT *
+FROM customers
+WHERE customer_id IN (SELECT customer_id FROM orders WHERE product_id = 123);
+```
+
+Subqueries can also be classified by where they are used in a SQL statement. There are three types of subqueries based on where they are used:
+
+* Subquery in SELECT statement: A subquery can be used in the SELECT statement to retrieve data from another table or to perform a calculation using data from another table.
+
+* Subquery in FROM clause: A subquery can be used in the FROM clause to create a temporary table that is used by the outer query to retrieve data.
+
+* Subquery in WHERE clause: A subquery can be used in the WHERE clause to filter the results of the outer query based on a condition that involves data from another table.
+
+```
+-- Subquery in SELECT statement
+SELECT product_name, (SELECT MAX(price) FROM products) AS max_price
+FROM products;
+
+-- Subquery in FROM clause
+SELECT *
+FROM (SELECT customer_id, SUM(total) as total_spent FROM orders GROUP BY customer_id) AS customer_totals
+WHERE total_spent > 1000;
+
+-- Subquery in WHERE clause 
+SELECT *
+FROM products
+WHERE category_id = (SELECT category_id FROM categories WHERE category_name = 'Electronics');
+```
+
+### 24. What is collation in SQL ?
+
+Collation in SQL refers to the rules used to compare and sort character data, which can affect the results of SQL queries that involve character data. It determines how characters are treated in terms of case sensitivity, accent marks, and other language-specific rules. SQL supports a wide variety of collations, and each database has a default collation that is used for all character data in the database.
+
+### 25. What is trigger in SQL ?
+
+*Trigger* is a type of stored procedure that is automatically executed in response to certain database events, such as insert, update, or delete operations on a table.
+Triggers are commonly used in database applications to enforce data consistency and integrity, or to automate tasks that need to be performed whenever data changes. However, because triggers can have a significant impact on database performance, they should be used judiciously and only when necessary.
+
+
+Here is an example of a trigger in SQL:
+```
+CREATE TRIGGER update_customer_orders
+AFTER INSERT ON orders
+FOR EACH ROW
+BEGIN
+  UPDATE customer_orders
+  SET total_order_amount = total_order_amount + NEW.total_amount
+  WHERE customer_id = NEW.customer_id;
+END;
+
+```
+This trigger will be executed automatically after a new row is inserted into the "orders" table. The 'NEW' keyword is used to refer to the new row being inserted, and the trigger will update the "customer_orders" table to add the total amount of the new order to the corresponding customer's total order amount.
