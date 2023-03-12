@@ -329,3 +329,16 @@ SELECT DISTINCT column1, column2, column3 FROM table_name;
 ```
 **NOTE**: It's worth noting that using the DISTINCT keyword can have performance implications, especially on large tables. If you're working with a large dataset, you may want to consider other techniques such as grouping and aggregation to identify unique records.
 
+## 3. Regular Expression Querry
+Write a query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+```
+-- option 1
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '^[aeiouAEIOU]';
+
+-- option 2
+SELECT DISTINCT CITY
+FROM STATION
+WHERE SUBSTR(CITY, 1, 1) IN ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
+```
