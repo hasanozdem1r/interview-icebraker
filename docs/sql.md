@@ -1,5 +1,6 @@
 # SQL Interview Questions 
 
+## THEORETICAL
 ### 1. What is difference between SQL and MySQL ?
 SQL is a standard language. SQL is the core of the relational database which is used for accessing and managing database
 MySQL is a database management system and RDMS  such as SQL Server.
@@ -283,3 +284,48 @@ Based on the cost estimates, the database engine generates multiple execution pl
 The final step is to select the best execution plan based on the estimated cost. The selected plan is then executed to retrieve the query results.
 
 Query optimization is critical for improving the performance of database systems, especially for large, complex queries that involve multiple tables and join operations. By optimizing queries, database administrators can improve the overall efficiency of the system, reduce response times, and ensure that users can retrieve the information they need in a timely manner.
+
+### 30. What is Normalization and what are the advantages of it ?
+Normalization is a process of organizing data in a database to reduce redundancy and dependency. It involves dividing a larger table into smaller tables and defining relationships between them to ensure that each table contains only related data.
+
+There are several levels of normalization, with each level representing a higher degree of organization and a lower level of redundancy. The most commonly used levels of normalization are:
+
+* First Normal Form (1NF): This level ensures that each column in a table contains only atomic values (values that cannot be divided further), and that each row in the table is unique.
+* Second Normal Form (2NF): This level ensures that each non-key column in a table is fully dependent on the primary key, and that there are no partial dependencies (where a non-key column depends on only part of the primary key).
+* Third Normal Form (3NF): This level ensures that each non-key column in a table is dependent only on the primary key, and that there are no transitive dependencies (where a non-key column depends on another non-key column).
+
+The advantages of normalization include:
+
+* Reduced Redundancy: Normalization helps to reduce data redundancy by eliminating duplicate data and storing it only once. This reduces the storage requirements and helps to improve the performance of the database.
+* Improved Data Integrity: Normalization helps to improve data integrity by ensuring that each piece of data is stored in only one place. This reduces the likelihood of data inconsistencies and improves the accuracy of the data.
+* Improved Query Performance: Normalization can help to improve query performance by breaking down large tables into smaller, more manageable tables. This allows queries to be executed more efficiently, reducing response times and improving overall performance.
+* Easier Maintenance: Normalization makes it easier to maintain the database by simplifying data structures and reducing the complexity of the data model. This makes it easier to modify and update the database as needed.
+## CODING
+
+### 1. How to insert NULL values in a column while inserting the data?
+To insert a NULL value into a column while inserting data into a table, you can use the keyword NULL in place of the actual value.
+
+For example, consider a table named "employees" with columns "employee_id", "first_name", "last_name", and "email". If you want to insert a NULL value into the email column, you can do it as follows:
+```
+INSERT INTO employees (employee_id, first_name, last_name, email) 
+VALUES (1, 'John', 'Doe', NULL);
+```
+Another way to insert a NULL value into a column is to omit it from the column list in the INSERT statement. If you omit a column from the list, the database will insert a NULL value into the column by default.
+```
+INSERT INTO employees (employee_id, first_name, last_name) 
+VALUES (1, 'John', 'Doe');
+```
+
+### 2. How can you select unique records from a table ?
+To select unique records from a table, you can use the DISTINCT keyword in a SELECT statement. The DISTINCT keyword filters out duplicate values and returns only the unique values in the specified column or columns.
+
+For example, consider a table named "employees" with columns "employee_id", "first_name", "last_name", and "department". To select only the unique department names from the table, you can use the following query:
+```
+SELECT DISTINCT department FROM employees;
+```
+If you want to select unique records based on multiple columns, you can specify those columns in the SELECT statement, like this:
+```
+SELECT DISTINCT column1, column2, column3 FROM table_name;
+```
+**NOTE**: It's worth noting that using the DISTINCT keyword can have performance implications, especially on large tables. If you're working with a large dataset, you may want to consider other techniques such as grouping and aggregation to identify unique records.
+
