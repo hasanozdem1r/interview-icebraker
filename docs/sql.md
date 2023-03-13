@@ -300,6 +300,45 @@ The advantages of normalization include:
 * Improved Data Integrity: Normalization helps to improve data integrity by ensuring that each piece of data is stored in only one place. This reduces the likelihood of data inconsistencies and improves the accuracy of the data.
 * Improved Query Performance: Normalization can help to improve query performance by breaking down large tables into smaller, more manageable tables. This allows queries to be executed more efficiently, reducing response times and improving overall performance.
 * Easier Maintenance: Normalization makes it easier to maintain the database by simplifying data structures and reducing the complexity of the data model. This makes it easier to modify and update the database as needed.
+
+### 31. What are the database design basics ?
+A properly designed database provides you with access to up-to-date, accurate information
+
+A good database design is, therefore, one that:
+
+* Divides your information into subject-based tables to reduce redundant data.
+* Provides Access with the information it requires to join the information in the tables together as needed.
+* Helps support and ensure the accuracy and integrity of your information.
+* Accommodates your data processing and reporting needs.
+
+The design process consists of the following steps:
+
+**Define the Purpose and Scope of the Database**: Before you start designing a database, you need to determine its purpose and scope. What is the database going to be used for? Who is going to use it? What data will it store? What queries will it need to support? These questions will help you determine the requirements of your database.
+
+**Identify the Entities and Relationships**: The next step is to identify the entities and relationships that will be represented in the database. An entity is anything that can be represented in the database, such as a person, place, or thing. Relationships define how entities are related to one another.
+
+**Create a Data Model**: Once you have identified the entities and relationships, you can create a data model that represents them in a graphical format. There are several types of data models, including entity-relationship (ER) models, UML diagrams, and data flow diagrams.
+
+**Normalize the Data**: Normalization is the process of organizing the data in a database so that it is consistent and efficient. This involves breaking down larger tables into smaller ones and eliminating redundant data.
+
+**Define the Data Types and Constraints**: After normalizing the data, you need to define the data types and constraints for each field in the database. This includes specifying the data type (e.g., string, integer, date) and any constraints on that data (e.g., length limits, required fields, unique values).
+
+**Create the Tables and Relationships**: Using the data model and data types, you can now create the tables and relationships in the database. Tables represent the entities, and relationships define how they are related to one another.
+
+**Populate the Database**: Once the tables are created, you can populate the database with data. This can be done manually or through an automated process, depending on the size of the database.
+
+**Test the Database**: After populating the database, you need to test it to make sure it functions correctly. This includes running queries, updating data, and verifying that the database performs as expected.
+
+Cornerstones to take into consideration:
+
+1. Data Integrity - Ensuring the accuracy and consistency of the data.
+2. Scalability - Ensuring the database can handle increasing amounts of data and users.
+3. Security - Protecting the database from unauthorized access and ensuring data privacy.
+4. Performance - Ensuring the database operates efficiently and responds quickly to user requests.
+5. Maintainability - Ensuring the database is easy to maintain and update over time.
+6. Usability - Ensuring the database is easy to use and navigate for end-users.
+7. Flexibility - Ensuring the database can adapt to changing business needs and requirements.
+
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
@@ -329,7 +368,7 @@ SELECT DISTINCT column1, column2, column3 FROM table_name;
 ```
 **NOTE**: It's worth noting that using the DISTINCT keyword can have performance implications, especially on large tables. If you're working with a large dataset, you may want to consider other techniques such as grouping and aggregation to identify unique records.
 
-## 3. Regular Expression Querry
+### 3. Regular Expression Querry
 Write a query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
 ```
 -- option 1
@@ -342,3 +381,60 @@ SELECT DISTINCT CITY
 FROM STATION
 WHERE SUBSTR(CITY, 1, 1) IN ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
 ```
+
+### 4. Removing Duplicate Values 
+Write a query that remove duplicate values from table
+```
+-- prepare environment
+CREATE DATABASE family_db;
+
+USE family_db;
+
+CREATE TABLE family (
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   name VARCHAR(50) NOT NULL,
+   age INT NOT NULL,
+   gender ENUM('male', 'female') NOT NULL,
+   relationship VARCHAR(20) NOT NULL
+);
+
+INSERT INTO family (name, age, gender, relationship)
+VALUES
+   ('John Smith', 45, 'male', 'father'),
+   ('Jane Smith', 42, 'female', 'mother'),
+   ('Bob Smith', 18, 'male', 'brother'),
+   ('Sally Smith', 15, 'female', 'sister'),
+   ('Tom Johnson', 55, 'male', 'grandfather'),
+   ('Mary Johnson', 50, 'female', 'grandmother'),
+   ('Jim Johnson', 28, 'male', 'uncle'),
+   ('Karen Johnson', 25, 'female', 'aunt'),
+   ('Mark Davis', 30, 'male', 'cousin'),
+   ('Sarah Davis', 28, 'female', 'cousin');
+```
+Following code uses a self-join on the "family" table to compare each row with all other rows in the table, looking for duplicates based on the values of the name, age, gender, and relationship columns. The WHERE clause filters the results to only include rows where the ID of the first row is greater than the ID of the second row (to avoid deleting the original row), and where all other column values are identical. The DELETE statement then removes the duplicate row from the table.
+```
+-- OPTION 1 (self-join)
+
+DELETE f1
+FROM family f1, family f2
+WHERE f1.id > f2.id
+AND f1.name = f2.name
+AND f1.age = f2.age
+AND f1.gender = f2.gender
+AND f1.relationship = f2.relationship;
+```
+Instead of using a self-join, which can be slow for large tables, you can use a temporary table to store the distinct rows, and then replace the original table with the temporary table.
+```
+-- OPTION 2 (temp table and distinct)
+
+-- Create a new temporary table with the same schema as the original table
+CREATE TEMPORARY TABLE tmp_family LIKE family;
+-- Insert the distinct rows from the original table into the temporary table
+INSERT INTO tmp_family
+SELECT DISTINCT * FROM family;
+-- Drop the original table:
+DROP TABLE family;
+-- Rename the temporary table to the original table name
+RENAME TABLE tmp_family TO family;
+```
+This approach is faster and more efficient than using a self-join, as it only scans the original table once, and it avoids the overhead of deleting rows one by one. However, it may require more disk space to create the temporary table, so make sure you have enough free space on your server before running this code.
