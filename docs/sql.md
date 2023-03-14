@@ -410,6 +410,13 @@ Denormalization is the opposite of normalization; redundant data is added to spe
 A data warehouse is a large store of accumulated data, from a wide range of sources, within an organization. The data helps drive business decisions.
 
 ### 37. What is difference between views and tables ?
+
+|                                      **Views**                                     |                                               **Tables**                                              |
+|:----------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------:|
+| A view is a virtual table that is extracted from a database                        | A table is structured with a set number of columns and a boundless number of rows                     |
+| A view does not hold data itself                                                   | A table contains data and stores it in databases                                                      |
+| A view is utilized to query certain information contained in a few distinct tables | A table holds fundamental client information and cases of a characterized object                      |
+| In a view, we will get frequently queried information                              | In a table, changing the information in the database changes the information that appears in the view |
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
