@@ -509,5 +509,3 @@ DROP TABLE family;
 RENAME TABLE tmp_family TO family;
 ```
 This approach is faster and more efficient than using a self-join, as it only scans the original table once, and it avoids the overhead of deleting rows one by one. However, it may require more disk space to create the temporary table, so make sure you have enough free space on your server before running this code.
-
-### 4. Removing Duplicate Values 
