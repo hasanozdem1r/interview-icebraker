@@ -409,6 +409,7 @@ Denormalization is the opposite of normalization; redundant data is added to spe
 ### 36. What is data warehouse ?
 A data warehouse is a large store of accumulated data, from a wide range of sources, within an organization. The data helps drive business decisions.
 
+### 37. What is difference between views and tables ?
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
@@ -509,3 +510,4 @@ DROP TABLE family;
 RENAME TABLE tmp_family TO family;
 ```
 This approach is faster and more efficient than using a self-join, as it only scans the original table once, and it avoids the overhead of deleting rows one by one. However, it may require more disk space to create the temporary table, so make sure you have enough free space on your server before running this code.
+
