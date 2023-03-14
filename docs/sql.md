@@ -339,6 +339,76 @@ Cornerstones to take into consideration:
 6. Usability - Ensuring the database is easy to use and navigate for end-users.
 7. Flexibility - Ensuring the database can adapt to changing business needs and requirements.
 
+### 32. What is aggregate functions in MySQL ?
+An aggregate function is a function in SQL that performs a calculation on a set of values and returns a single value as the result. 
+The set of values is typically a group of rows in a table, and the function is applied to one or more columns in the table
+
+**List of aggregate functions in MySQL**
+
+|   **FUNCTION**   |                  **DESCRIPTION**                 |
+|:----------------:|:------------------------------------------------:|
+|       AVG()      | Return the average value of the argument         |
+|     BIT_AND()    | Return bitwise AND                               |
+|     BIT_OR()     | Return bitwise OR                                |
+|     BIT_XOR()    | Return bitwise XOR                               |
+|      COUNT()     | Return a count of the number of rows returned    |
+|  COUNT(DISTINCT) | Return the count of a number of different values |
+|  GROUP_CONCAT()  | Return a concatenated string                     |
+|  JSON_ARRAYAGG() | Return result set as a single JSON array         |
+| JSON_OBJECTAGG() | Return result set as a single JSON object        |
+|       MAX()      | Return the maximum value                         |
+|       MIN()      | Return the minimum value                         |
+|       STD()      | Return the population standard deviation         |
+|     STDDEV()     | Return the population standard deviation         |
+|   STDDEV_POP()   | Return the population standard deviation         |
+|   STDDEV_SAMP()  | Return the sample standard deviation             |
+|       SUM()      | Return the sum                                   |
+|     VAR_POP()    | Return the population standard variance          |
+|    VAR_SAMP()    | Return the sample variance                       |
+|    VARIANCE()    | Return the population standard variance          |
+
+Here are some examples of aggregate functions in SQL:
+```
+-- Calculate the average salary of all employees
+SELECT AVG(salary) FROM employees;
+
+-- Calculate the total number of items in a store
+SELECT COUNT(*) FROM inventory;
+
+-- Count the number of distinct product categories in a store
+SELECT COUNT(DISTINCT category) FROM products;
+
+-- Concatenate the names of all employees in a department
+SELECT GROUP_CONCAT(name SEPARATOR ', ') FROM employees WHERE department='Sales';
+
+-- Return the highest and lowest salary among all employees
+SELECT MAX(salary) as highest FROM employees;
+SELECT MIN(salary) as lowest FROM employees;
+
+-- Calculate the sum of all sales in a store
+SELECT SUM(sales) FROM store;
+
+-- Calculate the population standard deviation of product prices
+SELECT STDDEV_POP(price) FROM products;
+
+-- Calculate the sample variance of customer ages
+SELECT VAR_SAMP(age) FROM customers;
+```
+
+### 33. What is difference between **UNION** and **UNION ALL** in SQL ?
+
+UNION merges the contents of two structurally-compatible tables into a single combined table. The difference between UNION and UNION ALL is that UNION will omit duplicate records whereas UNION ALL will include duplicate records.
+The performance of UNION ALL will typically be better than UNION, since UNION requires the server to do the additional work of removing any duplicates
+
+### 34. What is database ?
+A database is an organized collection of structured data that can be stored, easily accessed, managed, and retrieved digitally from a remote or local computer system.
+
+### 35. What is denormalization ?
+Denormalization is the opposite of normalization; redundant data is added to speed up complex queries that have multiple tables that need to be joined. Optimization of the read performance of a database is attempted by adding or grouping redundant copies of data.
+
+### 36. What is data warehouse ?
+A data warehouse is a large store of accumulated data, from a wide range of sources, within an organization. The data helps drive business decisions.
+
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
