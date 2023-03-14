@@ -438,6 +438,7 @@ SELECT DISTINCT column1, column2, column3 FROM table_name;
 ```
 **NOTE**: It's worth noting that using the DISTINCT keyword can have performance implications, especially on large tables. If you're working with a large dataset, you may want to consider other techniques such as grouping and aggregation to identify unique records.
 
+
 ### 3. Regular Expression Querry
 Write a query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
 ```
@@ -508,3 +509,5 @@ DROP TABLE family;
 RENAME TABLE tmp_family TO family;
 ```
 This approach is faster and more efficient than using a self-join, as it only scans the original table once, and it avoids the overhead of deleting rows one by one. However, it may require more disk space to create the temporary table, so make sure you have enough free space on your server before running this code.
+
+### 4. Removing Duplicate Values 

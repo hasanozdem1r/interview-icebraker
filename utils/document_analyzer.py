@@ -1,4 +1,5 @@
 import os
+import sys
 from typing import List
 import glob
 
@@ -31,8 +32,10 @@ def check_duplicate_question(path: str):
             set([header for header in headers if headers.count(header) > 1])
         )
         if len(duplicates) > 0:
-            raise ValueError("Duplicate question is found. Duplicate questions")
-        return None
+            # cause CI-CD pipeline fail
+            sys.exit(1)
+        else:
+            return sys.exit(0)
 
 
 def main():
