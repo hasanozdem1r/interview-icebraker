@@ -417,6 +417,54 @@ A data warehouse is a large store of accumulated data, from a wide range of sour
 | A view does not hold data itself                                                   | A table contains data and stores it in databases                                                      |
 | A view is utilized to query certain information contained in a few distinct tables | A table holds fundamental client information and cases of a characterized object                      |
 | In a view, we will get frequently queried information                              | In a table, changing the information in the database changes the information that appears in the view |
+
+### 38. What is SQL Window functions ?
+SQL window functions are a type of SQL function that allow you to perform calculations across a set of rows that are related to the current row. They are commonly used in analytic queries to calculate rankings, cumulative sums, moving averages, and other types of aggregations.
+
+Window functions are similar to the aggregation done in the GROUP BY clause. However, rows are not grouped into a single row, each row retains their separate identity.
+![join visualization](img/sql/window_function.PNG)
+
+Window functions in SQL offer more flexibility, increased query efficiency, simplified code, and improved accuracy in data analysis, making them a powerful tool for performing complex calculations and analysis on your data within a single SQL query.
+
+Here is a list of some common window functions in SQL, along with examples:
+
+**ROW_NUMBER()**: assigns a unique integer value to each row in the result set.
+```
+SELECT ROW_NUMBER() OVER() AS row_num, name, age
+FROM customers;
+```
+**RANK()**: assigns a rank to each row based on its value relative to the other rows.
+```
+SELECT RANK() OVER(ORDER BY salary DESC) AS rank, name, salary
+FROM employees;
+```
+**DENSE_RANK()**: assigns a rank to each row based on its value relative to the other rows, but without any gaps in the ranking.
+```
+SELECT DENSE_RANK() OVER(ORDER BY score DESC) AS dense_rank, name, score
+FROM students;
+```
+**SUM()**, **AVG()**, **MIN()**, **MAX()**: calculate an aggregate value across the rows in the window.
+```
+SELECT department, AVG(salary) OVER(PARTITION BY department) AS avg_salary
+FROM employees;
+```
+**LAG()** and **LEAD()**: retrieve the value from a previous or subsequent row in the window.
+```
+SELECT name, score, LAG(score, 1) OVER(ORDER BY score DESC) AS prev_score,
+LEAD(score, 1) OVER(ORDER BY score DESC) AS next_score
+FROM students;
+```
+**NTILE()**: divides the result set into a specified number of groups, assigning a group number to each row.
+```
+SELECT NTILE(4) OVER(ORDER BY salary DESC) AS quartile, name, salary
+FROM employees;
+```
+**FIRST_VALUE()** and **LAST_VALUE()**: retrieve the first or last value in the window.
+```
+SELECT name, score, FIRST_VALUE(score) OVER(ORDER BY score DESC) AS highest_score,
+LAST_VALUE(score) OVER(ORDER BY score DESC) AS lowest_score
+FROM students;
+```
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
