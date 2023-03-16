@@ -15,15 +15,15 @@ theme:
   name: null
   disable_nav_previous_next: true
   # Turn off the footer entirely
-  disable_footer: false
+  disable_footer: true
   custom_dir: 'cinder'
   # snytax highlighting
   colorscheme: dracula
   favicon: img/favicon.ico
 
 nav:
-    - Home: index.md
-    - Python: python.md
+    - HOME: index.md
+    - PYTHON: python.md
     - SQL: sql.md
 
 extra:
