@@ -15,7 +15,7 @@ theme:
   name: null
   disable_nav_previous_next: true
   # Turn off the footer entirely
-  disable_footer: true
+  disable_footer: false
   custom_dir: 'cinder'
   # snytax highlighting
   colorscheme: dracula
