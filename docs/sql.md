@@ -465,6 +465,25 @@ SELECT name, score, FIRST_VALUE(score) OVER(ORDER BY score DESC) AS highest_scor
 LAST_VALUE(score) OVER(ORDER BY score DESC) AS lowest_score
 FROM students;
 ```
+
+### 39. What is order of operations in SQL ?
+The order of operations in SQL, also known as operator precedence, determines the order in which the different operators and functions in a SQL statement are evaluated. The order of operations is important in ensuring that the SQL statement is evaluated correctly and produces the intended results.
+
+The following is the order of operations in SQL, from highest to lowest precedence:
+
+1. Parentheses: Expressions enclosed in parentheses are evaluated first.
+2. Unary operators: Unary operators such as NOT, +, and - are evaluated next.
+3. Multiplication, Division, and Modulus: These arithmetic operators are evaluated next, from left to right.
+4. Addition and Subtraction: These arithmetic operators are evaluated next, from left to right.
+5. Comparison operators: Comparison operators such as =, <>, <, <=, >, and >= are evaluated next.
+6. Logical operators: Logical operators such as AND, OR, and NOT are evaluated next.
+7. BETWEEN, IN, LIKE, and EXISTS: These operators are evaluated next.
+8. CASE expressions: CASE expressions are evaluated next.
+9. Aggregate functions: Aggregate functions such as COUNT, SUM, AVG, MAX, and MIN are evaluated next.
+10. Window functions: Window functions are evaluated next.
+11. DISTINCT, GROUP BY, and HAVING: These operators are evaluated next.
+12. SELECT: The SELECT statement is evaluated last.
+
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
