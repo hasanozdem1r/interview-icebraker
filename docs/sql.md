@@ -484,6 +484,19 @@ The following is the order of operations in SQL, from highest to lowest preceden
 11. DISTINCT, GROUP BY, and HAVING: These operators are evaluated next.
 12. SELECT: The SELECT statement is evaluated last.
 
+### 40. How many type of key does SQL have ?
+
+**Primary Key**: A primary key is a unique identifier for each record in a table. It is used to ensure that each record can be identified uniquely, and it is often used as the basis for relationships with other tables.
+
+**Foreign Key**: A foreign key is a field in a table that refers to the primary key of another table. It is used to establish a relationship between two tables, and it ensures that data in one table can be linked to data in another table.
+
+**Candidate Key**: A candidate key is a field or combination of fields that can be used as a primary key for a table. It is an alternative key that can be used instead of the primary key.
+
+**Composite Key**: A composite key is a primary key that consists of two or more fields. It is used when no single field can uniquely identify a record in a table.
+
+**Unique Key**: A unique key is a field or combination of fields that ensures that each record in a table is unique. It is similar to a primary key, but it does not have to be used as the basis for relationships with other tables.
+
+Overall, keys are used to ensure data integrity and to establish relationships between tables in a database. They are a fundamental concept in SQL and are essential for managing and manipulating data effectively.
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
