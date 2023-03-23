@@ -598,3 +598,13 @@ RENAME TABLE tmp_family TO family;
 ```
 This approach is faster and more efficient than using a self-join, as it only scans the original table once, and it avoids the overhead of deleting rows one by one. However, it may require more disk space to create the temporary table, so make sure you have enough free space on your server before running this code.
 
+### 5. What is the output of following statements and why ?
+```
+-- 1st statement
+select '123ABC' * 3;
+-- 2nd statement
+select 'ABC123' * 3;
+```
+To make the multiplication with 3 MySQL automatically converts the string 123 into a number.But conversion to a number starts from left to right. If the conversion is not possible the result is 0
+
+Result of **select '123ABC' * 3;** is 369 but result of **select 'ABC123' * 3;** is 0
