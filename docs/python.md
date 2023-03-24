@@ -434,7 +434,24 @@ def test_get_data_from_api():
     requests.get.assert_called_with('https://example.com/api')
 ```
 
+### 33. What is the difference between .py and .pyc files ?
+Python source code files have a ".py" extension and are human-readable text files that contain Python code. When you run a Python program, the interpreter reads the ".py" file and executes the code it contains.
 
+Python compiled bytecode files have a ".pyc" extension and are created by the Python interpreter when a ".py" file is imported or run. The ".pyc" file is a binary file containing the compiled bytecode version of the ".py" file. The Python interpreter can execute ".pyc" files faster than ".py" files because it doesn't need to compile the source code again. Instead, it loads the pre-compiled bytecode directly into memory.
+
+### 34. What does *split()* and *join()* functions do in Python ?
+The split() and join() functions in Python are used to manipulate strings.
+
+The split() function is used to split a string into a list of substrings based on a delimiter character. By default, the delimiter is a space character, but you can specify a different delimiter as an argument to the function. Here is an example:
+```
+my_string = "Hello World"
+split_string = my_string.split() # Returns ['Hello', 'World']
+```
+The join() function, on the other hand, is used to join a list of strings into a single string using a specified delimiter. Here is an example:
+```
+my_list = ['Hello', 'World']
+joined_string = ' '.join(my_list) # Returns "Hello World"
+```
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
