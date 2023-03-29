@@ -165,6 +165,8 @@ Views are useful for several reasons:
 4. They provide a way to combine data from multiple tables. Views can be used to combine data from several tables into a single view, making it easier to work with the data.
 5. Overall, views are a powerful tool in SQL that can help to simplify complex data, control access to data, and provide a flexible way to work with data from multiple tables.
 
+![sql view](img/sql/sql_view.png)
+
 ### 23. What are the different types of a subquery ?
 
 **Subquery** is a query that is nested within another query. The subquery is used to retrieve data that will be used by the outer query to filter or manipulate the results.
@@ -497,6 +499,62 @@ The following is the order of operations in SQL, from highest to lowest preceden
 **Unique Key**: A unique key is a field or combination of fields that ensures that each record in a table is unique. It is similar to a primary key, but it does not have to be used as the basis for relationships with other tables.
 
 Overall, keys are used to ensure data integrity and to establish relationships between tables in a database. They are a fundamental concept in SQL and are essential for managing and manipulating data effectively.
+
+### 41. What is DBMS ?
+DBMS stands for Database Management System. It is a software system that allows users to create, manage, and manipulate databases. A database is a collection of data that is organized and stored in a way that allows users to easily retrieve and update it.
+
+A DBMS provides a framework for creating, storing, and managing data in a structured format. It provides users with an interface to interact with the database and perform tasks such as adding, modifying, deleting, and retrieving data.
+
+Some popular examples of DBMS include MySQL, Oracle, Microsoft SQL Server, and MongoDB.
+
+### 42. What is scalar functions in SQL ?
+Scalar functions in SQL are functions that take one or more input parameters and return a single value as the result. These functions operate on individual rows and can be used in SELECT statements, WHERE clauses, and other parts of SQL queries where a single value is expected.
+
+There are various types of scalar functions available in SQL, including:
+
+1. String functions: These functions perform operations on strings, such as concatenation, conversion, and searching.
+2. Date and time functions: These functions perform operations on dates and times, such as calculating the difference between two dates or adding a certain number of days to a date.
+3. Numeric functions: These functions perform operations on numeric values, such as rounding, truncation, and conversion.
+4. Conversion functions: These functions convert one data type to another, such as converting a string to a number or a date to a string.
+Examples of scalar functions in SQL include:
+
+* LEN(): Returns the length of a string.
+* DATEADD(): Adds a specified time interval to a date.
+* ROUND(): Rounds a numeric value to a specified precision.
+* CAST(): Converts a value from one data type to another.
+
+Scalar functions can be very useful in SQL queries, as they allow you to perform various calculations and manipulations on data without the need for complex programming logic.
+
+### 43. What is OLTP ?
+OLTP stands for Online Transaction Processing, which is a type of computer system that manages and processes transaction-oriented applications, such as financial transactions, order processing, and inventory management. OLTP systems are designed to handle high volumes of small transactions in real-time or near real-time, typically with short response times.
+
+OLTP databases typically use normalized data structures to ensure data integrity, with tables organized around entities and relationships. These systems are optimized for data reads and writes, and are usually built on relational database management systems (RDBMS) like Oracle, SQL Server, or MySQL.
+
+OLTP systems are commonly used in businesses and organizations that need to process a high volume of transactions quickly and efficiently, such as banks, airlines, and e-commerce websites.
+
+### 44. What is OLAP ?
+OLAP stands for Online Analytical Processing, which is a computer-based approach to analyzing data that allows users to access and analyze large sets of data from multiple perspectives. OLAP systems are designed for complex data analysis, and are optimized for querying and reporting.
+
+OLAP databases typically use denormalized data structures to provide fast and flexible access to data. OLAP systems allow users to query data using dimensions, measures, and hierarchies to analyze data across different dimensions, such as time, geography, and product lines.
+
+OLAP systems are commonly used in business intelligence and data analysis applications, where users need to quickly analyze large amounts of data to identify trends, patterns, and insights. They are typically built on multidimensional database management systems (MDBMS) like Microsoft Analysis Services, Oracle Essbase, or SAP BusinessObjects.
+
+![olap vs oltp](img/sql/olap_vs_oltp.png)
+
+### 45. What is difference between OLAP and OLTP ?
+OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) are two different types of computer-based systems designed to serve different purposes:
+
+**Purpose**: OLTP is designed to manage and process transaction-oriented applications in real-time or near real-time, while OLAP is designed for complex data analysis and querying.
+
+**Data Structure**: OLTP databases typically use normalized data structures to ensure data integrity, while OLAP databases typically use denormalized data structures to provide fast and flexible access to data.
+
+**Usage**: OLTP systems are optimized for data reads and writes, and are usually built on relational database management systems (RDBMS) like Oracle or SQL Server. OLAP systems are optimized for querying and reporting, and are typically built on multidimensional database management systems (MDBMS) like Microsoft Analysis Services or Oracle Essbase.
+
+**Queries**: OLTP systems typically involve simple queries, such as retrieving a single record, while OLAP systems involve complex queries that analyze data across multiple dimensions.
+
+**Users**: OLTP systems are designed for transactional users, such as bank tellers or customer service representatives, while OLAP systems are designed for analytical users, such as business analysts or data scientists.
+
+In summary, OLTP systems are designed for transaction processing and OLAP systems are designed for data analysis and querying.
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
