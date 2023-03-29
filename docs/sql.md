@@ -539,8 +539,6 @@ OLAP databases typically use denormalized data structures to provide fast and fl
 
 OLAP systems are commonly used in business intelligence and data analysis applications, where users need to quickly analyze large amounts of data to identify trends, patterns, and insights. They are typically built on multidimensional database management systems (MDBMS) like Microsoft Analysis Services, Oracle Essbase, or SAP BusinessObjects.
 
-![olap vs oltp](img/sql/olap_vs_oltp.png)
-
 ### 45. What is difference between OLAP and OLTP ?
 OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) are two different types of computer-based systems designed to serve different purposes:
 
@@ -555,6 +553,22 @@ OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) are
 **Users**: OLTP systems are designed for transactional users, such as bank tellers or customer service representatives, while OLAP systems are designed for analytical users, such as business analysts or data scientists.
 
 In summary, OLTP systems are designed for transaction processing and OLAP systems are designed for data analysis and querying.
+
+![olap vs oltp](img/sql/olap_vs_oltp.png)
+
+### 46. What is pattern matching in SQL ?
+Pattern matching is a technique used in SQL to search for specific patterns or substrings within a larger string of text data. SQL provides several operators that can be used to perform pattern matching, including the LIKE operator and the regular expression functions.
+
+The LIKE operator is used to compare a string to a pattern and returns a boolean value indicating whether the string matches the pattern or not. The LIKE operator supports two wildcards:
+
+1. The percent sign (%) matches any sequence of zero or more characters.
+2. The underscore (_) matches any single character.
+
+For example, the following query retrieves all records where the value of the "name" column starts with the letter "J":
+```
+SELECT * FROM table_name WHERE name LIKE 'J%';
+```
+In addition to the LIKE operator, SQL also provides regular expression functions such as *REGEXP_LIKE*, *REGEXP_REPLACE*, and *REGEXP_INSTR*, which allow for more advanced pattern matching capabilities. These functions can be used to search for patterns based on regular expressions, which are a powerful tool for matching complex patterns of text.
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
