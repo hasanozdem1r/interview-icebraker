@@ -25,6 +25,7 @@ nav:
     - HOME: index.md
     - PYTHON: python.md
     - SQL: sql.md
+    - DEVOPS: devops.md
 
 extra:
   alternate:

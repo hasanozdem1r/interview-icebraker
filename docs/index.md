@@ -9,3 +9,4 @@
 * SQL Questions
     * [Theoratical](sql.md)
     * [Coding](sql.md)
+* [DevOps Questions](devops.md)
