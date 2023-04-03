@@ -41,8 +41,23 @@ DevOps involves the integration of development and operations processes across t
 These phases are not necessarily sequential, and many of them may occur simultaneously or iteratively depending on the organization's needs and practices. DevOps practices aim to automate and streamline each phase of the software development lifecycle to achieve faster and more reliable software delivery.
 
 ### 5. What is the difference between continuous delivery and continuous deployment?
+
 |                                    Continuous Delivery                                    |                                     Continuous Deployment                                     |
 |:-----------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------:|
 |                    Ensures code can be safely deployed on to production                   |      Every change that passes the automated tests is deployed to production automatically     |
 |              Ensures business applications and services function as expected              |           Makes software development and the release process faster and more robust           |
 | Delivers every change to a production-like environment through rigorous automated testing | There is no explicit approval from a developer and requires a developed culture of monitoring |
+
+### 6. What is the use of SSH ?
+SSH (Secure Shell) is a cryptographic network protocol that provides a secure and encrypted way to access and manage remote machines over an insecure network.
+
+The main use of SSH is to establish a secure connection between two networked devices, such as a client and a server, and to provide secure access to the shell of the remote machine. This allows system administrators to remotely manage servers and other networked devices, such as routers and switches, securely.
+
+In addition to providing secure shell access, SSH can also be used for secure file transfer (SFTP) and remote command execution. SSH can also be used for tunneling other network protocols, such as HTTP, FTP, and SMTP, over an encrypted connection.
+
+### 7. What is configuration management ?
+Configuration management (CM) is a crucial practice in software development and IT operations, which involves the systematic handling of changes to maintain the integrity of systems over time. CM encompasses a range of policies, techniques, procedures, and tools that are used to evaluate change proposals, manage changes, and track their progress while maintaining proper documentation.
+
+By implementing CM, organizations can ensure that changes are made in a controlled and standardized manner, reducing the risk of errors and system failures. It also facilitates collaboration between team members and enables faster, more efficient delivery of software and services.
+
+CM practices include version control, testing, deployment automation, monitoring, and documentation. These practices help organizations maintain a comprehensive view of their IT infrastructure and make informed decisions about changes that will impact the system.
