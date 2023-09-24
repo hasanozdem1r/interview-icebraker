@@ -84,12 +84,12 @@ example[start:stop:step] # # start through not past stop, by step
 
 ### 9. How is memory managed in Python ?
 Memory is managed in Python in the following ways:
-1.	Memory management in python is managed by Python private heap space. All Python objects and data structures are located in a **private heap**. The programmer does not have access to this private heap. The python interpreter takes care of this instead.
+1.	Memory management in Python is managed by Python private heap space. All Python objects and data structures are located in a **private heap**. The programmer does not have access to this private heap. The Python interpreter takes care of this instead.
 2.	The allocation of heap space for Python objects is done by Python’s memory manager. The core API gives access to some tools for the programmer to code.
 3.	Python also has an inbuilt garbage collector, which recycles all the unused memory and so that it can be made available to the heap space.
 
-### 10. What are python modules? Name some commonly used built-in modules in Python ?
-A module is a file containing Python definitions and statements. This code can either be functions classes or variables. Ex ; os, sys, math, random, JSON, csv
+### 10. What are Python modules? Name some commonly used built-in modules in Python ?
+A module is a file containing Python definitions and statements. This code can either be functions classes or variables. Ex ; os, sys, math, random, json, csv
 
 ### 11. What are local variables and global variables in Python ?
 
@@ -185,7 +185,7 @@ A context manager is a Python construct that is used to manage resources, such a
 
 The context manager is implemented as an object that defines two methods: \__enter__ and \__exit__. The \__enter__ method is called when the context is entered, and it returns the resource object that will be used in the block of code that follows.
 
-The context manager can be used with the with statement, which provides a convenient way to manage resources in a safe and reliable manner. When the with statement is used, the context manager is automatically called when the block of code is entered, and it is automatically cleaned up when the block of code is exited, even if an error occurs.
+The context manager can be used with the **with** statement, which provides a convenient way to manage resources in a safe and reliable manner. When the **with** statement is used, the context manager is automatically called when the block of code is entered, and it is automatically cleaned up when the block of code is exited, even if an error occurs.
 
 ```
 class prep_interview:
@@ -213,7 +213,7 @@ with requests.Session() as session:
 
 ### 20 . What is \__init__ in Python ?
 
-The \__init__ method is the Python equivalent of the C++ constructor in an object-oriented approach. The \__init__  function is called every time an object is created from a class. The \__init__ method lets the class initialize the object’s attributes and serves no other purpose. 
+The \__init__ method is the Python equivalent of the C++ constructor in an object-oriented approach. The \__init__  function is called every time an object is created from a class. The \__init__ method lets the class initialize the object’s attributes and serves no other purpose. In constructor (\__init__) you can return nothing. It required to return None 
 
 ### 21. What does  break, continue and pass meaning in Python ?
 
@@ -226,11 +226,12 @@ index = -5
 while True:
     if index < 0:
         pass
-    elif index == 0:
+    if index == 0:
+        index += 1
         continue
-    elif index > 0:
+    if index > 0:
         print(1 / index)
-    elif index > 5:
+    if index > 5:
         break
     index += 1
 ```
@@ -240,7 +241,7 @@ A scope is a block of code where an object in Python remains relevant.Each and e
 ### 23. What is the Python Global Interpreter Lock (GIL) ? 
 The Python Global Interpreter Lock (GIL) is a mechanism used in the CPython implementation of the Python programming language to <u>ensure that only one thread executes Python bytecode at a time</u>. The GIL is a mutex that protects access to Python objects, preventing multiple threads from modifying them at the same time.
 
-The GIL has both benefits and drawbacks. On the one hand, it <u>simplifies the implementation of the Python interpreter and makes it easier to write thread-safe Python code</u>. On the other hand, it can <u>limit the performance of multi-threaded Python programs</u>, because only one thread can execute Python code at a time. This means that CPU-bound tasks, which require a lot of computation, may not be able to take full advantage of multi-core CPUs.
+The GIL has both benefits and drawbacks. On the one hand, it <u>simplifies the implementation of the Python interpreter and makes it easier to write thread-safe Python code</u>. On the other hand, it can <u>limit the performance of multi-threaded Python programs</u>, because only one thread can execute Python code at a time. <u>This means that CPU-bound tasks, which require a lot of computation, may not be able to take full advantage of multi-core CPUs.</u>
 
 However, it's important to note that the <u>GIL only affects multi-threaded Python programs, not multi-process Python programs</u>. Python's multiprocessing module can be used to take advantage of multiple CPUs without being limited by the GIL. Additionally, the GIL is specific to the CPython implementation of Python, and other implementations such as Jython and IronPython do not have a GIL.
 
@@ -325,7 +326,7 @@ last_two_elements = example_list[-2:]  # returns [4, 5]
 Negative indexes can be particularly useful when working with sequences of unknown length or when you need to access elements relative to the end of the sequence, such as when processing log files or other types of time-series data
 
 ### 28. Why is finalize used ?
-In Python, finalize is a method that is used to release resources associated with an object when it is no longer needed. This method is part of the Python garbage collection mechanism, which automatically manages memory allocation and deallocation for objects created in a Python program.
+In Python, *finalize* is a method that is used to release resources associated with an object when it is no longer needed. This method is part of the Python garbage collection mechanism, which automatically manages memory allocation and deallocation for objects created in a Python program.
 
 The finalize method provides a way to automatically release these external resources when the object is garbage-collected. To use finalize, you define a callback function that will be called when the object is about to be garbage-collected. This function can then release any external resources held by the object, such as closing a file or disconnecting from a network socket.
 
@@ -452,6 +453,13 @@ The join() function, on the other hand, is used to join a list of strings into a
 my_list = ['Hello', 'World']
 joined_string = ' '.join(my_list) # Returns "Hello World"
 ```
+
+### 35. When is multiprocessing ?
+Multiprocessing refers to a system that has more than two central processing units (CPUs). Every additional CPU added to a system increases its speed, power and memory. This allows users to run multiple processes simultaneously
+
+There are two primary categories of multiprocessing systems:
+* Symmetric multiprocessing: This multiprocessing system uses computer hardware and software that incorporates two or more identical processors connected by one memory space. These processors have complete access to all input and output devices and receive equal treatment.
+* Asymmetric multiprocessing: In this multiprocessing system, different CPUs have access to separate input and output (I/O) devices. For example, one CPU might perform I/O operations, while another CPU might focus on maintaining the operating system.
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
