@@ -454,12 +454,29 @@ my_list = ['Hello', 'World']
 joined_string = ' '.join(my_list) # Returns "Hello World"
 ```
 
-### 35. When is multiprocessing ?
+### 35. What is multiprocessing ?
 Multiprocessing refers to a system that has more than two central processing units (CPUs). Every additional CPU added to a system increases its speed, power and memory. This allows users to run multiple processes simultaneously
 
 There are two primary categories of multiprocessing systems:
 * Symmetric multiprocessing: This multiprocessing system uses computer hardware and software that incorporates two or more identical processors connected by one memory space. These processors have complete access to all input and output devices and receive equal treatment.
 * Asymmetric multiprocessing: In this multiprocessing system, different CPUs have access to separate input and output (I/O) devices. For example, one CPU might perform I/O operations, while another CPU might focus on maintaining the operating system.
+
+### 36. What is multithreading ?
+Multithreading is a programming technique that assigns multiple code segments to a single process. These code segments, also referred to as threads, run concurrently and parallel to each other. These threads share the same memory space within a parent process
+
+## 37. What is Mutex(Mutual Exclusion)?
+The point of a mutex is to synchronize two threads. When you have two threads attempting to access a single resource, the general pattern is to have the first block of code attempting access to set the mutex before entering the code. When the second code block attempts access, it sees that the mutex is set and waits until the first block of code is complete (and unsets the mutex), then continues.
+
+### 38. Multithreading vs. Multiprocessing
+
+|      **Aspect**     |                **Multithreading**               |                **Multiprocessing**                |
+|:-------------------:|:-----------------------------------------------:|:-------------------------------------------------:|
+| Unit of Execution   | Threads (within a single process)               | Processes (separate instances of the program)     |
+| Communication       | Shared memory, easy communication               | Inter-process communication mechanisms            |
+| Resource Efficiency | More resource-efficient due to shared resources | Less resource-efficient due to separate resources |
+| Data Sharing        | Easier but prone to synchronization issues      | Structured through communication mechanisms       |
+| Use Cases           | I/O-bound tasks, concurrent within a process    | CPU-bound tasks, true parallelism required        |
+
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
