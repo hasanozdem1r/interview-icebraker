@@ -138,7 +138,7 @@ export PYTHONPATH="$PWD" # project root directory
 
 ### 16. What is a lambda function in Python ?
 
-A lambda function is an anonymous function (i.e., defined without a name) that can take any number of arguments but, unlike normal functions, evaluates and returns only one expression
+A lambda function is an anonymous function (i.e., defined without a name) that can take any number of arguments but, unlike normal functions, evaluates and <u>returns only one expression</u>
 
 ```
 # lambda function
@@ -464,7 +464,7 @@ There are two primary categories of multiprocessing systems:
 ### 36. What is multithreading ?
 Multithreading is a programming technique that assigns multiple code segments to a single process. These code segments, also referred to as threads, run concurrently and parallel to each other. These threads share the same memory space within a parent process
 
-## 37. What is Mutex(Mutual Exclusion)?
+### 37. What is Mutex(Mutual Exclusion)?
 The point of a mutex is to synchronize two threads. When you have two threads attempting to access a single resource, the general pattern is to have the first block of code attempting access to set the mutex before entering the code. When the second code block attempts access, it sees that the mutex is set and waits until the first block of code is complete (and unsets the mutex), then continues.
 
 ### 38. Multithreading vs. Multiprocessing
@@ -477,6 +477,34 @@ The point of a mutex is to synchronize two threads. When you have two threads at
 | Data Sharing        | Easier but prone to synchronization issues      | Structured through communication mechanisms       |
 | Use Cases           | I/O-bound tasks, concurrent within a process    | CPU-bound tasks, true parallelism required        |
 
+### 39. What is CPython ?
+Firsty need to  distinguish between a language and an implementation. Python is a language,
+
+According to Wikipedia, "A programming language is a notation for writing programs, which are specifications of a computation or algorithm". This means that it's simply the rules and syntax for writing code. 
+
+Python is a language. CPython is the implementation of Python in C. Jython is the implementation in Java, and so on.
+
+Please go for detailed discussion to [link](https://stackoverflow.com/questions/17130975/python-vs-cpython)
+
+### 40. What are the common built-in data types in Python?
+
+| Class Name | Description                                                                               |
+|------------|-------------------------------------------------------------------------------------------|
+| NoneType   | Represents the NULL values in Python.                                                     |
+| int        | Stores integer literals including hex, octal and binary numbers as integers               |
+| float      | Stores literals containing decimal values and/or exponent signs as floating-point numbers |
+| complex    | Stores complex numbers in the form (A + Bj) and has attributes: real and imag             |
+| bool       | Stores boolean value (True or False).                                                     |
+| list       | Mutable sequence used to store collection of items.                                       |
+| tuple      | Immutable sequence used to store collection of items.                                     |
+| range      | Represents an immutable sequence of numbers generated during execution.                   |
+| str        | Immutable sequence of Unicode code points to store textual data.                          |
+| dict       | Stores comma-separated list of key: value pairs                                           |
+| set        | Mutable unordered collection of distinct hashable objects.                                |
+| frozenset  | Immutable collection of distinct hashable objects.                                        |
+
+
+### 41.
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
