@@ -17,7 +17,7 @@ poetry install
 ```
 Generate requirements.txt for read-the-docs
 ```
-poetry export --format requirements.txt --output requirements.txt --without-hashes
+poetry export --format requirements.txt --output requirements.txt --without-hashes --without-urls
 ```
 Following command generates site with given data under docs/ directory so you can check locally files
 ```
