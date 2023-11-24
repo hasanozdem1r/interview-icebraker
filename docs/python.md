@@ -84,8 +84,11 @@ example[start:stop:step] # # start through not past stop, by step
 
 ### 9. How is memory managed in Python ?
 Memory is managed in Python in the following ways:
+
 1.	Memory management in Python is managed by Python private heap space. All Python objects and data structures are located in a **private heap**. The programmer does not have access to this private heap. The Python interpreter takes care of this instead.
+
 2.	The allocation of heap space for Python objects is done by Python’s memory manager. The core API gives access to some tools for the programmer to code.
+
 3.	Python also has an inbuilt garbage collector, which recycles all the unused memory and so that it can be made available to the heap space.
 
 ### 10. What are Python modules? Name some commonly used built-in modules in Python ?
