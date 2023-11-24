@@ -111,7 +111,9 @@ def get_user_domain(base_url:str,username:str):
 ### 12. What is type conversion in Python ?
 
 Type conversion refers to the conversion of one data type into another.
+
 * Implicit type conversion, interpreter helps in automatically converting the data type into another data type without any User involvement.
+
 * Explicit type conversion the data type in changed into a required type by the user.
 
 ### 13. What is PEP 8 and why is it important ?

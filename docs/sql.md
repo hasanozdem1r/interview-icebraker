@@ -569,6 +569,39 @@ For example, the following query retrieves all records where the value of the "n
 SELECT * FROM table_name WHERE name LIKE 'J%';
 ```
 In addition to the LIKE operator, SQL also provides regular expression functions such as *REGEXP_LIKE*, *REGEXP_REPLACE*, and *REGEXP_INSTR*, which allow for more advanced pattern matching capabilities. These functions can be used to search for patterns based on regular expressions, which are a powerful tool for matching complex patterns of text.
+
+### 47. What is Common Table Expression (CTE) in SQL ?
+CTEs work as virtual tables (with records and columns), created during the execution of a query, used by the query, and eliminated after query execution.
+
+Each SQL CTE is like a named query, whose result is stored in a virtual table (a CTE) to be referenced later in the main query.
+```
+WITH london1_monthly_revenue AS (
+  SELECT
+    EXTRACT(MONTH FROM date) as month,
+    SUM(unit_price * quantity) AS revenue
+  FROM sales
+  WHERE EXTRACT(YEAR FROM date) = 2021
+    AND branch = 'London-1'
+  GROUP BY 1
+),
+london2_monthly_revenue AS (
+  SELECT
+    EXTRACT(MONTH FROM date) as month,
+    SUM(unit_price * quantity) AS revenue
+  FROM sales
+  WHERE EXTRACT(YEAR FROM date) = 2021
+    AND branch = 'London-2'
+  GROUP BY 1
+)
+SELECT
+  l1.month,
+  l1.revenue + l2.revenue AS london_revenue,
+  l1.revenue AS london1_revenue,
+  l2.revenue AS london2_revenue
+FROM london1_monthly_revenue l1, london2_monthly_revenue l2
+WHERE l1.month = l2.month
+```
+
 ## CODING
 
 ### 1. How to insert NULL values in a column while inserting the data?
