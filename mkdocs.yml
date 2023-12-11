@@ -26,6 +26,7 @@ nav:
     - PYTHON: python.md
     - SQL: sql.md
     - DEVOPS: devops.md
+    - AWS: amazon_web_services.md
 
 extra:
   alternate:
