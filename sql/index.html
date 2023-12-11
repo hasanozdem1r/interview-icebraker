@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This repository contains a comprehensive list of Python interview questions that can assist you in securing your dream job">
+    <meta name="author" content="Hasan Ozdemir">
+    <link rel="canonical" href="https://interview-icebraker.readthedocs.io/en/latest/sql/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>SQL - Interview Icebraker</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">Interview Icebraker</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">HOME</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../python/">PYTHON</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">SQL</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../devops/">DEVOPS</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../amazon_web_services/">AWS</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/hasanozdem1r/interview-icebraker/edit/master/docs/sql.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-4"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#sql-interview-questions">SQL Interview Questions</a></li>
+            <li class="second-level"><a href="#theoretical">THEORETICAL</a></li>
+                
+                <li class="third-level"><a href="#1-what-is-difference-between-sql-and-mysql">1. What is difference between SQL and MySQL ?</a></li>
+                <li class="third-level"><a href="#2-what-are-the-different-subsets-of-sql">2. What are the different subsets of SQL?</a></li>
+                <li class="third-level"><a href="#3-what-is-a-primary-key">3. What is a Primary Key ?</a></li>
+                <li class="third-level"><a href="#4-what-are-constraints">4. What are constraints ?</a></li>
+                <li class="third-level"><a href="#5-what-is-a-unique-key">5. What is a unique key ?</a></li>
+                <li class="third-level"><a href="#6-what-is-foreign-key">6. What is Foreign Key ?</a></li>
+                <li class="third-level"><a href="#7-what-is-an-index">7. What is an Index?</a></li>
+                <li class="third-level"><a href="#8-how-many-different-types-of-index-does-sql-have">8. How many different types of index does SQL have ?</a></li>
+                <li class="third-level"><a href="#9-what-is-the-difference-between-clustered-and-non-clustered-index-in-sql">9. What is the difference between clustered and non-clustered index in SQL ?</a></li>
+                <li class="third-level"><a href="#10-what-is-difference-between-drop-and-truncate">10. What is difference between DROP and TRUNCATE ?</a></li>
+                <li class="third-level"><a href="#11-what-is-the-main-difference-between-between-and-in-condition-operators">11. What is the main difference between ‘BETWEEN’ and ‘IN’ condition operators ?</a></li>
+                <li class="third-level"><a href="#12-what-is-the-difference-between-delete-and-truncate-statements">12. What is the difference between DELETE and TRUNCATE statements ?</a></li>
+                <li class="third-level"><a href="#13-what-is-the-difference-between-char-and-varchar2-datatype-in-sql">13. What is the difference between CHAR and VARCHAR2 datatype in SQL ?</a></li>
+                <li class="third-level"><a href="#14-what-are-entities-and-relationships">14. What are Entities and Relationships ?</a></li>
+                <li class="third-level"><a href="#15-what-is-the-acid-property-in-a-database">15. What is the ACID property in a database ?</a></li>
+                <li class="third-level"><a href="#16-are-null-values-same-as-that-of-zero-or-a-blank-space">16. Are NULL values same as that of zero or a blank space ?</a></li>
+                <li class="third-level"><a href="#17-what-is-clause-in-sql">17. What is CLAUSE in SQL ?</a></li>
+                <li class="third-level"><a href="#18-what-is-the-difference-between-having-clause-and-a-where-clause">18. What is the difference between ‘HAVING’ clause and a ‘WHERE’ clause ?</a></li>
+                <li class="third-level"><a href="#19-what-is-a-stored-procedure-in-sql">19. What is a Stored Procedure in SQL ?</a></li>
+                <li class="third-level"><a href="#20-what-are-joins-in-sql">20. What are joins in SQL ?</a></li>
+                <li class="third-level"><a href="#21-what-is-data-integrity">21. What is data integrity ?</a></li>
+                <li class="third-level"><a href="#22-what-is-view-in-sql">22. What is view in SQL ?</a></li>
+                <li class="third-level"><a href="#23-what-are-the-different-types-of-a-subquery">23. What are the different types of a subquery ?</a></li>
+                <li class="third-level"><a href="#24-what-is-collation-in-sql">24. What is collation in SQL ?</a></li>
+                <li class="third-level"><a href="#25-what-is-trigger-in-sql">25. What is trigger in SQL ?</a></li>
+                <li class="third-level"><a href="#26-what-is-table-and-field-in-sql">26. What is table and field in SQL ?</a></li>
+                <li class="third-level"><a href="#27-what-are-the-different-operators-available-in-sql">27. What are the different operators available in SQL ?</a></li>
+                <li class="third-level"><a href="#28-what-is-the-difference-between-cross-join-and-natural-join">28. What is the difference between cross join and natural join ?</a></li>
+                <li class="third-level"><a href="#29-what-is-query-optimization-in-sql">29. What is query optimization in SQL ?</a></li>
+                <li class="third-level"><a href="#30-what-is-normalization-and-what-are-the-advantages-of-it">30. What is Normalization and what are the advantages of it ?</a></li>
+                <li class="third-level"><a href="#31-what-are-the-database-design-basics">31. What are the database design basics ?</a></li>
+                <li class="third-level"><a href="#32-what-is-aggregate-functions-in-mysql">32. What is aggregate functions in MySQL ?</a></li>
+                <li class="third-level"><a href="#33-what-is-difference-between-union-and-union-all-in-sql">33. What is difference between UNION and UNION ALL in SQL ?</a></li>
+                <li class="third-level"><a href="#34-what-is-database">34. What is database ?</a></li>
+                <li class="third-level"><a href="#35-what-is-denormalization">35. What is denormalization ?</a></li>
+                <li class="third-level"><a href="#36-what-is-data-warehouse">36. What is data warehouse ?</a></li>
+                <li class="third-level"><a href="#37-what-is-difference-between-views-and-tables">37. What is difference between views and tables ?</a></li>
+                <li class="third-level"><a href="#38-what-is-sql-window-functions">38. What is SQL Window functions ?</a></li>
+                <li class="third-level"><a href="#39-what-is-order-of-operations-in-sql">39. What is order of operations in SQL ?</a></li>
+                <li class="third-level"><a href="#40-how-many-type-of-key-does-sql-have">40. How many type of key does SQL have ?</a></li>
+                <li class="third-level"><a href="#41-what-is-dbms">41. What is DBMS ?</a></li>
+                <li class="third-level"><a href="#42-what-is-scalar-functions-in-sql">42. What is scalar functions in SQL ?</a></li>
+                <li class="third-level"><a href="#43-what-is-oltp">43. What is OLTP ?</a></li>
+                <li class="third-level"><a href="#44-what-is-olap">44. What is OLAP ?</a></li>
+                <li class="third-level"><a href="#45-what-is-difference-between-olap-and-oltp">45. What is difference between OLAP and OLTP ?</a></li>
+                <li class="third-level"><a href="#46-what-is-pattern-matching-in-sql">46. What is pattern matching in SQL ?</a></li>
+                <li class="third-level"><a href="#47-what-is-common-table-expression-cte-in-sql">47. What is Common Table Expression (CTE) in SQL ?</a></li>
+            <li class="second-level"><a href="#coding">CODING</a></li>
+                
+                <li class="third-level"><a href="#1-how-to-insert-null-values-in-a-column-while-inserting-the-data">1. How to insert NULL values in a column while inserting the data?</a></li>
+                <li class="third-level"><a href="#2-how-can-you-select-unique-records-from-a-table">2. How can you select unique records from a table ?</a></li>
+                <li class="third-level"><a href="#3-regular-expression-querry">3. Regular Expression Querry</a></li>
+                <li class="third-level"><a href="#4-removing-duplicate-values">4. Removing Duplicate Values</a></li>
+                <li class="third-level"><a href="#5-what-is-the-output-of-following-statements-and-why">5. What is the output of following statements and why ?</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-8" role="main">
+
+<h1 id="sql-interview-questions">SQL Interview Questions</h1>
+<h2 id="theoretical">THEORETICAL</h2>
+<h3 id="1-what-is-difference-between-sql-and-mysql">1. What is difference between SQL and MySQL ?</h3>
+<p>SQL is a standard language. SQL is the core of the relational database which is used for accessing and managing database
+MySQL is a database management system and RDMS  such as SQL Server.</p>
+<h3 id="2-what-are-the-different-subsets-of-sql">2. What are the different subsets of SQL?</h3>
+<ul>
+<li>Data Definition Language (DDL) – It allows you to perform various operations on the database such as CREATE, ALTER, and DELETE objects.</li>
+<li>Data Manipulation Language(DML) – It allows you to access and manipulate data. It helps you to insert, update, delete and retrieve data from the database.</li>
+<li>Data Control Language(DCL) – It allows you to control access to the database. Example – Grant, Revoke access permissions.</li>
+</ul>
+<h3 id="3-what-is-a-primary-key">3. What is a Primary Key ?</h3>
+<p>A <strong>Primary Key (PK)</strong> in SQL is a column (or collection of columns) or a set of columns that uniquely identifies each row in the table. Null values not allowed.</p>
+<h3 id="4-what-are-constraints">4. What are constraints ?</h3>
+<p>Constraints in SQL are used to specify the limit on the data type of the table. It can be specified while creating or altering the table statement</p>
+<p>Example ;  NOT NULL, CHECK, DEFAULT, UNIQUE, PK, FK</p>
+<h3 id="5-what-is-a-unique-key">5. What is a unique key ?</h3>
+<p>Uniquely identifies a single row in the table. Multiple values allowed per table. Null values allowed.</p>
+<h3 id="6-what-is-foreign-key">6. What is Foreign Key ?</h3>
+<p><strong>Foreign Key (FK)</strong> maintains referential integrity by enforcing a link between the data in two tables. The foreign key in the child table references the primary key in the parent table.</p>
+<h3 id="7-what-is-an-index">7. What is an Index?</h3>
+<p>An index refers to a performance tuning method of allowing faster retrieval of records from the table. An index creates an entry for each value and hence it will be faster to retrieve data.</p>
+<h3 id="8-how-many-different-types-of-index-does-sql-have">8. How many different types of index does SQL have ?</h3>
+<ul>
+<li><strong>Unique</strong>: This index does not allow the field to have duplicate values if the column is unique indexed. If a primary key is defined, a unique index can be applied automatically.</li>
+<li><strong>Clustered</strong>:  This index reorders the physical order of the table and searches based on the basis of key values. Each table can only have one clustered index.</li>
+<li><strong>Non – Clustered</strong>: Non-Clustered Index does not alter the physical order of the table and maintains a logical order of the data. Each table can have many nonclustered indexes.</li>
+</ul>
+<h3 id="9-what-is-the-difference-between-clustered-and-non-clustered-index-in-sql">9. What is the difference between clustered and non-clustered index in SQL ?</h3>
+<ul>
+<li>Clustered index is used for easy retrieval of data from the database and its faster whereas reading from non clustered index is relatively slower.</li>
+<li>One table can only have one clustered index whereas it can have many non clustered index.</li>
+</ul>
+<h3 id="10-what-is-difference-between-drop-and-truncate">10. What is difference between DROP and TRUNCATE ?</h3>
+<p>DROP command removes a table and it cannot be rolled back from the database whereas TRUNCATE command removes all the rows from the table.</p>
+<h3 id="11-what-is-the-main-difference-between-between-and-in-condition-operators">11. What is the main difference between ‘BETWEEN’ and ‘IN’ condition operators ?</h3>
+<p>BETWEEN operator is used to display rows based on a range of values in a row whereas the IN condition operator is used to check for values contained in a specific set of values.</p>
+<h3 id="12-what-is-the-difference-between-delete-and-truncate-statements">12. What is the difference between DELETE and TRUNCATE statements ?</h3>
+<ul>
+<li><strong>Delete</strong> command is used to delete a row in a table. You can rollback data after using delete statement. It is a DML command. It is slower than Truncate</li>
+<li><strong>Truncate</strong> is used to delete all the rows from a table. You cannot rollback data. It is a DDL command. It is faster than Delete</li>
+</ul>
+<h3 id="13-what-is-the-difference-between-char-and-varchar2-datatype-in-sql">13. What is the difference between CHAR and VARCHAR2 datatype in SQL ?</h3>
+<ul>
+<li>Char is a data type in SQL that can store characters of a <em>fixed length</em>. </li>
+<li>Varchar is a datatype in SQL that holds characters of variable length. It uses dynamic memory location.</li>
+</ul>
+<h3 id="14-what-are-entities-and-relationships">14. What are Entities and Relationships ?</h3>
+<p><strong>Entities</strong>: A person, place, or thing in the real world about which data can be stored in a database. </p>
+<p><strong>Relationships</strong>: Relation or links between entities that have something to do with each other.</p>
+<h3 id="15-what-is-the-acid-property-in-a-database">15. What is the ACID property in a database ?</h3>
+<p><strong>Atomicity</strong>: Atomicity refers to the transactions that are completely done or failed where transaction refers to a single logical operation of a data. It means if one part of any transaction fails, the entire transaction fails and the database state is left unchanged.</p>
+<p><strong>Consistency</strong>: Consistency ensures that the data must meet all the validation rules. In simple words,  you can say that your transaction never leaves the database without completing its state.</p>
+<p><strong>Isolation</strong>: The main goal of isolation is concurrency control.</p>
+<p><strong>Durability</strong>: Durability means that if a transaction has been committed, it will occur whatever may come in between such as power loss, crash or any sort of error.</p>
+<h3 id="16-are-null-values-same-as-that-of-zero-or-a-blank-space">16. Are NULL values same as that of zero or a blank space ?</h3>
+<p>A NULL value is not at all same as that of zero or a blank space. NULL value represents a value which is unavailable, unknown, assigned or not applicable whereas a zero is a number and blank space is a character.</p>
+<h3 id="17-what-is-clause-in-sql">17. What is <strong>CLAUSE</strong> in SQL ?</h3>
+<p>SQL clause helps to limit the result set by providing a condition to the query. A clause helps to filter the rows from the entire set of records.</p>
+<h3 id="18-what-is-the-difference-between-having-clause-and-a-where-clause">18. What is the difference between ‘HAVING’ clause and a ‘WHERE’ clause ?</h3>
+<p>HAVING clause can be used only with SELECT statement. It is usually used in a GROUP BY clause and whenever GROUP BY is not used, HAVING behaves like a WHERE clause.</p>
+<p>Having Clause is only used with the GROUP BY function in a query whereas WHERE Clause is applied to each row before they are a part of the GROUP BY function in a query.</p>
+<h3 id="19-what-is-a-stored-procedure-in-sql">19. What is a Stored Procedure in SQL ?</h3>
+<p>A Stored Procedure is a function which consists of many SQL statements to access the database system. Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required which saves time and avoid writing code again and again.</p>
+<p><strong>Pros</strong>: can be used as a modular programming which means create once, store and call for several times whenever it is required. This supports faster execution. It also reduces network traffic and provides better security to the data.</p>
+<p><strong>Cons</strong>: The only disadvantage of Stored Procedure is that it can be executed only in the database and utilizes more memory in the database server.</p>
+<p>Following stored procedure called sp_GetProductDetails which accepts a parameter called @ProductId of type INT. 
+The stored procedure selects the details of the product from the Products table where the ProductId matches the value of @ProductId.</p>
+<pre><code>CREATE PROCEDURE sp_GetProductDetails
+    @ProductId INT
+AS
+BEGIN
+    SELECT ProductId, ProductName, Price
+    FROM Products
+    WHERE ProductId = @ProductId
+END
+</code></pre>
+<p>You can then execute this stored procedure by passing a value for the @ProductId parameter:</p>
+<pre><code>EXEC sp_GetProductDetails @ProductId = 1;
+</code></pre>
+<h3 id="20-what-are-joins-in-sql">20. What are joins in SQL ?</h3>
+<p>In SQL , a join is used to combine rows from two or more tables based on a related column between them. Joins are used to retrieve data that is spread across multiple tables in a database.</p>
+<p>There are several types of joins in SQL, including:</p>
+<ul>
+<li>INNER JOIN / JOIN: Returns only the rows that have matching values in both tables.</li>
+<li>LEFT JOIN: Returns all the rows from the left table and the matched rows from the right table. If there is no match in the right table, NULL values are returned for those columns.</li>
+<li>RIGHT JOIN: Returns all the rows from the right table and the matched rows from the left table. If there is no match in the left table, NULL values are returned for those columns.</li>
+<li>OUTER JOIN / FULL OUTER JOIN: Returns all the rows from both tables, with NULL values for the columns that do not have a match in the other table.</li>
+</ul>
+<p><img alt="join visualization" src="../img/sql/sql_joins.png" /></p>
+<pre><code>-- INNER JOIN or just JOIN retrieves all users and likes that match each other 
+-- ( where the id field in users matches a user_id in the likes table and vice versa )
+SELECT users.name, likes.like FROM users JOIN likes ON users.id = likes.user_id;
+
+-- LEFT JOIN retrieves all users and its likes if there is any else sets NULL in the like field
+SELECT users.name, likes.like FROM users LEFT JOIN likes ON users.id = likes.user_id;
+
+-- RIGHT JOIN is like LEFT JOIN but retrieves all likes with all matching users or NULL if it doesn't have any matching user
+SELECT users.name, likes.like FROM users RIGHT JOIN likes ON users.id = likes.user_id;
+
+-- OUTER JOIN or OUTER LEFT and RIGHT with UNION (MySQL don't support FULL OUTER JOIN) retrieves all users and likes and matches them 
+-- and sets NULL on any like without any match on user  and same thing with user with no matching like
+SELECT users.name, likes.like FROM users LEFT OUTER JOIN likes ON users.id = likes.user_id
+UNION
+SELECT users.name, likes.like FROM users RIGHT OUTER JOIN likes ON users.id = likes.user_id
+</code></pre>
+<h3 id="21-what-is-data-integrity">21. What is data integrity ?</h3>
+<p>Data integrity in SQL refers to the <em>accuracy</em>, <em>consistency</em>, and <em>reliability</em> of data stored in a database. It ensures that the data is complete, correct, and valid. In other words, data integrity ensures that the data is of high quality and can be relied upon for decision-making, analysis, and reporting.</p>
+<p>There are different types of data integrity in SQL:</p>
+<ul>
+<li>Entity integrity: It ensures that each row in a table has a unique identifier, such as a primary key.</li>
+<li>Referential integrity: It ensures that the relationships between tables are maintained, and any foreign key values in one table refer to valid primary key values in another table.</li>
+<li>Domain integrity: It ensures that the data in each column of a table conforms to a specific set of rules, such as data type, range, and format.</li>
+<li>User-defined integrity: It allows users to define their own rules and constraints to ensure the accuracy and consistency of data.</li>
+<li>Overall, data integrity is critical for maintaining the reliability and consistency of data in a SQL database, and it helps to prevent errors, data loss, and data corruption.</li>
+</ul>
+<h3 id="22-what-is-view-in-sql">22. What is view in SQL ?</h3>
+<p><em>View</em> is a virtual table that is based on the result of a SELECT query. It is not a physical table, but rather a stored SELECT statement that can be used to retrieve data in a specific format.</p>
+<p>A view is created using the CREATE VIEW statement, which defines the SELECT query used to generate the view's data. The result set of the SELECT query is then stored as a named object that can be used in other SQL statements just like a regular table.</p>
+<p>Views are useful for several reasons:</p>
+<ol>
+<li>They provide a simplified view of complex data. A view can be used to hide the complexity of a database schema and present a simpler view of the data that is more easily understood by users.</li>
+<li>They provide a way to control access to data. Views can be used to restrict access to certain columns or rows of data, so that users only see the data they need to see.</li>
+<li>They provide a way to aggregate data. Views can be used to group data together and calculate summary information, such as totals or averages, which can be used for reporting or analysis.</li>
+<li>They provide a way to combine data from multiple tables. Views can be used to combine data from several tables into a single view, making it easier to work with the data.</li>
+<li>Overall, views are a powerful tool in SQL that can help to simplify complex data, control access to data, and provide a flexible way to work with data from multiple tables.</li>
+</ol>
+<p><img alt="sql view" src="../img/sql/sql_view.png" /></p>
+<h3 id="23-what-are-the-different-types-of-a-subquery">23. What are the different types of a subquery ?</h3>
+<p><strong>Subquery</strong> is a query that is nested within another query. The subquery is used to retrieve data that will be used by the outer query to filter or manipulate the results.</p>
+<p>There are two types of subqueries:</p>
+<ul>
+<li>Single-row subquery: A single-row subquery is a subquery that returns only one row of data, which is then used by the outer query as a value in a comparison or calculation. For example, a single-row subquery can be used to find the maximum value in a column and then use that value to filter the results of the outer query.</li>
+<li>Multiple-row subquery: A multiple-row subquery is a subquery that returns multiple rows of data, which are then used by the outer query to filter or manipulate the results. For example, a multiple-row subquery can be used to find all the customers who have ordered a particular product and then use that information to generate a report.</li>
+</ul>
+<pre><code>-- Single-row subquery
+SELECT *
+FROM products
+WHERE price = (SELECT MAX(price) FROM products);
+
+-- Multiple-row subquery
+SELECT *
+FROM customers
+WHERE customer_id IN (SELECT customer_id FROM orders WHERE product_id = 123);
+</code></pre>
+<p>Subqueries can also be classified by where they are used in a SQL statement. There are three types of subqueries based on where they are used:</p>
+<ul>
+<li>
+<p>Subquery in SELECT statement: A subquery can be used in the SELECT statement to retrieve data from another table or to perform a calculation using data from another table.</p>
+</li>
+<li>
+<p>Subquery in FROM clause: A subquery can be used in the FROM clause to create a temporary table that is used by the outer query to retrieve data.</p>
+</li>
+<li>
+<p>Subquery in WHERE clause: A subquery can be used in the WHERE clause to filter the results of the outer query based on a condition that involves data from another table.</p>
+</li>
+</ul>
+<pre><code>-- Subquery in SELECT statement
+SELECT product_name, (SELECT MAX(price) FROM products) AS max_price
+FROM products;
+
+-- Subquery in FROM clause
+SELECT *
+FROM (SELECT customer_id, SUM(total) as total_spent FROM orders GROUP BY customer_id) AS customer_totals
+WHERE total_spent &gt; 1000;
+
+-- Subquery in WHERE clause 
+SELECT *
+FROM products
+WHERE category_id = (SELECT category_id FROM categories WHERE category_name = 'Electronics');
+</code></pre>
+<h3 id="24-what-is-collation-in-sql">24. What is collation in SQL ?</h3>
+<p>Collation in SQL refers to the rules used to compare and sort character data, which can affect the results of SQL queries that involve character data. It determines how characters are treated in terms of case sensitivity, accent marks, and other language-specific rules. SQL supports a wide variety of collations, and each database has a default collation that is used for all character data in the database.</p>
+<h3 id="25-what-is-trigger-in-sql">25. What is trigger in SQL ?</h3>
+<p><em>Trigger</em> is a type of stored procedure that is automatically executed in response to certain database events, such as insert, update, or delete operations on a table.
+Triggers are commonly used in database applications to enforce data consistency and integrity, or to automate tasks that need to be performed whenever data changes. However, because triggers can have a significant impact on database performance, they should be used judiciously and only when necessary.</p>
+<p>Here is an example of a trigger in SQL:</p>
+<pre><code>CREATE TRIGGER update_customer_orders
+AFTER INSERT ON orders
+FOR EACH ROW
+BEGIN
+  UPDATE customer_orders
+  SET total_order_amount = total_order_amount + NEW.total_amount
+  WHERE customer_id = NEW.customer_id;
+END;
+</code></pre>
+<p>This trigger will be executed automatically after a new row is inserted into the "orders" table. The 'NEW' keyword is used to refer to the new row being inserted, and the trigger will update the "customer_orders" table to add the total amount of the new order to the corresponding customer's total order amount.</p>
+<h3 id="26-what-is-table-and-field-in-sql">26. What is table and field in SQL ?</h3>
+<p>A table refers to a collection of data in an organised manner in form of rows and columns. A field refers to the number of columns in a table. </p>
+<p>For example:</p>
+<ul>
+<li>table: Students</li>
+<li>field: id, full_name, marks, register_date, origin</li>
+</ul>
+<h3 id="27-what-are-the-different-operators-available-in-sql">27. What are the different operators available in SQL ?</h3>
+<p>SQL has several types of operators that can be used to perform various tasks on data in a database. The following are some of the most common SQL operators:</p>
+<ol>
+<li>Arithmetic Operators: SQL supports the basic arithmetic operators: + (addition), - (subtraction), * (multiplication), / (division), and % (modulus).</li>
+<li>Comparison Operators: SQL supports various comparison operators, including = (equal to), != or &lt;&gt; (not equal to), &gt; (greater than), &lt; (less than), &gt;= (greater than or equal to), and &lt;= (less than or equal to).</li>
+<li>Logical Operators: SQL supports three logical operators: AND, OR, and NOT. These operators are used to combine two or more conditions in a WHERE clause.</li>
+<li>String Operators: SQL supports the concatenation operator (||) to concatenate two or more strings, and the LIKE operator to search for a string pattern within a string.</li>
+<li>NULL Operators: SQL has the special operator IS NULL which is used to check if a value is NULL or not.</li>
+<li>Set Operators: SQL supports set operators such as UNION, UNION ALL, INTERSECT, and EXCEPT which can be used to combine results of multiple SELECT statements.</li>
+</ol>
+<h3 id="28-what-is-the-difference-between-cross-join-and-natural-join">28. What is the difference between cross join and natural join ?</h3>
+<p><strong>Cross Join</strong>: A cross join (also known as a Cartesian join) returns the Cartesian product of the two tables involved. In other words, <em>it returns all possible combinations of rows from both tables</em>. This type of join does not use any join condition to filter rows.</p>
+<pre><code>SELECT * FROM table1 CROSS JOIN table2;
+</code></pre>
+<p><strong>Natural Join</strong>: A natural join <em>returns only the rows that have matching values in both tables</em>, based on the column names that are the same in both tables. It automatically matches columns with the same name in both tables and returns only those rows where the values in those columns match. This type of join does not require a join condition to be specified explicitly.</p>
+<pre><code>SELECT * FROM table1 NATURAL JOIN table2;
+</code></pre>
+<p>In summary, the main difference between a cross join and a natural join is that a cross join returns all possible combinations of rows from both tables, while a natural join returns only the rows that have matching values in both tables based on the column names that are the same in both tables.</p>
+<h3 id="29-what-is-query-optimization-in-sql">29. What is query optimization in SQL ?</h3>
+<p>Query optimization is the process of improving the performance of a database query by selecting the most efficient method of executing it. The goal of query optimization is to minimize the response time of a query and reduce the amount of system resources needed to execute it.</p>
+<p>Query optimization involves several steps, including:</p>
+<ol>
+<li>
+<p><strong>Parsing and Translation</strong>:
+The first step in query optimization is to parse and translate the query into a form that can be processed by the database engine. This involves breaking the query down into its component parts, such as the SELECT, FROM, and WHERE clauses, and generating an execution plan.</p>
+</li>
+<li>
+<p><strong>Cost Estimation</strong>:
+The next step is to estimate the cost of executing the query using different execution plans. This involves analyzing the size of the data, the complexity of the query, and the resources required to execute it.</p>
+</li>
+<li>
+<p><strong>Plan Generation</strong>:
+Based on the cost estimates, the database engine generates multiple execution plans for the query. Each plan represents a different way of executing the query, and may involve different optimization techniques such as index selection, join ordering, and filtering.</p>
+</li>
+<li>
+<p><strong>Plan Selection</strong>:
+The final step is to select the best execution plan based on the estimated cost. The selected plan is then executed to retrieve the query results.</p>
+</li>
+</ol>
+<p>Query optimization is critical for improving the performance of database systems, especially for large, complex queries that involve multiple tables and join operations. By optimizing queries, database administrators can improve the overall efficiency of the system, reduce response times, and ensure that users can retrieve the information they need in a timely manner.</p>
+<h3 id="30-what-is-normalization-and-what-are-the-advantages-of-it">30. What is Normalization and what are the advantages of it ?</h3>
+<p>Normalization is a process of organizing data in a database to reduce redundancy and dependency. It involves dividing a larger table into smaller tables and defining relationships between them to ensure that each table contains only related data.</p>
+<p>There are several levels of normalization, with each level representing a higher degree of organization and a lower level of redundancy. The most commonly used levels of normalization are:</p>
+<ul>
+<li>First Normal Form (1NF): This level ensures that each column in a table contains only atomic values (values that cannot be divided further), and that each row in the table is unique.</li>
+<li>Second Normal Form (2NF): This level ensures that each non-key column in a table is fully dependent on the primary key, and that there are no partial dependencies (where a non-key column depends on only part of the primary key).</li>
+<li>Third Normal Form (3NF): This level ensures that each non-key column in a table is dependent only on the primary key, and that there are no transitive dependencies (where a non-key column depends on another non-key column).</li>
+</ul>
+<p>The advantages of normalization include:</p>
+<ul>
+<li>Reduced Redundancy: Normalization helps to reduce data redundancy by eliminating duplicate data and storing it only once. This reduces the storage requirements and helps to improve the performance of the database.</li>
+<li>Improved Data Integrity: Normalization helps to improve data integrity by ensuring that each piece of data is stored in only one place. This reduces the likelihood of data inconsistencies and improves the accuracy of the data.</li>
+<li>Improved Query Performance: Normalization can help to improve query performance by breaking down large tables into smaller, more manageable tables. This allows queries to be executed more efficiently, reducing response times and improving overall performance.</li>
+<li>Easier Maintenance: Normalization makes it easier to maintain the database by simplifying data structures and reducing the complexity of the data model. This makes it easier to modify and update the database as needed.</li>
+</ul>
+<h3 id="31-what-are-the-database-design-basics">31. What are the database design basics ?</h3>
+<p>A properly designed database provides you with access to up-to-date, accurate information</p>
+<p>A good database design is, therefore, one that:</p>
+<ul>
+<li>Divides your information into subject-based tables to reduce redundant data.</li>
+<li>Provides Access with the information it requires to join the information in the tables together as needed.</li>
+<li>Helps support and ensure the accuracy and integrity of your information.</li>
+<li>Accommodates your data processing and reporting needs.</li>
+</ul>
+<p>The design process consists of the following steps:</p>
+<p><strong>Define the Purpose and Scope of the Database</strong>: Before you start designing a database, you need to determine its purpose and scope. What is the database going to be used for? Who is going to use it? What data will it store? What queries will it need to support? These questions will help you determine the requirements of your database.</p>
+<p><strong>Identify the Entities and Relationships</strong>: The next step is to identify the entities and relationships that will be represented in the database. An entity is anything that can be represented in the database, such as a person, place, or thing. Relationships define how entities are related to one another.</p>
+<p><strong>Create a Data Model</strong>: Once you have identified the entities and relationships, you can create a data model that represents them in a graphical format. There are several types of data models, including entity-relationship (ER) models, UML diagrams, and data flow diagrams.</p>
+<p><strong>Normalize the Data</strong>: Normalization is the process of organizing the data in a database so that it is consistent and efficient. This involves breaking down larger tables into smaller ones and eliminating redundant data.</p>
+<p><strong>Define the Data Types and Constraints</strong>: After normalizing the data, you need to define the data types and constraints for each field in the database. This includes specifying the data type (e.g., string, integer, date) and any constraints on that data (e.g., length limits, required fields, unique values).</p>
+<p><strong>Create the Tables and Relationships</strong>: Using the data model and data types, you can now create the tables and relationships in the database. Tables represent the entities, and relationships define how they are related to one another.</p>
+<p><strong>Populate the Database</strong>: Once the tables are created, you can populate the database with data. This can be done manually or through an automated process, depending on the size of the database.</p>
+<p><strong>Test the Database</strong>: After populating the database, you need to test it to make sure it functions correctly. This includes running queries, updating data, and verifying that the database performs as expected.</p>
+<p>Cornerstones to take into consideration:</p>
+<ol>
+<li>Data Integrity - Ensuring the accuracy and consistency of the data.</li>
+<li>Scalability - Ensuring the database can handle increasing amounts of data and users.</li>
+<li>Security - Protecting the database from unauthorized access and ensuring data privacy.</li>
+<li>Performance - Ensuring the database operates efficiently and responds quickly to user requests.</li>
+<li>Maintainability - Ensuring the database is easy to maintain and update over time.</li>
+<li>Usability - Ensuring the database is easy to use and navigate for end-users.</li>
+<li>Flexibility - Ensuring the database can adapt to changing business needs and requirements.</li>
+</ol>
+<h3 id="32-what-is-aggregate-functions-in-mysql">32. What is aggregate functions in MySQL ?</h3>
+<p>An aggregate function is a function in SQL that performs a calculation on a set of values and returns a single value as the result. 
+The set of values is typically a group of rows in a table, and the function is applied to one or more columns in the table</p>
+<p><strong>List of aggregate functions in MySQL</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>FUNCTION</strong></th>
+<th style="text-align: center;"><strong>DESCRIPTION</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">AVG()</td>
+<td style="text-align: center;">Return the average value of the argument</td>
+</tr>
+<tr>
+<td style="text-align: center;">BIT_AND()</td>
+<td style="text-align: center;">Return bitwise AND</td>
+</tr>
+<tr>
+<td style="text-align: center;">BIT_OR()</td>
+<td style="text-align: center;">Return bitwise OR</td>
+</tr>
+<tr>
+<td style="text-align: center;">BIT_XOR()</td>
+<td style="text-align: center;">Return bitwise XOR</td>
+</tr>
+<tr>
+<td style="text-align: center;">COUNT()</td>
+<td style="text-align: center;">Return a count of the number of rows returned</td>
+</tr>
+<tr>
+<td style="text-align: center;">COUNT(DISTINCT)</td>
+<td style="text-align: center;">Return the count of a number of different values</td>
+</tr>
+<tr>
+<td style="text-align: center;">GROUP_CONCAT()</td>
+<td style="text-align: center;">Return a concatenated string</td>
+</tr>
+<tr>
+<td style="text-align: center;">JSON_ARRAYAGG()</td>
+<td style="text-align: center;">Return result set as a single JSON array</td>
+</tr>
+<tr>
+<td style="text-align: center;">JSON_OBJECTAGG()</td>
+<td style="text-align: center;">Return result set as a single JSON object</td>
+</tr>
+<tr>
+<td style="text-align: center;">MAX()</td>
+<td style="text-align: center;">Return the maximum value</td>
+</tr>
+<tr>
+<td style="text-align: center;">MIN()</td>
+<td style="text-align: center;">Return the minimum value</td>
+</tr>
+<tr>
+<td style="text-align: center;">STD()</td>
+<td style="text-align: center;">Return the population standard deviation</td>
+</tr>
+<tr>
+<td style="text-align: center;">STDDEV()</td>
+<td style="text-align: center;">Return the population standard deviation</td>
+</tr>
+<tr>
+<td style="text-align: center;">STDDEV_POP()</td>
+<td style="text-align: center;">Return the population standard deviation</td>
+</tr>
+<tr>
+<td style="text-align: center;">STDDEV_SAMP()</td>
+<td style="text-align: center;">Return the sample standard deviation</td>
+</tr>
+<tr>
+<td style="text-align: center;">SUM()</td>
+<td style="text-align: center;">Return the sum</td>
+</tr>
+<tr>
+<td style="text-align: center;">VAR_POP()</td>
+<td style="text-align: center;">Return the population standard variance</td>
+</tr>
+<tr>
+<td style="text-align: center;">VAR_SAMP()</td>
+<td style="text-align: center;">Return the sample variance</td>
+</tr>
+<tr>
+<td style="text-align: center;">VARIANCE()</td>
+<td style="text-align: center;">Return the population standard variance</td>
+</tr>
+</tbody>
+</table>
+<p>Here are some examples of aggregate functions in SQL:</p>
+<pre><code>-- Calculate the average salary of all employees
+SELECT AVG(salary) FROM employees;
+
+-- Calculate the total number of items in a store
+SELECT COUNT(*) FROM inventory;
+
+-- Count the number of distinct product categories in a store
+SELECT COUNT(DISTINCT category) FROM products;
+
+-- Concatenate the names of all employees in a department
+SELECT GROUP_CONCAT(name SEPARATOR ', ') FROM employees WHERE department='Sales';
+
+-- Return the highest and lowest salary among all employees
+SELECT MAX(salary) as highest FROM employees;
+SELECT MIN(salary) as lowest FROM employees;
+
+-- Calculate the sum of all sales in a store
+SELECT SUM(sales) FROM store;
+
+-- Calculate the population standard deviation of product prices
+SELECT STDDEV_POP(price) FROM products;
+
+-- Calculate the sample variance of customer ages
+SELECT VAR_SAMP(age) FROM customers;
+</code></pre>
+<h3 id="33-what-is-difference-between-union-and-union-all-in-sql">33. What is difference between <strong>UNION</strong> and <strong>UNION ALL</strong> in SQL ?</h3>
+<p>UNION merges the contents of two structurally-compatible tables into a single combined table. The difference between UNION and UNION ALL is that UNION will omit duplicate records whereas UNION ALL will include duplicate records.
+The performance of UNION ALL will typically be better than UNION, since UNION requires the server to do the additional work of removing any duplicates</p>
+<h3 id="34-what-is-database">34. What is database ?</h3>
+<p>A database is an organized collection of structured data that can be stored, easily accessed, managed, and retrieved digitally from a remote or local computer system.</p>
+<h3 id="35-what-is-denormalization">35. What is denormalization ?</h3>
+<p>Denormalization is the opposite of normalization; redundant data is added to speed up complex queries that have multiple tables that need to be joined. Optimization of the read performance of a database is attempted by adding or grouping redundant copies of data.</p>
+<h3 id="36-what-is-data-warehouse">36. What is data warehouse ?</h3>
+<p>A data warehouse is a large store of accumulated data, from a wide range of sources, within an organization. The data helps drive business decisions.</p>
+<h3 id="37-what-is-difference-between-views-and-tables">37. What is difference between views and tables ?</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Views</strong></th>
+<th style="text-align: center;"><strong>Tables</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A view is a virtual table that is extracted from a database</td>
+<td style="text-align: center;">A table is structured with a set number of columns and a boundless number of rows</td>
+</tr>
+<tr>
+<td style="text-align: center;">A view does not hold data itself</td>
+<td style="text-align: center;">A table contains data and stores it in databases</td>
+</tr>
+<tr>
+<td style="text-align: center;">A view is utilized to query certain information contained in a few distinct tables</td>
+<td style="text-align: center;">A table holds fundamental client information and cases of a characterized object</td>
+</tr>
+<tr>
+<td style="text-align: center;">In a view, we will get frequently queried information</td>
+<td style="text-align: center;">In a table, changing the information in the database changes the information that appears in the view</td>
+</tr>
+</tbody>
+</table>
+<h3 id="38-what-is-sql-window-functions">38. What is SQL Window functions ?</h3>
+<p>SQL window functions are a type of SQL function that allow you to perform calculations across a set of rows that are related to the current row. They are commonly used in analytic queries to calculate rankings, cumulative sums, moving averages, and other types of aggregations.</p>
+<p>Window functions are similar to the aggregation done in the GROUP BY clause. However, rows are not grouped into a single row, each row retains their separate identity.
+<img alt="join visualization" src="../img/sql/window_function.PNG" /></p>
+<p>Window functions in SQL offer more flexibility, increased query efficiency, simplified code, and improved accuracy in data analysis, making them a powerful tool for performing complex calculations and analysis on your data within a single SQL query.</p>
+<p>Here is a list of some common window functions in SQL, along with examples:</p>
+<p><strong>ROW_NUMBER()</strong>: assigns a unique integer value to each row in the result set.</p>
+<pre><code>SELECT ROW_NUMBER() OVER() AS row_num, name, age
+FROM customers;
+</code></pre>
+<p><strong>RANK()</strong>: assigns a rank to each row based on its value relative to the other rows.</p>
+<pre><code>SELECT RANK() OVER(ORDER BY salary DESC) AS rank, name, salary
+FROM employees;
+</code></pre>
+<p><strong>DENSE_RANK()</strong>: assigns a rank to each row based on its value relative to the other rows, but without any gaps in the ranking.</p>
+<pre><code>SELECT DENSE_RANK() OVER(ORDER BY score DESC) AS dense_rank, name, score
+FROM students;
+</code></pre>
+<p><strong>SUM()</strong>, <strong>AVG()</strong>, <strong>MIN()</strong>, <strong>MAX()</strong>: calculate an aggregate value across the rows in the window.</p>
+<pre><code>SELECT department, AVG(salary) OVER(PARTITION BY department) AS avg_salary
+FROM employees;
+</code></pre>
+<p><strong>LAG()</strong> and <strong>LEAD()</strong>: retrieve the value from a previous or subsequent row in the window.</p>
+<pre><code>SELECT name, score, LAG(score, 1) OVER(ORDER BY score DESC) AS prev_score,
+LEAD(score, 1) OVER(ORDER BY score DESC) AS next_score
+FROM students;
+</code></pre>
+<p><strong>NTILE()</strong>: divides the result set into a specified number of groups, assigning a group number to each row.</p>
+<pre><code>SELECT NTILE(4) OVER(ORDER BY salary DESC) AS quartile, name, salary
+FROM employees;
+</code></pre>
+<p><strong>FIRST_VALUE()</strong> and <strong>LAST_VALUE()</strong>: retrieve the first or last value in the window.</p>
+<pre><code>SELECT name, score, FIRST_VALUE(score) OVER(ORDER BY score DESC) AS highest_score,
+LAST_VALUE(score) OVER(ORDER BY score DESC) AS lowest_score
+FROM students;
+</code></pre>
+<h3 id="39-what-is-order-of-operations-in-sql">39. What is order of operations in SQL ?</h3>
+<p>The order of operations in SQL, also known as operator precedence, determines the order in which the different operators and functions in a SQL statement are evaluated. The order of operations is important in ensuring that the SQL statement is evaluated correctly and produces the intended results.</p>
+<p>The following is the order of operations in SQL, from highest to lowest precedence:</p>
+<ol>
+<li>Parentheses: Expressions enclosed in parentheses are evaluated first.</li>
+<li>Unary operators: Unary operators such as NOT, +, and - are evaluated next.</li>
+<li>Multiplication, Division, and Modulus: These arithmetic operators are evaluated next, from left to right.</li>
+<li>Addition and Subtraction: These arithmetic operators are evaluated next, from left to right.</li>
+<li>Comparison operators: Comparison operators such as =, &lt;&gt;, &lt;, &lt;=, &gt;, and &gt;= are evaluated next.</li>
+<li>Logical operators: Logical operators such as AND, OR, and NOT are evaluated next.</li>
+<li>BETWEEN, IN, LIKE, and EXISTS: These operators are evaluated next.</li>
+<li>CASE expressions: CASE expressions are evaluated next.</li>
+<li>Aggregate functions: Aggregate functions such as COUNT, SUM, AVG, MAX, and MIN are evaluated next.</li>
+<li>Window functions: Window functions are evaluated next.</li>
+<li>DISTINCT, GROUP BY, and HAVING: These operators are evaluated next.</li>
+<li>SELECT: The SELECT statement is evaluated last.</li>
+</ol>
+<h3 id="40-how-many-type-of-key-does-sql-have">40. How many type of key does SQL have ?</h3>
+<p><strong>Primary Key</strong>: A primary key is a unique identifier for each record in a table. It is used to ensure that each record can be identified uniquely, and it is often used as the basis for relationships with other tables.</p>
+<p><strong>Foreign Key</strong>: A foreign key is a field in a table that refers to the primary key of another table. It is used to establish a relationship between two tables, and it ensures that data in one table can be linked to data in another table.</p>
+<p><strong>Candidate Key</strong>: A candidate key is a field or combination of fields that can be used as a primary key for a table. It is an alternative key that can be used instead of the primary key.</p>
+<p><strong>Composite Key</strong>: A composite key is a primary key that consists of two or more fields. It is used when no single field can uniquely identify a record in a table.</p>
+<p><strong>Unique Key</strong>: A unique key is a field or combination of fields that ensures that each record in a table is unique. It is similar to a primary key, but it does not have to be used as the basis for relationships with other tables.</p>
+<p>Overall, keys are used to ensure data integrity and to establish relationships between tables in a database. They are a fundamental concept in SQL and are essential for managing and manipulating data effectively.</p>
+<h3 id="41-what-is-dbms">41. What is DBMS ?</h3>
+<p>DBMS stands for Database Management System. It is a software system that allows users to create, manage, and manipulate databases. A database is a collection of data that is organized and stored in a way that allows users to easily retrieve and update it.</p>
+<p>A DBMS provides a framework for creating, storing, and managing data in a structured format. It provides users with an interface to interact with the database and perform tasks such as adding, modifying, deleting, and retrieving data.</p>
+<p>Some popular examples of DBMS include MySQL, Oracle, Microsoft SQL Server, and MongoDB.</p>
+<h3 id="42-what-is-scalar-functions-in-sql">42. What is scalar functions in SQL ?</h3>
+<p>Scalar functions in SQL are functions that take one or more input parameters and return a single value as the result. These functions operate on individual rows and can be used in SELECT statements, WHERE clauses, and other parts of SQL queries where a single value is expected.</p>
+<p>There are various types of scalar functions available in SQL, including:</p>
+<ol>
+<li>String functions: These functions perform operations on strings, such as concatenation, conversion, and searching.</li>
+<li>Date and time functions: These functions perform operations on dates and times, such as calculating the difference between two dates or adding a certain number of days to a date.</li>
+<li>Numeric functions: These functions perform operations on numeric values, such as rounding, truncation, and conversion.</li>
+<li>
+<p>Conversion functions: These functions convert one data type to another, such as converting a string to a number or a date to a string.
+Examples of scalar functions in SQL include:</p>
+</li>
+<li>
+<p>LEN(): Returns the length of a string.</p>
+</li>
+<li>DATEADD(): Adds a specified time interval to a date.</li>
+<li>ROUND(): Rounds a numeric value to a specified precision.</li>
+<li>CAST(): Converts a value from one data type to another.</li>
+</ol>
+<p>Scalar functions can be very useful in SQL queries, as they allow you to perform various calculations and manipulations on data without the need for complex programming logic.</p>
+<h3 id="43-what-is-oltp">43. What is OLTP ?</h3>
+<p>OLTP stands for Online Transaction Processing, which is a type of computer system that manages and processes transaction-oriented applications, such as financial transactions, order processing, and inventory management. OLTP systems are designed to handle high volumes of small transactions in real-time or near real-time, typically with short response times.</p>
+<p>OLTP databases typically use normalized data structures to ensure data integrity, with tables organized around entities and relationships. These systems are optimized for data reads and writes, and are usually built on relational database management systems (RDBMS) like Oracle, SQL Server, or MySQL.</p>
+<p>OLTP systems are commonly used in businesses and organizations that need to process a high volume of transactions quickly and efficiently, such as banks, airlines, and e-commerce websites.</p>
+<h3 id="44-what-is-olap">44. What is OLAP ?</h3>
+<p>OLAP stands for Online Analytical Processing, which is a computer-based approach to analyzing data that allows users to access and analyze large sets of data from multiple perspectives. OLAP systems are designed for complex data analysis, and are optimized for querying and reporting.</p>
+<p>OLAP databases typically use denormalized data structures to provide fast and flexible access to data. OLAP systems allow users to query data using dimensions, measures, and hierarchies to analyze data across different dimensions, such as time, geography, and product lines.</p>
+<p>OLAP systems are commonly used in business intelligence and data analysis applications, where users need to quickly analyze large amounts of data to identify trends, patterns, and insights. They are typically built on multidimensional database management systems (MDBMS) like Microsoft Analysis Services, Oracle Essbase, or SAP BusinessObjects.</p>
+<h3 id="45-what-is-difference-between-olap-and-oltp">45. What is difference between OLAP and OLTP ?</h3>
+<p>OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) are two different types of computer-based systems designed to serve different purposes:</p>
+<p><strong>Purpose</strong>: OLTP is designed to manage and process transaction-oriented applications in real-time or near real-time, while OLAP is designed for complex data analysis and querying.</p>
+<p><strong>Data Structure</strong>: OLTP databases typically use normalized data structures to ensure data integrity, while OLAP databases typically use denormalized data structures to provide fast and flexible access to data.</p>
+<p><strong>Usage</strong>: OLTP systems are optimized for data reads and writes, and are usually built on relational database management systems (RDBMS) like Oracle or SQL Server. OLAP systems are optimized for querying and reporting, and are typically built on multidimensional database management systems (MDBMS) like Microsoft Analysis Services or Oracle Essbase.</p>
+<p><strong>Queries</strong>: OLTP systems typically involve simple queries, such as retrieving a single record, while OLAP systems involve complex queries that analyze data across multiple dimensions.</p>
+<p><strong>Users</strong>: OLTP systems are designed for transactional users, such as bank tellers or customer service representatives, while OLAP systems are designed for analytical users, such as business analysts or data scientists.</p>
+<p>In summary, OLTP systems are designed for transaction processing and OLAP systems are designed for data analysis and querying.</p>
+<p><img alt="olap vs oltp" src="../img/sql/olap_vs_oltp.png" /></p>
+<h3 id="46-what-is-pattern-matching-in-sql">46. What is pattern matching in SQL ?</h3>
+<p>Pattern matching is a technique used in SQL to search for specific patterns or substrings within a larger string of text data. SQL provides several operators that can be used to perform pattern matching, including the LIKE operator and the regular expression functions.</p>
+<p>The LIKE operator is used to compare a string to a pattern and returns a boolean value indicating whether the string matches the pattern or not. The LIKE operator supports two wildcards:</p>
+<ol>
+<li>The percent sign (%) matches any sequence of zero or more characters.</li>
+<li>The underscore (_) matches any single character.</li>
+</ol>
+<p>For example, the following query retrieves all records where the value of the "name" column starts with the letter "J":</p>
+<pre><code>SELECT * FROM table_name WHERE name LIKE 'J%';
+</code></pre>
+<p>In addition to the LIKE operator, SQL also provides regular expression functions such as <em>REGEXP_LIKE</em>, <em>REGEXP_REPLACE</em>, and <em>REGEXP_INSTR</em>, which allow for more advanced pattern matching capabilities. These functions can be used to search for patterns based on regular expressions, which are a powerful tool for matching complex patterns of text.</p>
+<h3 id="47-what-is-common-table-expression-cte-in-sql">47. What is Common Table Expression (CTE) in SQL ?</h3>
+<p>CTEs work as virtual tables (with records and columns), created during the execution of a query, used by the query, and eliminated after query execution.</p>
+<p>Each SQL CTE is like a named query, whose result is stored in a virtual table (a CTE) to be referenced later in the main query.</p>
+<pre><code>WITH london1_monthly_revenue AS (
+  SELECT
+    EXTRACT(MONTH FROM date) as month,
+    SUM(unit_price * quantity) AS revenue
+  FROM sales
+  WHERE EXTRACT(YEAR FROM date) = 2021
+    AND branch = 'London-1'
+  GROUP BY 1
+),
+london2_monthly_revenue AS (
+  SELECT
+    EXTRACT(MONTH FROM date) as month,
+    SUM(unit_price * quantity) AS revenue
+  FROM sales
+  WHERE EXTRACT(YEAR FROM date) = 2021
+    AND branch = 'London-2'
+  GROUP BY 1
+)
+SELECT
+  l1.month,
+  l1.revenue + l2.revenue AS london_revenue,
+  l1.revenue AS london1_revenue,
+  l2.revenue AS london2_revenue
+FROM london1_monthly_revenue l1, london2_monthly_revenue l2
+WHERE l1.month = l2.month
+</code></pre>
+<h2 id="coding">CODING</h2>
+<h3 id="1-how-to-insert-null-values-in-a-column-while-inserting-the-data">1. How to insert NULL values in a column while inserting the data?</h3>
+<p>To insert a NULL value into a column while inserting data into a table, you can use the keyword NULL in place of the actual value.</p>
+<p>For example, consider a table named "employees" with columns "employee_id", "first_name", "last_name", and "email". If you want to insert a NULL value into the email column, you can do it as follows:</p>
+<pre><code>INSERT INTO employees (employee_id, first_name, last_name, email) 
+VALUES (1, 'John', 'Doe', NULL);
+</code></pre>
+<p>Another way to insert a NULL value into a column is to omit it from the column list in the INSERT statement. If you omit a column from the list, the database will insert a NULL value into the column by default.</p>
+<pre><code>INSERT INTO employees (employee_id, first_name, last_name) 
+VALUES (1, 'John', 'Doe');
+</code></pre>
+<h3 id="2-how-can-you-select-unique-records-from-a-table">2. How can you select unique records from a table ?</h3>
+<p>To select unique records from a table, you can use the DISTINCT keyword in a SELECT statement. The DISTINCT keyword filters out duplicate values and returns only the unique values in the specified column or columns.</p>
+<p>For example, consider a table named "employees" with columns "employee_id", "first_name", "last_name", and "department". To select only the unique department names from the table, you can use the following query:</p>
+<pre><code>SELECT DISTINCT department FROM employees;
+</code></pre>
+<p>If you want to select unique records based on multiple columns, you can specify those columns in the SELECT statement, like this:</p>
+<pre><code>SELECT DISTINCT column1, column2, column3 FROM table_name;
+</code></pre>
+<p><strong>NOTE</strong>: It's worth noting that using the DISTINCT keyword can have performance implications, especially on large tables. If you're working with a large dataset, you may want to consider other techniques such as grouping and aggregation to identify unique records.</p>
+<h3 id="3-regular-expression-querry">3. Regular Expression Querry</h3>
+<p>Write a query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.</p>
+<pre><code>-- option 1
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '^[aeiouAEIOU]';
+
+-- option 2
+SELECT DISTINCT CITY
+FROM STATION
+WHERE SUBSTR(CITY, 1, 1) IN ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
+</code></pre>
+<h3 id="4-removing-duplicate-values">4. Removing Duplicate Values</h3>
+<p>Write a query that remove duplicate values from table</p>
+<pre><code>-- prepare environment
+CREATE DATABASE family_db;
+
+USE family_db;
+
+CREATE TABLE family (
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   name VARCHAR(50) NOT NULL,
+   age INT NOT NULL,
+   gender ENUM('male', 'female') NOT NULL,
+   relationship VARCHAR(20) NOT NULL
+);
+
+INSERT INTO family (name, age, gender, relationship)
+VALUES
+   ('John Smith', 45, 'male', 'father'),
+   ('Jane Smith', 42, 'female', 'mother'),
+   ('Bob Smith', 18, 'male', 'brother'),
+   ('Sally Smith', 15, 'female', 'sister'),
+   ('Tom Johnson', 55, 'male', 'grandfather'),
+   ('Mary Johnson', 50, 'female', 'grandmother'),
+   ('Jim Johnson', 28, 'male', 'uncle'),
+   ('Karen Johnson', 25, 'female', 'aunt'),
+   ('Mark Davis', 30, 'male', 'cousin'),
+   ('Sarah Davis', 28, 'female', 'cousin');
+</code></pre>
+<p>Following code uses a self-join on the "family" table to compare each row with all other rows in the table, looking for duplicates based on the values of the name, age, gender, and relationship columns. The WHERE clause filters the results to only include rows where the ID of the first row is greater than the ID of the second row (to avoid deleting the original row), and where all other column values are identical. The DELETE statement then removes the duplicate row from the table.</p>
+<pre><code>-- OPTION 1 (self-join)
+
+DELETE f1
+FROM family f1, family f2
+WHERE f1.id &gt; f2.id
+AND f1.name = f2.name
+AND f1.age = f2.age
+AND f1.gender = f2.gender
+AND f1.relationship = f2.relationship;
+</code></pre>
+<p>Instead of using a self-join, which can be slow for large tables, you can use a temporary table to store the distinct rows, and then replace the original table with the temporary table.</p>
+<pre><code>-- OPTION 2 (temp table and distinct)
+
+-- Create a new temporary table with the same schema as the original table
+CREATE TEMPORARY TABLE tmp_family LIKE family;
+-- Insert the distinct rows from the original table into the temporary table
+INSERT INTO tmp_family
+SELECT DISTINCT * FROM family;
+-- Drop the original table:
+DROP TABLE family;
+-- Rename the temporary table to the original table name
+RENAME TABLE tmp_family TO family;
+</code></pre>
+<p>This approach is faster and more efficient than using a self-join, as it only scans the original table once, and it avoids the overhead of deleting rows one by one. However, it may require more disk space to create the temporary table, so make sure you have enough free space on your server before running this code.</p>
+<h3 id="5-what-is-the-output-of-following-statements-and-why">5. What is the output of following statements and why ?</h3>
+<pre><code>-- 1st statement
+select '123ABC' * 3;
+-- 2nd statement
+select 'ABC123' * 3;
+</code></pre>
+<p>To make the multiplication with 3 MySQL automatically converts the string 123 into a number.But conversion to a number starts from left to right. If the conversion is not possible the result is 0</p>
+<p>Result of <strong>select '123ABC' * 3;</strong> is 369 but result of <strong>select 'ABC123' * 3;</strong> is 0</p></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">CLOSE</span>
+                </button>
+                <h3 class="modal-title" id="searchModalLabel">SEARCH</h3>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Type to start searching
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

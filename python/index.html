@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This repository contains a comprehensive list of Python interview questions that can assist you in securing your dream job">
+    <meta name="author" content="Hasan Ozdemir">
+    <link rel="canonical" href="https://interview-icebraker.readthedocs.io/en/latest/python/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>PYTHON - Interview Icebraker</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">Interview Icebraker</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">HOME</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">PYTHON</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../sql/">SQL</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../devops/">DEVOPS</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../amazon_web_services/">AWS</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/hasanozdem1r/interview-icebraker/edit/master/docs/python.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-4"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#python-theoretical">Python Theoretical</a></li>
+            <li class="second-level"><a href="#1-what-are-key-features-of-python">1. What are key features of Python ?</a></li>
+                
+            <li class="second-level"><a href="#2-what-are-keywords-in-python">2. What are keywords in Python ?</a></li>
+                
+            <li class="second-level"><a href="#3-what-are-literals-in-python">3. What are literals in Python ?</a></li>
+                
+            <li class="second-level"><a href="#4-what-are-functions-in-python">4. What are functions in Python ?</a></li>
+                
+            <li class="second-level"><a href="#5-what-is-the-difference-between-list-and-tuples-in-python">5. What is the difference between list and tuples in Python ?</a></li>
+                
+            <li class="second-level"><a href="#6-what-are-python-namespaces">6. What are Python namespaces ?</a></li>
+                
+            <li class="second-level"><a href="#7-what-are-decorators-in-python">7. What are decorators in Python ?</a></li>
+                
+            <li class="second-level"><a href="#8-what-is-slicing-in-python">8. What is slicing in Python ?</a></li>
+                
+            <li class="second-level"><a href="#9-how-is-memory-managed-in-python">9. How is memory managed in Python ?</a></li>
+                
+            <li class="second-level"><a href="#10-what-are-python-modules-name-some-commonly-used-built-in-modules-in-python">10. What are Python modules? Name some commonly used built-in modules in Python ?</a></li>
+                
+            <li class="second-level"><a href="#11-what-are-local-variables-and-global-variables-in-python">11. What are local variables and global variables in Python ?</a></li>
+                
+            <li class="second-level"><a href="#12-what-is-type-conversion-in-python">12. What is type conversion in Python ?</a></li>
+                
+            <li class="second-level"><a href="#13-what-is-pep-8-and-why-is-it-important">13. What is PEP 8 and why is it important ?</a></li>
+                
+            <li class="second-level"><a href="#14-what-is-docstring-in-python">14. What is docstring in Python?</a></li>
+                
+            <li class="second-level"><a href="#15-what-is-pythonpath-in-python">15. What is PYTHONPATH in Python ?</a></li>
+                
+            <li class="second-level"><a href="#16-what-is-a-lambda-function-in-python">16. What is a lambda function in Python ?</a></li>
+                
+            <li class="second-level"><a href="#17-how-python-is-interpreted">17. How Python is interpreted ?</a></li>
+                
+            <li class="second-level"><a href="#18-what-does-args-and-kwargs-mean">18. What does args and *kwargs mean ?</a></li>
+                
+            <li class="second-level"><a href="#19-what-is-context-manager-in-python">19. What is context manager in Python ?</a></li>
+                
+            <li class="second-level"><a href="#20-what-is-__init__-in-python">20 . What is __init__ in Python ?</a></li>
+                
+            <li class="second-level"><a href="#21-what-does-break-continue-and-pass-meaning-in-python">21. What does  break, continue and pass meaning in Python ?</a></li>
+                
+            <li class="second-level"><a href="#22-what-is-scope-resolution-in-python">22. What is Scope Resolution in Python ?</a></li>
+                
+            <li class="second-level"><a href="#23-what-is-the-python-global-interpreter-lock-gil">23. What is the Python Global Interpreter Lock (GIL) ?</a></li>
+                
+            <li class="second-level"><a href="#24-what-are-generators-in-python">24. What are generators in Python ?</a></li>
+                
+            <li class="second-level"><a href="#25-how-are-arguments-passed-by-value-or-by-reference-in-python">25. How are arguments passed by value or by reference in Python ?</a></li>
+                
+            <li class="second-level"><a href="#26-what-are-iterators-in-python">26. What are iterators in Python ?</a></li>
+                
+            <li class="second-level"><a href="#27-what-are-the-negative-indexes-and-why-are-they-used">27. What are the negative indexes and why are they used ?</a></li>
+                
+            <li class="second-level"><a href="#28-why-is-finalize-used">28. Why is finalize used ?</a></li>
+                
+            <li class="second-level"><a href="#29-what-is-comprehensions-in-python">29. What is comprehensions in Python ?</a></li>
+                
+            <li class="second-level"><a href="#30-what-is-difference-between-append-and-extend-in-python">30. What is difference between append() and extend() in Python ?</a></li>
+                
+            <li class="second-level"><a href="#31-what-is-monkey-patching-in-python">31. What is monkey patching in Python ?</a></li>
+                
+            <li class="second-level"><a href="#32-what-is-mocking-in-python">32. What is mocking in Python ?</a></li>
+                
+            <li class="second-level"><a href="#33-what-is-the-difference-between-py-and-pyc-files">33. What is the difference between .py and .pyc files ?</a></li>
+                
+            <li class="second-level"><a href="#34-what-does-split-and-join-functions-do-in-python">34. What does split() and join() functions do in Python ?</a></li>
+                
+            <li class="second-level"><a href="#35-what-is-multiprocessing">35. What is multiprocessing ?</a></li>
+                
+            <li class="second-level"><a href="#36-what-is-multithreading">36. What is multithreading ?</a></li>
+                
+            <li class="second-level"><a href="#37-what-is-mutexmutual-exclusion">37. What is Mutex(Mutual Exclusion)?</a></li>
+                
+            <li class="second-level"><a href="#38-multithreading-vs-multiprocessing">38. Multithreading vs. Multiprocessing</a></li>
+                
+            <li class="second-level"><a href="#39-what-is-cpython">39. What is CPython ?</a></li>
+                
+            <li class="second-level"><a href="#40-what-are-the-common-built-in-data-types-in-python">40. What are the common built-in data types in Python?</a></li>
+                
+            <li class="second-level"><a href="#41-what-is-io-bound-tasks">41. What is IO-Bound Tasks ?</a></li>
+                
+            <li class="second-level"><a href="#42-what-is-cpu-bound-tasks">42. What is CPU-Bound Tasks ?</a></li>
+                
+        <li class="first-level "><a href="#python-coding">Python Coding</a></li>
+            <li class="second-level"><a href="#1-implement-a-linked-list-in-python">1. Implement a Linked List in Python</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-8" role="main">
+
+<h1 id="python-theoretical">Python Theoretical</h1>
+<p>Theoretical interview questions in Python are designed to assess a candidate's understanding of fundamental concepts and principles in the field of software development. </p>
+<h3 id="1-what-are-key-features-of-python">1. What are key features of Python ?</h3>
+<ul>
+<li>Easy to learn due to clear syntax and readability </li>
+<li>Easy to interpret, making debug is easy</li>
+<li>Free and open source</li>
+<li>OOP supported, general purpose programming language</li>
+<li>Python is <strong>dynamically typed</strong>, this means that you don’t need to state the types of variables when you declare them or anything like that.</li>
+</ul>
+<h3 id="2-what-are-keywords-in-python">2. What are keywords in Python ?</h3>
+<p>Keywords are the reserved words in Python. We cannot use a keyword as a variable name, function name or any other identifier.
+Here's a list of all keywords in Python Programming</p>
+<p><img alt="Keywords" src="../img/python/keywords.PNG" /></p>
+<h3 id="3-what-are-literals-in-python">3. What are literals in Python ?</h3>
+<p>Literals in Python refer to the data that is given in a variable or constant. </p>
+<ul>
+<li>String Literals</li>
+<li>Numeric Literals</li>
+<li>Boolean Literals</li>
+<li>Special Literals</li>
+</ul>
+<h3 id="4-what-are-functions-in-python">4. What are functions in Python ?</h3>
+<p>Functions in Python refer to blocks that have organised, and reusable codes to perform single, and related events. Functions are important to create better modularity for applications which reuse high degree of coding. Functions are executed only when a call is made to the function.</p>
+<h3 id="5-what-is-the-difference-between-list-and-tuples-in-python">5. What is the difference between list and tuples in Python ?</h3>
+<table>
+<thead>
+<tr>
+<th><strong>LIST</strong></th>
+<th><strong>TUPLE</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mutable. Items can be changed</td>
+<td>Immutable. Items cannot be changed</td>
+</tr>
+<tr>
+<td>Slower than tuples</td>
+<td>Faster than list</td>
+</tr>
+<tr>
+<td>eg_list= [1,2,3,4,5]</td>
+<td>example=(1,2,3,4,5)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-what-are-python-namespaces">6. What are Python namespaces ?</h3>
+<p>A namespace is a naming system used to make sure that names are unique to avoid naming conflicts.The objects are variables and functions. </p>
+<ul>
+<li>Built-in namespace– These namespaces contain all the built in objects in python and are available whenever python is running.</li>
+<li>Global namespace– These are namespaces for all the objects created at the level of the main program.</li>
+<li>Enclosing namespaces– These namespaces are at the higher level or outer function.</li>
+<li>Local namespaces– These namespaces are at the local or inner function.</li>
+</ul>
+<h3 id="7-what-are-decorators-in-python">7. What are decorators in Python ?</h3>
+<p>Decorators in Python are essentially functions that add functionality to an existing function in Python without changing the structure of the function itself. Decorators are used to add some design patterns to a function without changing its structure. </p>
+<p>Decorators generally are defined before the function they are enhancing. To apply a decorator we first define the decorator function. Then we write the function it is applied to and simply add the decorator function above the function it has to be applied to. For this, we use the <strong>@ symbol</strong> before the decorator.</p>
+<pre><code>def whee_decorator(func):
+    def wrapper():
+        print(&quot;Something is happening before the function is called.&quot;)
+        func()
+        print(&quot;Something is happening after the function is called.&quot;)
+    return wrapper
+
+@whee_decorator
+def say_whee():
+    print(&quot;Whee!&quot;)
+</code></pre>
+<h3 id="8-what-is-slicing-in-python">8. What is slicing in Python ?</h3>
+<p>Slicing is used to access parts of sequences like lists, tuples, and strings.</p>
+<p>The syntax of slicing is  <code>[start:stop:step]</code></p>
+<ul>
+<li><strong>start</strong>: refer starting index for collection. In Python first index is 0</li>
+<li><strong>stop</strong>: refer last index for collection which is not included.</li>
+<li><strong>step</strong>: refer incrementation / decrementation for each iteration.</li>
+</ul>
+<p>Checkout following examples to understand better</p>
+<pre><code>example=[]
+example[start:stop]  # items start through stop-1
+example[start:]      # items start through the rest of the array
+example[:stop]       # items from the beginning through stop-1
+example[:]           # a copy of the whole array
+example[start:stop:step] # # start through not past stop, by step
+</code></pre>
+<h3 id="9-how-is-memory-managed-in-python">9. How is memory managed in Python ?</h3>
+<p>Memory is managed in Python in the following ways:</p>
+<ol>
+<li>
+<p>Memory management in Python is managed by Python private heap space. All Python objects and data structures are located in a <strong>private heap</strong>. The programmer does not have access to this private heap. The Python interpreter takes care of this instead.</p>
+</li>
+<li>
+<p>The allocation of heap space for Python objects is done by Python’s memory manager. The core API gives access to some tools for the programmer to code.</p>
+</li>
+<li>
+<p>Python also has an inbuilt garbage collector, which recycles all the unused memory and so that it can be made available to the heap space.</p>
+</li>
+</ol>
+<h3 id="10-what-are-python-modules-name-some-commonly-used-built-in-modules-in-python">10. What are Python modules? Name some commonly used built-in modules in Python ?</h3>
+<p>A module is a file containing Python definitions and statements. This code can either be functions classes or variables. Ex ; os, sys, math, random, json, csv</p>
+<h3 id="11-what-are-local-variables-and-global-variables-in-python">11. What are local variables and global variables in Python ?</h3>
+<ul>
+<li><strong>Global</strong>: Variables declared outside a function or in global space are called global variables. These variables can be accessed by any function in the program</li>
+<li><strong>Local</strong>: Any variable declared inside a function is known as a local variable. This variable is present in the local space and not in the global space.</li>
+</ul>
+<p><strong>BASE_URL</strong> is a global variable and <strong>user_domain</strong> is local variable and only can be accessed in scope of function</p>
+<pre><code>BASE_URL=&quot;www.github.com&quot;
+
+def get_user_domain(base_url:str,username:str):
+    user_domain:str=&quot;&quot;
+    user_domain=f&quot;{base_url}/{username}&quot;
+    return user_domain
+</code></pre>
+<h3 id="12-what-is-type-conversion-in-python">12. What is type conversion in Python ?</h3>
+<p>Type conversion refers to the conversion of one data type into another.</p>
+<ul>
+<li>
+<p>Implicit type conversion, interpreter helps in automatically converting the data type into another data type without any User involvement.</p>
+</li>
+<li>
+<p>Explicit type conversion the data type in changed into a required type by the user.</p>
+</li>
+</ul>
+<h3 id="13-what-is-pep-8-and-why-is-it-important">13. What is PEP 8 and why is it important ?</h3>
+<p>PEP stands for Python Enhancement Proposal. PEP 8 is especially important since it documents the style guidelines for Python Code. It is a set of rules that specify how to write and design Python code for maximum readability.</p>
+<h3 id="14-what-is-docstring-in-python">14. What is docstring in Python?</h3>
+<p>Documentation string or docstring is a multiline string used to document a specific code segment.
+Below you can see example docstr for <strong>do_sth</strong> function</p>
+<pre><code>def do_sth(:
+    &quot;&quot;&quot;
+    do_sth method return message (I AM DOCSTRING)
+    &quot;&quot;&quot;
+    return &quot;DO STH&quot;
+</code></pre>
+<h3 id="15-what-is-pythonpath-in-python">15. What is PYTHONPATH in Python ?</h3>
+<p>The PYTHONPATH variable has a value that is a string with a list of directories that Python should add to the <strong>sys.path</strong> directory list.
+If PYTHONPATH is not setted you can encounter with various problems such as <strong>xyz package is not found</strong> and etc. </p>
+<p>If you want to set PYTHONPATH please do as following</p>
+<pre><code>echo $PYTHONPATH # if return none do the following
+export PYTHONPATH=&quot;$PWD&quot; # project root directory
+</code></pre>
+<h3 id="16-what-is-a-lambda-function-in-python">16. What is a lambda function in Python ?</h3>
+<p>A lambda function is an anonymous function (i.e., defined without a name) that can take any number of arguments but, unlike normal functions, evaluates and <u>returns only one expression</u></p>
+<pre><code># lambda function
+lambda x: x - 1
+# normal function
+def decrease(x):
+    return x - 1
+</code></pre>
+<h3 id="17-how-python-is-interpreted">17. How Python is interpreted ?</h3>
+<p>Python as a language is not interpreted or compiled. 
+Interpreted or compiled is the property of the implementation. 
+Python is a bytecode(set of interpreter readable instructions) interpreted generally.</p>
+<h3 id="18-what-does-args-and-kwargs-mean">18. What does <em>args and </em>*kwargs mean ?</h3>
+<p>args stands for arguments, and kwargs stands for is keyword arguments.
+* <em>args allows you to pass the desired number of arguments to the function
+* </em>kwargs represent same idea, but only that this format uses keyword-based Python dictionaries</p>
+<p>Let's look at following example to understand better <em>args and </em>*kwargs</p>
+<pre><code>def example(x,y,*args,**kwargs):
+    # access args, it's a tuple
+    arguments=[arg for arg in args]
+    # access kwargs, it's a dictionary
+    keyword_arguments={key:value for (key,value) in kwargs.items()}
+    print(f&quot;x:{x}, y:{y}&quot;)
+    print(f&quot;arguments:{arguments}&quot;)
+    print(f&quot;keyword_arguments:{keyword_arguments}&quot;)
+example(-3,-2,-1,0,a= 1, b= 2, c= 3, d= 4, e= 5)
+</code></pre>
+<p>The code provided above outputs the following:</p>
+<pre><code>x:-3, y:-2
+arguments:[-1, 0]
+keyword_arguments:{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+</code></pre>
+<h3 id="19-what-is-context-manager-in-python">19. What is context manager in Python ?</h3>
+<p>A context manager is a Python construct that is used to manage resources, such as files or network connections, that need to be properly initialized and cleaned up after use. The context manager provides a convenient way to allocate and release resources automatically, ensuring that resources are properly managed even if an error occurs or an exception is raised.</p>
+<p>The context manager is implemented as an object that defines two methods: __enter__ and __exit__. The __enter__ method is called when the context is entered, and it returns the resource object that will be used in the block of code that follows.</p>
+<p>The context manager can be used with the <strong>with</strong> statement, which provides a convenient way to manage resources in a safe and reliable manner. When the <strong>with</strong> statement is used, the context manager is automatically called when the block of code is entered, and it is automatically cleaned up when the block of code is exited, even if an error occurs.</p>
+<pre><code>class prep_interview:
+    def __enter__(self):
+        print(&quot;Entering the context...&quot;)
+        # Code to initialize the resource goes here
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        # Code to clean up the resource goes here
+        print(&quot;Exiting the context...&quot;)
+
+# usage of the context manager
+with prep_interview() as cm:
+    print(&quot;Inside the context.&quot;)
+
+# built-in context manager
+with open('file.txt', 'w') as f:
+    f.write('Hello, World!')
+
+# python request library
+with requests.Session() as session:
+    session.get('https://httpbin.org')
+</code></pre>
+<h3 id="20-what-is-__init__-in-python">20 . What is __init__ in Python ?</h3>
+<p>The __init__ method is the Python equivalent of the C++ constructor in an object-oriented approach. The __init__  function is called every time an object is created from a class. The __init__ method lets the class initialize the object’s attributes and serves no other purpose. In constructor (__init__) you can return nothing. It required to return None </p>
+<h3 id="21-what-does-break-continue-and-pass-meaning-in-python">21. What does  break, continue and pass meaning in Python ?</h3>
+<ul>
+<li>break : Allows loop termination when some condition is met and the control is transferred to the next statement</li>
+<li>continue: Allows skipping some part of a loop when some specific condition is met and the control is transferred to the beginning of the loop</li>
+<li>Used when you need some block of code syntactically, but you want to skip its execution. This is basically null opearion. Nothing happens when this is executed.</li>
+</ul>
+<pre><code>index = -5
+while True:
+    if index &lt; 0:
+        pass
+    if index == 0:
+        index += 1
+        continue
+    if index &gt; 0:
+        print(1 / index)
+    if index &gt; 5:
+        break
+    index += 1
+</code></pre>
+<h3 id="22-what-is-scope-resolution-in-python">22. What is Scope Resolution in Python ?</h3>
+<p>A scope is a block of code where an object in Python remains relevant.Each and every object of python functions within its respective scope</p>
+<h3 id="23-what-is-the-python-global-interpreter-lock-gil">23. What is the Python Global Interpreter Lock (GIL) ?</h3>
+<p>The Python Global Interpreter Lock (GIL) is a mechanism used in the CPython implementation of the Python programming language to <u>ensure that only one thread executes Python bytecode at a time</u>. The GIL is a mutex that protects access to Python objects, preventing multiple threads from modifying them at the same time.</p>
+<p>The GIL has both benefits and drawbacks. On the one hand, it <u>simplifies the implementation of the Python interpreter and makes it easier to write thread-safe Python code</u>. On the other hand, it can <u>limit the performance of multi-threaded Python programs</u>, because only one thread can execute Python code at a time. <u>This means that CPU-bound tasks, which require a lot of computation, may not be able to take full advantage of multi-core CPUs.</u></p>
+<p>However, it's important to note that the <u>GIL only affects multi-threaded Python programs, not multi-process Python programs</u>. Python's multiprocessing module can be used to take advantage of multiple CPUs without being limited by the GIL. Additionally, the GIL is specific to the CPython implementation of Python, and other implementations such as Jython and IronPython do not have a GIL.</p>
+<p><strong>NOTE</strong>:The GIL can have a significant impact on the performance of multi-threaded Python programs that perform CPU-bound tasks, but it may have less of an impact on programs that spend most of their time waiting for I/O or calling into C extensions that release the GIL.</p>
+<h3 id="24-what-are-generators-in-python">24. What are generators in Python ?</h3>
+<p>Generators are functions that return an iterable collection of items, one at a time, in a set manner. 
+Generators, in general, are used to create iterators with a different approach. 
+They employ the use of yield keyword rather than return to return a generator object.</p>
+<p>Here's an example of a simple generator that generates the first n Fibonacci numbers:</p>
+<pre><code># creating generator
+def fibonacci(n):
+    a, b = 0, 1
+    for i in range(n):
+        yield a
+        a, b = b, a + b
+
+# accessing generator
+for number in fibonacci(10):
+    print(number)
+
+# Code output:  0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+</code></pre>
+<h3 id="25-how-are-arguments-passed-by-value-or-by-reference-in-python">25. How are arguments passed by value or by reference in Python ?</h3>
+<ul>
+<li>Pass by value: Copy of the actual object is passed. Changing the value of the copy of the object will not change the value of the original object.</li>
+<li>Pass by reference: Reference to the actual object is passed. Changing the value of the new object will change the value of the original object.</li>
+</ul>
+<p>Arguments are passed by reference in Python, but the behavior can depend on whether the objects are mutable or immutable. </p>
+<ul>
+<li>Mutable objects can be modified in place inside a function, and the modifications will be visible outside the function. </li>
+<li>Immutable objects cannot be modified in place, so modifications inside a function will create new objects and not affect the original objects outside the function.</li>
+</ul>
+<h3 id="26-what-are-iterators-in-python">26. What are iterators in Python ?</h3>
+<p>An iterator is an object.  It remembers its state i.e., where it is during iteration</p>
+<ul>
+<li>__iter__() method initializes an iterator.</li>
+<li>__next__() method which returns the next item in iteration and points to the next element. Upon reaching the end of iterable object __next__() must return StopIteration exception. It is also self-iterable.</li>
+</ul>
+<pre><code># example iterator
+class EvenNumbers:
+    # constructor
+    def __init__(self, n):
+        self.n = n
+        self.current = 0
+
+    # returns the iterator object itself
+    def __iter__(self):
+        return self
+
+    # computes the next even number in the sequence and updates the current value
+    def __next__(self):
+        if self.current &gt;= self.n:
+            raise StopIteration
+        result = 2 * self.current
+        self.current += 1
+        return result
+
+# calling iterator
+for number in EvenNumbers(5):
+    print(number)
+
+# output -&gt; 0, 2, 4, 6, 8
+</code></pre>
+<h3 id="27-what-are-the-negative-indexes-and-why-are-they-used">27. What are the negative indexes and why are they used ?</h3>
+<p>In Python, negative indexes are used to access elements from the end of a sequence, such as a string, list, or tuple. 
+The last element in the sequence can be accessed using an index of -1, the second-to-last element can be accessed using an index of -2, and so on.</p>
+<pre><code>example_list = [1, 2, 3, 4, 5]
+last_element = example_list[-1]  # returns 5
+last_two_elements = example_list[-2:]  # returns [4, 5]
+</code></pre>
+<p>Negative indexes can be particularly useful when working with sequences of unknown length or when you need to access elements relative to the end of the sequence, such as when processing log files or other types of time-series data</p>
+<h3 id="28-why-is-finalize-used">28. Why is finalize used ?</h3>
+<p>In Python, <em>finalize</em> is a method that is used to release resources associated with an object when it is no longer needed. This method is part of the Python garbage collection mechanism, which automatically manages memory allocation and deallocation for objects created in a Python program.</p>
+<p>The finalize method provides a way to automatically release these external resources when the object is garbage-collected. To use finalize, you define a callback function that will be called when the object is about to be garbage-collected. This function can then release any external resources held by the object, such as closing a file or disconnecting from a network socket.</p>
+<pre><code>import atexit
+
+class FileWrapper:
+    def __init__(self, filename):
+        self.file = open(filename, 'w')
+        self.finalizer = atexit.register(self.finalize)
+
+    def write(self, data):
+        self.file.write(data)
+
+    def finalize(self):
+        self.file.close()
+        atexit.unregister(self.finalizer)
+</code></pre>
+<h3 id="29-what-is-comprehensions-in-python">29. What is comprehensions in Python ?</h3>
+<p>Comprehensions in Python are a concise way to create sequences (such as lists, sets, and dictionaries) based on existing sequences. 
+They are a shorthand notation for loops that reduce the amount of code you need to write and make it easier to express complex operations on sequences.</p>
+<p>Following comprehension creates a list of squares of even numbers between 0 and 9.</p>
+<pre><code>squares = [x**2 for x in range(10) if x % 2 == 0]
+</code></pre>
+<p>Following comprehension creates a set of squares of even numbers between 0 and 9.</p>
+<pre><code>squares_set = {x**2 for x in range(10) if x % 2 == 0}
+</code></pre>
+<p>Following comprehension creates a dictionary of even numbers between 0 and 9 and their squares.</p>
+<pre><code>squares_dict = {x: x**2 for x in range(10) if x % 2 == 0}
+</code></pre>
+<h3 id="30-what-is-difference-between-append-and-extend-in-python">30. What is difference between append() and extend() in Python ?</h3>
+<p>In Python, both the append and extend methods are used to add new elements to a list. </p>
+<p>append method adds a single element to the end of the list:</p>
+<pre><code>my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list) # Output: [1, 2, 3, 4]
+</code></pre>
+<p>extend method, on the other hand, adds multiple elements to the end of the list. It takes an iterable (e.g. a list, tuple, set, etc.) and adds all of its elements to the list:</p>
+<pre><code>my_list = [1, 2, 3]
+my_list.extend([4, 5, 6])
+print(my_list) # Output: [1, 2, 3, 4, 5, 6]
+</code></pre>
+<h3 id="31-what-is-monkey-patching-in-python">31. What is monkey patching in Python ?</h3>
+<p>Monkey patching in Python is the practice of changing or adding functionality to a module, class, or object at runtime, without actually modifying the original source code.</p>
+<p>Let's say you're working with a third-party library that has a function called calculate() which takes two arguments and returns their sum. However, for some reason, you want this function to also return the difference between the two arguments. Instead of modifying the original code of the library, you can use monkey patching to add this additional functionality.</p>
+<pre><code>import some_library
+
+# define a new function that we want to add to the library
+def calculate_with_difference(a, b):
+    sum = some_library.calculate(a, b)
+    difference = a - b
+    return (sum, difference)
+
+# monkey patch the library with our new function
+some_library.calculate = calculate_with_difference
+</code></pre>
+<p>If you call some_library.calculate(10, 5), it will return (15, 5) instead of just 15. This is because we used monkey patching to add the difference value to the return value of the calculate() function.</p>
+<h3 id="32-what-is-mocking-in-python">32. What is mocking in Python ?</h3>
+<p>Mocking is a technique used in unit testing to replace a real object or function with a fake one that simulates its behavior. The purpose of mocking is to isolate the code being tested from its dependencies, so that the test can focus on the behavior of the code under test without being affected by the behavior of external dependencies.</p>
+<p>Mocking is often used to simulate the behavior of complex or external dependencies that are difficult to test directly, such as web services or databases. By mocking these dependencies, a test can be designed to verify that the code under test interacts with the dependency correctly, without actually making any real calls to the external service.</p>
+<p>Mocking can be a powerful technique for writing effective unit tests in Python, but it should be used judiciously. Overuse of mocking can lead to brittle and hard-to-maintain tests, as well as a false sense of security that the code is working correctly when in fact it may not be.</p>
+<pre><code>from unittest.mock import MagicMock
+import requests
+
+def get_data_from_api(api_url):
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return None
+
+def test_get_data_from_api():
+    # create a mock response object
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = {'foo': 'bar'}
+
+    # create a mock requests.get function that returns the mock response
+    requests.get = MagicMock(return_value=mock_response)
+
+    # call the function under test
+    data = get_data_from_api('https://example.com/api')
+
+    # assert that the function returned the expected data
+    assert data == {'foo': 'bar'}
+
+    # assert that requests.get was called with the correct URL
+    requests.get.assert_called_with('https://example.com/api')
+</code></pre>
+<h3 id="33-what-is-the-difference-between-py-and-pyc-files">33. What is the difference between .py and .pyc files ?</h3>
+<p>Python source code files have a ".py" extension and are human-readable text files that contain Python code. When you run a Python program, the interpreter reads the ".py" file and executes the code it contains.</p>
+<p>Python compiled bytecode files have a ".pyc" extension and are created by the Python interpreter when a ".py" file is imported or run. The ".pyc" file is a binary file containing the compiled bytecode version of the ".py" file. The Python interpreter can execute ".pyc" files faster than ".py" files because it doesn't need to compile the source code again. Instead, it loads the pre-compiled bytecode directly into memory.</p>
+<h3 id="34-what-does-split-and-join-functions-do-in-python">34. What does <em>split()</em> and <em>join()</em> functions do in Python ?</h3>
+<p>The split() and join() functions in Python are used to manipulate strings.</p>
+<p>The split() function is used to split a string into a list of substrings based on a delimiter character. By default, the delimiter is a space character, but you can specify a different delimiter as an argument to the function. Here is an example:</p>
+<pre><code>my_string = &quot;Hello World&quot;
+split_string = my_string.split() # Returns ['Hello', 'World']
+</code></pre>
+<p>The join() function, on the other hand, is used to join a list of strings into a single string using a specified delimiter. Here is an example:</p>
+<pre><code>my_list = ['Hello', 'World']
+joined_string = ' '.join(my_list) # Returns &quot;Hello World&quot;
+</code></pre>
+<h3 id="35-what-is-multiprocessing">35. What is multiprocessing ?</h3>
+<p>Multiprocessing refers to a system that has more than two central processing units (CPUs). Every additional CPU added to a system increases its speed, power and memory. This allows users to run multiple processes simultaneously</p>
+<p>There are two primary categories of multiprocessing systems:
+* Symmetric multiprocessing: This multiprocessing system uses computer hardware and software that incorporates two or more identical processors connected by one memory space. These processors have complete access to all input and output devices and receive equal treatment.
+* Asymmetric multiprocessing: In this multiprocessing system, different CPUs have access to separate input and output (I/O) devices. For example, one CPU might perform I/O operations, while another CPU might focus on maintaining the operating system.</p>
+<h3 id="36-what-is-multithreading">36. What is multithreading ?</h3>
+<p>Multithreading is a programming technique that assigns multiple code segments to a single process. These code segments, also referred to as threads, run concurrently and parallel to each other. These threads share the same memory space within a parent process</p>
+<h3 id="37-what-is-mutexmutual-exclusion">37. What is Mutex(Mutual Exclusion)?</h3>
+<p>The point of a mutex is to synchronize two threads. When you have two threads attempting to access a single resource, the general pattern is to have the first block of code attempting access to set the mutex before entering the code. When the second code block attempts access, it sees that the mutex is set and waits until the first block of code is complete (and unsets the mutex), then continues.</p>
+<h3 id="38-multithreading-vs-multiprocessing">38. Multithreading vs. Multiprocessing</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Aspect</strong></th>
+<th style="text-align: center;"><strong>Multithreading</strong></th>
+<th style="text-align: center;"><strong>Multiprocessing</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Unit of Execution</td>
+<td style="text-align: center;">Threads (within a single process)</td>
+<td style="text-align: center;">Processes (separate instances of the program)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Communication</td>
+<td style="text-align: center;">Shared memory, easy communication</td>
+<td style="text-align: center;">Inter-process communication mechanisms</td>
+</tr>
+<tr>
+<td style="text-align: center;">Resource Efficiency</td>
+<td style="text-align: center;">More resource-efficient due to shared resources</td>
+<td style="text-align: center;">Less resource-efficient due to separate resources</td>
+</tr>
+<tr>
+<td style="text-align: center;">Data Sharing</td>
+<td style="text-align: center;">Easier but prone to synchronization issues</td>
+<td style="text-align: center;">Structured through communication mechanisms</td>
+</tr>
+<tr>
+<td style="text-align: center;">Use Cases</td>
+<td style="text-align: center;">I/O-bound tasks, concurrent within a process</td>
+<td style="text-align: center;">CPU-bound tasks, true parallelism required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="39-what-is-cpython">39. What is CPython ?</h3>
+<p>Firsty need to  distinguish between a language and an implementation. Python is a language,</p>
+<p>According to Wikipedia, "A programming language is a notation for writing programs, which are specifications of a computation or algorithm". This means that it's simply the rules and syntax for writing code. </p>
+<p>Python is a language. CPython is the implementation of Python in C. Jython is the implementation in Java, and so on.</p>
+<p>Please go for detailed discussion to <a href="https://stackoverflow.com/questions/17130975/python-vs-cpython">link</a></p>
+<h3 id="40-what-are-the-common-built-in-data-types-in-python">40. What are the common built-in data types in Python?</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NoneType</td>
+<td>Represents the NULL values in Python.</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Stores integer literals including hex, octal and binary numbers as integers</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Stores literals containing decimal values and/or exponent signs as floating-point numbers</td>
+</tr>
+<tr>
+<td>complex</td>
+<td>Stores complex numbers in the form (A + Bj) and has attributes: real and imag</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>Stores boolean value (True or False).</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Mutable sequence used to store collection of items.</td>
+</tr>
+<tr>
+<td>tuple</td>
+<td>Immutable sequence used to store collection of items.</td>
+</tr>
+<tr>
+<td>range</td>
+<td>Represents an immutable sequence of numbers generated during execution.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Immutable sequence of Unicode code points to store textual data.</td>
+</tr>
+<tr>
+<td>dict</td>
+<td>Stores comma-separated list of key: value pairs</td>
+</tr>
+<tr>
+<td>set</td>
+<td>Mutable unordered collection of distinct hashable objects.</td>
+</tr>
+<tr>
+<td>frozenset</td>
+<td>Immutable collection of distinct hashable objects.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="41-what-is-io-bound-tasks">41. What is IO-Bound Tasks ?</h3>
+<p>Tasks that spend a significant amount of time waiting for input/output operations to complete, such as reading or writing to files, network communication, or database queries. Reading/writing files, making API requests, fetching data from a database, downloading data from the internet.</p>
+<ul>
+<li>
+<p>Asynchronous programming: Utilizing asynchronous I/O operations with features like asyncio or using libraries like aiohttp for asynchronous HTTP requests.</p>
+</li>
+<li>
+<p>Multiprocessing: Running IO-bound tasks concurrently using multiple processes.</p>
+</li>
+<li>
+<p>Threading: For certain IO-bound tasks, threading can be beneficial, especially when the Global Interpreter Lock (GIL) is not a significant bottleneck.</p>
+</li>
+</ul>
+<h3 id="42-what-is-cpu-bound-tasks">42. What is CPU-Bound Tasks ?</h3>
+<p>Tasks that spend the majority of their time performing CPU computations and have limited interaction with input/output operations. Mathematical calculations, image processing, data manipulation, and other CPU-intensive operations.</p>
+<ul>
+<li>
+<p>Multi-threading may not provide significant performance benefits due to the Global Interpreter Lock (GIL), which allows only one thread to execute Python bytecode at a time.</p>
+</li>
+<li>
+<p>Multiprocessing: Running CPU-bound tasks concurrently using multiple processes, which can take advantage of multiple CPU cores.</p>
+</li>
+<li>
+<p>Parallel computing: Using frameworks like concurrent.futures or joblib to parallelize computations across multiple cores.</p>
+</li>
+</ul>
+<h1 id="python-coding">Python Coding</h1>
+<p>A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. </p>
+<h3 id="1-implement-a-linked-list-in-python">1. Implement a Linked List in Python</h3>
+<pre><code>from typing import Any
+
+class Node:
+
+    def __init__(self,data:Any=None):
+        self.data=data
+        self.next=None
+
+        def __repr__(self):
+            return self.data
+
+class LinkedList:
+
+    def __init__(self):
+        self.head=None
+
+    def __repr__(self) -&gt; str:
+        node=self.head
+        nodes=[]
+        while node is not None:
+            nodes.append(node.data)
+            node=node.next
+        nodes.append(&quot;None&quot;)
+        return &quot; --&gt; &quot;.join(nodes)
+
+linked_list=LinkedList()
+node_a=Node(&quot;a&quot;)
+linked_list.head=node_a
+node_b=Node(&quot;b&quot;)
+node_a.next = node_b
+node_c=Node(&quot;c&quot;)
+node_b.next=node_c
+print(linked_list) 
+</code></pre></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">CLOSE</span>
+                </button>
+                <h3 class="modal-title" id="searchModalLabel">SEARCH</h3>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Type to start searching
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

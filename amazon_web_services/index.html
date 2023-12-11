@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This repository contains a comprehensive list of Python interview questions that can assist you in securing your dream job">
+    <meta name="author" content="Hasan Ozdemir">
+    <link rel="canonical" href="https://interview-icebraker.readthedocs.io/en/latest/amazon_web_services/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>AWS - Interview Icebraker</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">Interview Icebraker</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">HOME</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../python/">PYTHON</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../sql/">SQL</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../devops/">DEVOPS</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">AWS</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/hasanozdem1r/interview-icebraker/edit/master/docs/amazon_web_services.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-4"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#aws-interview-questions">AWS Interview Questions</a></li>
+            <li class="second-level"><a href="#1-what-is-region-availability-zones">1. What is Region &amp; Availability Zones ?</a></li>
+                
+            <li class="second-level"><a href="#2-what-is-edge-locations">2. What is Edge Locations</a></li>
+                
+            <li class="second-level"><a href="#3-what-are-the-aws-core-services">3. What are the AWS Core Services ?</a></li>
+                
+            <li class="second-level"><a href="#4-what-is-ec2elastic-cloud-storage">4. What is EC2(Elastic Cloud Storage) ?</a></li>
+                
+            <li class="second-level"><a href="#5-what-are-key-pairs-in-aws">5. What are key-pairs in AWS?</a></li>
+                
+            <li class="second-level"><a href="#6-what-is-vpc">6. What is VPC?</a></li>
+                
+            <li class="second-level"><a href="#7-what-is-meant-by-subnet">7. What is meant by subnet?</a></li>
+                
+            <li class="second-level"><a href="#8-what-is-sqs">8. What is SQS?</a></li>
+                
+            <li class="second-level"><a href="#9-what-is-aws-lambda">9. What is AWS Lambda?</a></li>
+                
+            <li class="second-level"><a href="#10-what-is-geo-targeting-in-cloudfront">10. What is geo-targeting in CloudFront?</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-8" role="main">
+
+<h1 id="aws-interview-questions">AWS Interview Questions</h1>
+<h3 id="1-what-is-region-availability-zones">1. What is Region &amp; Availability Zones ?</h3>
+<p>AWS has the concept of a Region, which is a physical location around the world where they cluster data centers.</p>
+<p>They call each group of logical data centers an Availability Zone
+Each AWS region consists of multiple, isolated, and physically seperate AZs within a geographic area.</p>
+<p>TIP: Edge location &gt; Availability Zones &gt; Regions</p>
+<h3 id="2-what-is-edge-locations">2. What is Edge Locations</h3>
+<p>An Edge Location is where end-users access services located at AWS, the cloud computing division of US-Headquartered Amazon. They are located in most of the major cities around the world and are specifically used by CloudFront(CDN) to distribute content to end-users to reduce latency.</p>
+<h3 id="3-what-are-the-aws-core-services">3. What are the AWS Core Services ?</h3>
+<ul>
+<li>IAM</li>
+<li>EC2</li>
+<li>EBS</li>
+<li>VPC</li>
+<li>RDS</li>
+<li>S3</li>
+<li>ECS</li>
+<li>Lambda</li>
+<li>CloudFront</li>
+<li>CloudWatch</li>
+<li>SES</li>
+<li>SNS</li>
+<li>SQS</li>
+<li>DevOps tools (CodePipeline + CodeCommit + CodeBuild + CodeDeploy)</li>
+</ul>
+<h3 id="4-what-is-ec2elastic-cloud-storage">4. What is EC2(Elastic Cloud Storage) ?</h3>
+<p>EC2, a Virtual Machine in the cloud on which you have OS-level control. You can run this cloud server whenever you want and can be used when you need to deploy your own servers in the cloud, similar to your on-premises servers, and when you want to have full control over the choice of hardware and the updates on the machine.</p>
+<h3 id="5-what-are-key-pairs-in-aws">5. What are key-pairs in AWS?</h3>
+<p>Key-pairs are secure login information for your virtual machines. To connect to the instances, you can use key-pairs which contain a public-key and private-key.</p>
+<h3 id="6-what-is-vpc">6. What is VPC?</h3>
+<p>VPC stands for Virtual Private Cloud. It allows you to customize your networking configuration. It is a network which is logically isolated from another network in the cloud. It allows you to have your IP address range,  internet gateways, subnet, and security groups.</p>
+<h3 id="7-what-is-meant-by-subnet">7. What is meant by subnet?</h3>
+<p>A large section of IP Addresses divided into chunks is known as subnets.</p>
+<h3 id="8-what-is-sqs">8. What is SQS?</h3>
+<p>Simple Queue Service is also known as SQS. It is distributed queuing service which acts as a mediator for two controllers.</p>
+<h3 id="9-what-is-aws-lambda">9. What is AWS Lambda?</h3>
+<p>Lambda is an Amazon compute service which allows you to run code in the  AWS Cloud without managing servers.</p>
+<h3 id="10-what-is-geo-targeting-in-cloudfront">10. What is geo-targeting in CloudFront?</h3>
+<p>Geo-Targeting is a concept where businesses can show personalized content to their audience based on their geographic location without changing the URL. This helps you create customized content for the audience of a specific geographical area, keeping their needs in the forefront.</p></div>
+        
+        
+    </div>
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">CLOSE</span>
+                </button>
+                <h3 class="modal-title" id="searchModalLabel">SEARCH</h3>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Type to start searching
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
