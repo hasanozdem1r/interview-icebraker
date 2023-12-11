@@ -527,43 +527,22 @@ Tasks that spend the majority of their time performing CPU computations and have
 
 - Parallel computing: Using frameworks like concurrent.futures or joblib to parallelize computations across multiple cores.
 
+### 43. Does Python need to be compiled before it is run? 
+
+Compiled languages are based on code that can be executed directly on a computer’s processor. An interpreted language, on the other hand, isn’t in “machine code” before runtime. The translation happens at the same time as the program is executed. 
+
+Python is an interpreted language so it does not need to be compiled. 
+
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
-### 1. Implement a Linked List in Python
+### 1. What will be the output of the code below? 
 
 ```
-from typing import Any
-
-class Node:
-
-    def __init__(self,data:Any=None):
-        self.data=data
-        self.next=None
-    
-        def __repr__(self):
-            return self.data
-
-class LinkedList:
-
-    def __init__(self):
-        self.head=None
-    
-    def __repr__(self) -> str:
-        node=self.head
-        nodes=[]
-        while node is not None:
-            nodes.append(node.data)
-            node=node.next
-        nodes.append("None")
-        return " --> ".join(nodes)
-
-linked_list=LinkedList()
-node_a=Node("a")
-linked_list.head=node_a
-node_b=Node("b")
-node_a.next = node_b
-node_c=Node("c")
-node_b.next=node_c
-print(linked_list) 
+numbers = [1,2,3,4,5]
+print(numbers[10:])
 ```
+
+The output will be []; it will not result in an IndexError. The code is trying to access the 10th object in the list which does not exist, so it will output []
+
+if you try to access an index outside the valid range, like <code>numbers[6]</code>, it will raise an IndexError.
