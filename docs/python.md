@@ -509,7 +509,24 @@ Please go for detailed discussion to [link](https://stackoverflow.com/questions/
 | frozenset  | Immutable collection of distinct hashable objects.                                        |
 
 
-### 41.
+### 41. What is IO-Bound Tasks ?
+Tasks that spend a significant amount of time waiting for input/output operations to complete, such as reading or writing to files, network communication, or database queries. Reading/writing files, making API requests, fetching data from a database, downloading data from the internet.
+
+- Asynchronous programming: Utilizing asynchronous I/O operations with features like asyncio or using libraries like aiohttp for asynchronous HTTP requests.
+
+- Multiprocessing: Running IO-bound tasks concurrently using multiple processes.
+
+- Threading: For certain IO-bound tasks, threading can be beneficial, especially when the Global Interpreter Lock (GIL) is not a significant bottleneck.
+
+### 42. What is CPU-Bound Tasks ?
+Tasks that spend the majority of their time performing CPU computations and have limited interaction with input/output operations. Mathematical calculations, image processing, data manipulation, and other CPU-intensive operations.
+
+- Multi-threading may not provide significant performance benefits due to the Global Interpreter Lock (GIL), which allows only one thread to execute Python bytecode at a time.
+
+- Multiprocessing: Running CPU-bound tasks concurrently using multiple processes, which can take advantage of multiple CPU cores.
+
+- Parallel computing: Using frameworks like concurrent.futures or joblib to parallelize computations across multiple cores.
+
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
