@@ -27,6 +27,7 @@ nav:
     - SQL: sql.md
     - DEVOPS: devops.md 
     - AWS: amazon_web_services.md
+    - DATA ENGINEERING: data_engineering.md
 
 extra:
   alternate:
