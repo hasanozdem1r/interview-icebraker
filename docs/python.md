@@ -466,6 +466,10 @@ There are two primary categories of multiprocessing systems:
 * Symmetric multiprocessing: This multiprocessing system uses computer hardware and software that incorporates two or more identical processors connected by one memory space. These processors have complete access to all input and output devices and receive equal treatment.
 * Asymmetric multiprocessing: In this multiprocessing system, different CPUs have access to separate input and output (I/O) devices. For example, one CPU might perform I/O operations, while another CPU might focus on maintaining the operating system.
 
+![](img/python/parallel_processing.png)
+
+The multiprocessing module allows you to create multiple processes, each of them with its own Python interpreter. For this reason, Python multiprocessing accomplishes process-based parallelism.
+
 ### 36. What is multithreading ?
 Multithreading is a programming technique that assigns multiple code segments to a single process. These code segments, also referred to as threads, run concurrently and parallel to each other. These threads share the same memory space within a parent process
 
