@@ -50,7 +50,7 @@ Decorators in Python are essentially functions that add functionality to an exis
 
 Decorators generally are defined before the function they are enhancing. To apply a decorator we first define the decorator function. Then we write the function it is applied to and simply add the decorator function above the function it has to be applied to. For this, we use the **@ symbol** before the decorator.
 
-```
+```python
 def whee_decorator(func):
     def wrapper():
         print("Something is happening before the function is called.")
@@ -73,7 +73,7 @@ The syntax of slicing is  `[start:stop:step]`
 * **step**: refer incrementation / decrementation for each iteration.
 
 Checkout following examples to understand better
-```
+```python
 example=[]
 example[start:stop]  # items start through stop-1
 example[start:]      # items start through the rest of the array
@@ -100,7 +100,7 @@ A module is a file containing Python definitions and statements. This code can e
 * **Local**: Any variable declared inside a function is known as a local variable. This variable is present in the local space and not in the global space.
 
 **BASE_URL** is a global variable and **user_domain** is local variable and only can be accessed in scope of function
-```
+```python
 BASE_URL="www.github.com"
 
 def get_user_domain(base_url:str,username:str):
@@ -122,7 +122,7 @@ PEP stands for Python Enhancement Proposal. PEP 8 is especially important since 
 ### 14. What is docstring in Python?
 Documentation string or docstring is a multiline string used to document a specific code segment.
 Below you can see example docstr for **do_sth** function
-```
+```python
 def do_sth(:
     """
     do_sth method return message (I AM DOCSTRING)
@@ -145,7 +145,7 @@ export PYTHONPATH="$PWD" # project root directory
 
 A lambda function is an anonymous function (i.e., defined without a name) that can take any number of arguments but, unlike normal functions, evaluates and <u>returns only one expression</u>
 
-```
+```python
 # lambda function
 lambda x: x - 1
 # normal function
@@ -166,7 +166,7 @@ args stands for arguments, and kwargs stands for is keyword arguments.
 * *kwargs represent same idea, but only that this format uses keyword-based Python dictionaries
 
 Let's look at following example to understand better *args and **kwargs
-```
+```python
 def example(x,y,*args,**kwargs):
     # access args, it's a tuple
     arguments=[arg for arg in args]
@@ -192,7 +192,7 @@ The context manager is implemented as an object that defines two methods: \__ent
 
 The context manager can be used with the **with** statement, which provides a convenient way to manage resources in a safe and reliable manner. When the **with** statement is used, the context manager is automatically called when the block of code is entered, and it is automatically cleaned up when the block of code is exited, even if an error occurs.
 
-```
+```python
 class prep_interview:
     def __enter__(self):
         print("Entering the context...")
@@ -226,7 +226,7 @@ The \__init__ method is the Python equivalent of the C++ constructor in an objec
 * continue: Allows skipping some part of a loop when some specific condition is met and the control is transferred to the beginning of the loop
 * Used when you need some block of code syntactically, but you want to skip its execution. This is basically null opearion. Nothing happens when this is executed.
 
-```
+```python
 index = -5
 while True:
     if index < 0:
@@ -259,7 +259,7 @@ Generators, in general, are used to create iterators with a different approach.
 They employ the use of yield keyword rather than return to return a generator object.
 
 Here's an example of a simple generator that generates the first n Fibonacci numbers:
-```
+```python
 # creating generator
 def fibonacci(n):
     a, b = 0, 1
@@ -290,7 +290,7 @@ An iterator is an object.  It remembers its state i.e., where it is during itera
 * \__iter__() method initializes an iterator.
 * \__next__() method which returns the next item in iteration and points to the next element. Upon reaching the end of iterable object \__next__() must return StopIteration exception. It is also self-iterable.
 
-```
+```python
 # example iterator
 class EvenNumbers:
     # constructor
@@ -335,7 +335,7 @@ In Python, *finalize* is a method that is used to release resources associated w
 
 The finalize method provides a way to automatically release these external resources when the object is garbage-collected. To use finalize, you define a callback function that will be called when the object is about to be garbage-collected. This function can then release any external resources held by the object, such as closing a file or disconnecting from a network socket.
 
-```
+```python
 import atexit
 
 class FileWrapper:
@@ -388,7 +388,7 @@ print(my_list) # Output: [1, 2, 3, 4, 5, 6]
 Monkey patching in Python is the practice of changing or adding functionality to a module, class, or object at runtime, without actually modifying the original source code.
 
 Let's say you're working with a third-party library that has a function called calculate() which takes two arguments and returns their sum. However, for some reason, you want this function to also return the difference between the two arguments. Instead of modifying the original code of the library, you can use monkey patching to add this additional functionality.
-```
+```python
 import some_library
 
 # define a new function that we want to add to the library
@@ -410,7 +410,7 @@ Mocking is often used to simulate the behavior of complex or external dependenci
 
 Mocking can be a powerful technique for writing effective unit tests in Python, but it should be used judiciously. Overuse of mocking can lead to brittle and hard-to-maintain tests, as well as a false sense of security that the code is working correctly when in fact it may not be.
 
-```
+```python
 from unittest.mock import MagicMock
 import requests
 
@@ -539,12 +539,19 @@ Compiled languages are based on code that can be executed directly on a computer
 
 Python is an interpreted language so it does not need to be compiled. 
 
+### 44. What are the 4 pillars of OOP ?
+
+* Abstraction
+* Encapsulation
+* Polymorphism
+* Inheritance
+
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
 ### 1. What will be the output of the code below? 
 
-```
+```python
 numbers = [1,2,3,4,5]
 print(numbers[10:])
 ```
