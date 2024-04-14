@@ -468,7 +468,9 @@ There are two primary categories of multiprocessing systems:
 
 ![](img/python/parallel_processing.png)
 
-The multiprocessing module allows you to create multiple processes, each of them with its own Python interpreter. For this reason, Python multiprocessing accomplishes process-based parallelism.
+The **multiprocessing** module allows you to create multiple processes, each of them with its own Python interpreter. For this reason, Python multiprocessing accomplishes process-based parallelism.
+
+**NOTE**: Creating multiple processes and doing parallel computations is not necessarily more efficient than serial computing. For low CPU-intensive tasks, serial computation is faster than parallel computation.
 
 ### 36. What is multithreading ?
 Multithreading is a programming technique that assigns multiple code segments to a single process. These code segments, also referred to as threads, run concurrently and parallel to each other. These threads share the same memory space within a parent process
