@@ -546,6 +546,15 @@ Python is an interpreted language so it does not need to be compiled.
 * Polymorphism
 * Inheritance
 
+### 45. What Is A Design Pattern?
+Design patterns are a common way of solving well known problems. Two main principles are in the bases of the design patterns defined by the GOF:
+* Program to an interface not an implementation.
+* Favor object composition over inheritance.
+
+**Behavioural Patterns** involve communication between objects, how objects interact and fulfil a given task. According to GOF principles, there are a total of 11 behavioral patterns in Python: Chain of responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template, Visitor.
+
+**Creational Patterns** provide a way to create objects while hiding the creation logic, rather than instantiating objects directly using a new operator
+
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
