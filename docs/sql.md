@@ -93,7 +93,7 @@ A Stored Procedure is a function which consists of many SQL statements to access
 
 Following stored procedure called sp_GetProductDetails which accepts a parameter called @ProductId of type INT. 
 The stored procedure selects the details of the product from the Products table where the ProductId matches the value of @ProductId.
-```
+```sql
 CREATE PROCEDURE sp_GetProductDetails
     @ProductId INT
 AS
@@ -121,7 +121,7 @@ There are several types of joins in SQL, including:
 
 ![join visualization](img/sql/sql_joins.png)
 
-```
+```sql
 -- INNER JOIN or just JOIN retrieves all users and likes that match each other 
 -- ( where the id field in users matches a user_id in the likes table and vice versa )
 SELECT users.name, likes.like FROM users JOIN likes ON users.id = likes.user_id;
@@ -176,7 +176,7 @@ There are two types of subqueries:
 * Single-row subquery: A single-row subquery is a subquery that returns only one row of data, which is then used by the outer query as a value in a comparison or calculation. For example, a single-row subquery can be used to find the maximum value in a column and then use that value to filter the results of the outer query.
 * Multiple-row subquery: A multiple-row subquery is a subquery that returns multiple rows of data, which are then used by the outer query to filter or manipulate the results. For example, a multiple-row subquery can be used to find all the customers who have ordered a particular product and then use that information to generate a report.
 
-```
+```sql
 -- Single-row subquery
 SELECT *
 FROM products
@@ -196,7 +196,7 @@ Subqueries can also be classified by where they are used in a SQL statement. The
 
 * Subquery in WHERE clause: A subquery can be used in the WHERE clause to filter the results of the outer query based on a condition that involves data from another table.
 
-```
+```sql
 -- Subquery in SELECT statement
 SELECT product_name, (SELECT MAX(price) FROM products) AS max_price
 FROM products;
@@ -223,7 +223,7 @@ Triggers are commonly used in database applications to enforce data consistency 
 
 
 Here is an example of a trigger in SQL:
-```
+```sql
 CREATE TRIGGER update_customer_orders
 AFTER INSERT ON orders
 FOR EACH ROW
@@ -370,7 +370,7 @@ The set of values is typically a group of rows in a table, and the function is a
 |    VARIANCE()    | Return the population standard variance          |
 
 Here are some examples of aggregate functions in SQL:
-```
+```sql
 -- Calculate the average salary of all employees
 SELECT AVG(salary) FROM employees;
 
@@ -574,7 +574,7 @@ In addition to the LIKE operator, SQL also provides regular expression functions
 CTEs work as virtual tables (with records and columns), created during the execution of a query, used by the query, and eliminated after query execution.
 
 Each SQL CTE is like a named query, whose result is stored in a virtual table (a CTE) to be referenced later in the main query.
-```
+```sql
 WITH london1_monthly_revenue AS (
   SELECT
     EXTRACT(MONTH FROM date) as month,
@@ -601,6 +601,42 @@ SELECT
 FROM london1_monthly_revenue l1, london2_monthly_revenue l2
 WHERE l1.month = l2.month
 ```
+
+### 48. What is SQL Execution Order
+```sql
+select customer_id, 
+      count(order_id) as total_orders,
+      sum(order_amount) as total_spent
+from customers
+join orders
+on customers.id = orders.customer_id
+where order_date > '2023-01-01'
+group by customer_id
+having total_spent >= 100
+order by total_spent desc
+limit 5;
+```
+![understand the sql execution order](img/sql/query_execution_order.png)
+
+1. **FROM / JOIN** Tables are joined to get the base data.
+2. **WHERE** The base data is filtered.
+3. **GROUP BY** The filtered base data is grouped.
+4. **HAVING** The grouped base data is filtered.
+5. **SELECT** The final data is returned.
+6. **DISTINCT** The final data duplicates cleaned.
+7. **ORDER BY** The final data is sorted.
+8. **LIMIT / OFFSET** The returned data is limited to row count.
+
+
+### 49. What is SARGABLE Query ? 
+**SARGABLE Query**: Search Argument Able
+
+To write sargable queries:
+* Avoid using functions or calculations on indexed columns in WHERE clause
+* Use direct comparisons when possible, instead of wrapping the column in a function
+* If you need to use a function on a column, consider creating a computed column or function-based index, if database system supports it.
+
+
 
 ## CODING
 
