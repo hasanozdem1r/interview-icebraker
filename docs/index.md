@@ -10,3 +10,5 @@
     * [Theoratical](sql.md)
     * [Coding](sql.md)
 * [DevOps Questions](devops.md)
+* [AWS Questions](amazon_web_services.md)
+* [Data Engineering Questions](data_engineering.md)
