@@ -56,8 +56,51 @@ The main use of SSH is to establish a secure connection between two networked de
 In addition to providing secure shell access, SSH can also be used for secure file transfer (SFTP) and remote command execution. SSH can also be used for tunneling other network protocols, such as HTTP, FTP, and SMTP, over an encrypted connection.
 
 ### 7. What is configuration management ?
+
 Configuration management (CM) is a crucial practice in software development and IT operations, which involves the systematic handling of changes to maintain the integrity of systems over time. CM encompasses a range of policies, techniques, procedures, and tools that are used to evaluate change proposals, manage changes, and track their progress while maintaining proper documentation.
 
 By implementing CM, organizations can ensure that changes are made in a controlled and standardized manner, reducing the risk of errors and system failures. It also facilitates collaboration between team members and enables faster, more efficient delivery of software and services.
 
 CM practices include version control, testing, deployment automation, monitoring, and documentation. These practices help organizations maintain a comprehensive view of their IT infrastructure and make informed decisions about changes that will impact the system.
+
+### 8. How many locations does Git have ?
+
+```markdown
++-----------------------+       +------------------+
+|    Remote Repository  |       |    Local Repository  |
+| (e.g., GitHub, GitLab)|       |------------------|
++-----------------------+       | .git directory   | 
+               |                 +------------------+
+               |<-------------->  |  Objects (commits, blobs, etc.) |
+               |                 |  Refs (branches, tags)        |     
+               V                 +------------------+
++-----------------------+           
+|     Working Directory |           
+|  (Your project files) |           
++-----------------------+           
+            ^            
+            |            
+          stage/changes 
+            |            
++-----------------------+          
+|      Staging Area     |          
+|    (Index)            |          
++-----------------------+          
+```
+**Remote Repository**: A central repository, often hosted on platforms like GitHub, GitLab, or Bitbucket.
+Stores the history of your project and acts as a shared point of collaboration.
+
+**Local Repository**: A copy of the entire repository stored on your computer within a hidden .git directory.
+Contains all the commits, branches, tags, and configuration information.
+
+**Working Directory**: The directory where your actual project files reside.
+You modify files, create new files, and delete files within this directory.
+
+**Staging Area (Index)**: An intermediate area where you prepare a snapshot of changes before committing them to your local repository.
+Lets you selectively add and organize the changes you want to include in your next commit.
+
+### 9. What is difference between git merge vs git rebase ?
+When we merge changes from one Git branch to another, we can use ‘git merge’ or ‘git rebase’.
+
+* Merge preserves history, whereas rebase rewrites it.Git merge is non-destructive. Neither the main nor the feature branch is changed.
+* Git rebase moves the feature branch histories to the head of the main branch. Rebasing is useful for streamlining a complex history. The benefit of rebase is that it has a linear commit history.
