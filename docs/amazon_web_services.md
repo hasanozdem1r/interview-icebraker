@@ -44,9 +44,10 @@ Simple Queue Service is also known as SQS. It is distributed queuing service whi
 
 ### 9. What is AWS Lambda?
 Lambda is an Amazon compute service which allows you to run code in the  AWS Cloud without managing servers.
+
+AWS Lambda is a secure, on-demand, event-driven, compute service that scales as needed and billed only for what is used.
 * Provisioned concurrency allows you to preallocate resources for your Lambda functions, reducing cold starts and ensuring consistent performance.
 * Implementing multi-threaded execution in Lambda functions enhances parallel processing and overall performance
-* 
 
 ### 10. What is geo-targeting in CloudFront?
 Geo-Targeting is a concept where businesses can show personalized content to their audience based on their geographic location without changing the URL. This helps you create customized content for the audience of a specific geographical area, keeping their needs in the forefront.
