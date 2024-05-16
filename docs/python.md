@@ -568,3 +568,59 @@ print(numbers[10:])
 The output will be []; it will not result in an IndexError. The code is trying to access the 10th object in the list which does not exist, so it will output []
 
 if you try to access an index outside the valid range, like <code>numbers[6]</code>, it will raise an IndexError.
+
+
+### 2. What will be the output of the code below? How finally would treat the output ?
+
+Scenario 1
+```python
+def case_1():
+    try:
+        print('try print')
+        return 'try return'
+    except:
+        print('except print')
+        return 'except return'
+    finally:
+        print('finally print')
+        return 'finally return'
+```
+
+When this function is called, the following sequence of events occurs:
+
+1. The try block is executed, which prints 'try print' and then attempts to return 'try return'.
+2. Before the function can return 'try return', the finally block is executed (the finally block always runs regardless of whether an exception was raised or not).
+3. The finally block prints 'finally print' and then attempts to return 'finally return'.
+```shell
+try print
+finally print
+finally return
+```
+
+Scenario 2
+```python
+def case_2():
+    try:
+        print('try print')
+        # No exception is raised, so it proceeds to the else block
+    except ValueError:
+        print('except print')
+        return 'except return'
+    else:
+        print('else print')
+        return 'else return'
+    finally:
+        print('finally print')
+        return 'finally return'
+```
+1. The try block is executed first. It contains a print statement: print('try print').
+2. Since no exception is raised in the try block, the else block is executed. (also no return statement)
+3. The finally block is always executed, regardless of whether an exception occurred or not.
+4. Even though the else block contains a return statement, the finally block's return statement overrides it.
+
+```shell
+try print
+else print
+finally print
+finally return
+```
