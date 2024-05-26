@@ -561,6 +561,18 @@ loc: label-based selection
 
 iloc uses the Python stdlib indexing scheme, where the first element of the range is included and the last one excluded. So 0:10 will select entries 0,...,9. loc, meanwhile, indexes inclusively. So 0:10 will select entries 0,...,10.
 
+### 46. What is difference between apply, applymap, map in pandas ?
+![apply-applymap-map](img/python/apply_applymap_map.png)
+
+- apply() is used to apply a function along an axis of the DataFrame or on values of Series.
+- applymap() is used to apply a function to a DataFrame elementwise.
+- map() is used to substitute each value in a Series with another value.
+
+**apply(function,axis)**
+- function: name of function you want to use
+- axis: 0 go over columns, 1 go over rows
+
+
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
 
