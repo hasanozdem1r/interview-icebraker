@@ -572,6 +572,32 @@ iloc uses the Python stdlib indexing scheme, where the first element of the rang
 - function: name of function you want to use
 - axis: 0 go over columns, 1 go over rows
 
+### 47. Explain difference between assignment and mutation ? 
+Python has two distinct types of change.
+
+- Assignment changes a variable. That is, it changes which object a variable points to.
+- Mutation changes an object, which any number of variables may be pointing to.
+
+So we can change variables through an assignment, and we can change the objects that those variables point to through a mutation.
+```python
+# mutation
+# variables in python are pointers. This means that two variables can point to the same object.
+b = [1, 2, 3]
+c = b
+b.append(
+    4
+)  # So changing that object will change the value that both variables point to.
+print(id(b), id(c), id(b) == id(c))
+print(b, c)  # [1,2,3,4] [1,2,3,4]
+
+# assignment
+d = [1,2,3]
+e = d
+d = [4,5]
+print(id(d),id(e))
+```
+In mutation case both variables point to the same id where in the assignment case variables point to the different id because identity is changed
+
 
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
