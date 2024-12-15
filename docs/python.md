@@ -598,6 +598,12 @@ print(id(d),id(e))
 ```
 In mutation case both variables point to the same id where in the assignment case variables point to the different id because identity is changed
 
+### 48. Which approaches / strategies used in Python Garbage Collector ?
+1. Reference Counting:
+It keeps track of the number of references to each object, and when the count reaches zero, indicating that no references to the object exist, the object is considered garbage and the memory is reclaimed.
+
+2. Cyclical reference:
+A cyclical reference, also known as a reference cycle or circular reference, occurs in Python when a group of objects reference each other in a way that forms a closed loop, preventing them from being garbage collected. This can lead to memory leaks as the objects involved are not eligible for automatic memory reclamation since their reference counts never reach zero.
 
 # Python Coding
 A coding interview is intended to seek out creative thinkers and those who can adapt their solutions to rapidly changing and dynamic scenarios. 
